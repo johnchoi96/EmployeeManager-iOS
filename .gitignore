@@ -90,4 +90,4 @@ fastlane/test_output
 iOSInjectionProject/
 
 # Google Firebase service info plist
-GoogleService-info.plist
+GoogleService-Info.plist
