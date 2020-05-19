@@ -119,10 +119,44 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="GwL-5E-hXy" kind="show" identifier="mainToTable" id="w8K-Cz-afI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zOM-uY-PJH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3408.6956521739135" y="182.8125"/>
+        </scene>
+        <!--Employee Table View Controller-->
+        <scene sceneID="MVw-pc-deu">
+            <objects>
+                <viewController id="GwL-5E-hXy" customClass="EmployeeTableViewController" customModule="EmployeeManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CEu-or-1QA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uE3-Bt-E4Y">
+                                <rect key="frame" x="0.0" y="140" width="375" height="638"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" name="AppColor"/>
+                        <constraints>
+                            <constraint firstItem="uE3-Bt-E4Y" firstAttribute="top" secondItem="EZM-kc-bDv" secondAttribute="top" id="C5S-rv-PgJ"/>
+                            <constraint firstItem="EZM-kc-bDv" firstAttribute="trailing" secondItem="uE3-Bt-E4Y" secondAttribute="trailing" id="Trn-yV-kM0"/>
+                            <constraint firstItem="uE3-Bt-E4Y" firstAttribute="leading" secondItem="EZM-kc-bDv" secondAttribute="leading" id="V7q-jx-eWU"/>
+                            <constraint firstItem="EZM-kc-bDv" firstAttribute="bottom" secondItem="uE3-Bt-E4Y" secondAttribute="bottom" id="qMo-5M-LzY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EZM-kc-bDv"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Gwx-SO-USJ"/>
+                    <connections>
+                        <outlet property="employeeTable" destination="uE3-Bt-E4Y" id="NaZ-wV-smJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UWb-5G-VEj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4532" y="-52"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="8wA-uU-6Om">

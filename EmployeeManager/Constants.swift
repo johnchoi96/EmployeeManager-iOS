@@ -15,5 +15,6 @@ struct K {
         static let welcomeToLogin = "welcomeToLogin"
         static let signupToMain = "signupToMain"
         static let loginToMain = "loginToMain"
+        static let mainToTable = "mainToTable"
     }
 }

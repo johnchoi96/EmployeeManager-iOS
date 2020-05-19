@@ -1,27 +1,25 @@
 //
-//  MainMenuViewController.swift
+//  EmployeeTableViewController.swift
 //  EmployeeManager
 //
-//  Created by John Choi on 5/18/20.
+//  Created by John Choi on 5/19/20.
 //  Copyright © 2020 John Choi. All rights reserved.
 //
 
 import UIKit
 
-class MainMenuViewController: UIViewController {
+class EmployeeTableViewController: UIViewController {
 
+    @IBOutlet weak var employeeTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        title = "Main Menu"
-        navigationItem.hidesBackButton = true
+        title = "Employees"
     }
     
-    @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
-        navigationController?.popToRootViewController(animated: true)
-    }
-    
+
     /*
     // MARK: - Navigation
 
