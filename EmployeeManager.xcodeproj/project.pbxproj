@@ -19,7 +19,7 @@
 		D22C7A8B2473873B00FA5DFC /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A8A2473873B00FA5DFC /* LogInViewController.swift */; };
 		D22C7A8D2473874900FA5DFC /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A8C2473874900FA5DFC /* MainMenuViewController.swift */; };
 		D22C7A8F2473894D00FA5DFC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A8E2473894D00FA5DFC /* Constants.swift */; };
-		D22C7A9124738D7500FA5DFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D22C7A9024738D7500FA5DFC /* GoogleService-Info.plist */; };
+		D22C7A932473936300FA5DFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D22C7A922473936300FA5DFC /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +39,7 @@
 		D22C7A8A2473873B00FA5DFC /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		D22C7A8C2473874900FA5DFC /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		D22C7A8E2473894D00FA5DFC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		D22C7A9024738D7500FA5DFC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D22C7A922473936300FA5DFC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +97,7 @@
 				D22C7A852473741500FA5DFC /* Views */,
 				D22C7A78247372FE00FA5DFC /* Assets.xcassets */,
 				D22C7A7D247372FE00FA5DFC /* Info.plist */,
-				D22C7A9024738D7500FA5DFC /* GoogleService-Info.plist */,
+				D22C7A922473936300FA5DFC /* GoogleService-Info.plist */,
 				D22C7A86247376A000FA5DFC /* EmployeeManager.swift */,
 				D22C7A8E2473894D00FA5DFC /* Constants.swift */,
 			);
@@ -193,9 +193,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D22C7A932473936300FA5DFC /* GoogleService-Info.plist in Resources */,
 				D22C7A7C247372FE00FA5DFC /* LaunchScreen.storyboard in Resources */,
 				D22C7A79247372FE00FA5DFC /* Assets.xcassets in Resources */,
-				D22C7A9124738D7500FA5DFC /* GoogleService-Info.plist in Resources */,
 				D22C7A77247372FB00FA5DFC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
