@@ -9,22 +9,92 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
-
+    
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var confirmPasswordField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        emailField.delegate = self
+        passwordField.delegate = self
+        confirmPasswordField.delegate = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func signupPressed(_ sender: UIButton) {
+        guard let email = emailField.text, email.count > 0 else {
+            displayAlert(title: "Please enter Email!", message: "Email must be provided")
+            return
+        }
+        if !isValidPassword() || !passwordsMatch() {
+            return
+        }
+        // TODO: Firebase Auth create user
+        performSegue(withIdentifier: K.Segues.signupToMain, sender: self)
     }
-    */
+    
+    /// Checks if the provided password satisfies the security requirement.
+    /// Shows the UIAlert if the check fails and returns false.
+    private func isValidPassword() -> Bool {
+        if let password = passwordField.text {
+            if password.count >= 6 {
+                return true
+            } else {
+                displayAlert(title: "Invalid password!", message: "Password must be at least 6 characters long!")
+                return false
+            }
+        } else {
+            displayAlert(title: "Invalid password!", message: "Please enter password")
+            return false
+        }
+    }
+    
+    /// Checks if the two entered passwords match.
+    /// If the two passwords do not match, alert is shown.
+    private func passwordsMatch() -> Bool {
+        if let pw = passwordField.text, let pwConfirm = confirmPasswordField.text {
+            if pw == pwConfirm {
+                return true
+            } else {
+                displayAlert(title: "Password Mismatch!", message: "Passwords must match")
+                return false
+            }
+        } else {
+            displayAlert(title: "Please enter password", message: "")
+            return false
+        }
+    }
+    
+    /// Displays alert with the provided title and message on current view.
+    /// - Parameters:
+    ///     - title: title of the alert
+    ///     - message: message of the alert
+    private func displayAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
+}
 
+// MARK: - UITextFieldDelegate section
+extension SignUpViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    /// Workaround to avoid the annoying auto-fill for the passwords.
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.placeholder == "New Password" || textField.placeholder == "Confirm Password" {
+            textField.isSecureTextEntry = true
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.resignFirstResponder()
+    }
 }

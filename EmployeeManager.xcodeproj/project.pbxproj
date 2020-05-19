@@ -95,10 +95,10 @@
 				D22C7A832473740300FA5DFC /* Delegates */,
 				D22C7A842473740800FA5DFC /* Controllers */,
 				D22C7A852473741500FA5DFC /* Views */,
+				D22C7A942473A85A00FA5DFC /* Models */,
 				D22C7A78247372FE00FA5DFC /* Assets.xcassets */,
 				D22C7A7D247372FE00FA5DFC /* Info.plist */,
 				D22C7A922473936300FA5DFC /* GoogleService-Info.plist */,
-				D22C7A86247376A000FA5DFC /* EmployeeManager.swift */,
 				D22C7A8E2473894D00FA5DFC /* Constants.swift */,
 			);
 			path = EmployeeManager;
@@ -131,6 +131,14 @@
 				D22C7A7A247372FE00FA5DFC /* LaunchScreen.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D22C7A942473A85A00FA5DFC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D22C7A86247376A000FA5DFC /* EmployeeManager.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
