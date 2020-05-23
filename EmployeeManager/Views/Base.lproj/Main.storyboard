@@ -11,7 +11,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="EmployeeManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="Employees" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ih2-Od-gWK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,7 +56,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.2553036809" green="0.60481721160000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="AppColor"/>
                         <constraints>
                             <constraint firstItem="1aO-FW-M3y" firstAttribute="top" secondItem="j4a-yC-Rqy" secondAttribute="top" constant="85" id="4Pl-96-xyw">
                                 <variation key="heightClass=compact" constant="20"/>
@@ -85,7 +85,7 @@
         <!--Welcome Back!-->
         <scene sceneID="PW9-uE-eyj">
             <objects>
-                <viewController id="q2O-JD-i7g" customClass="LogInViewController" customModule="EmployeeManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="q2O-JD-i7g" customClass="LogInViewController" customModule="Employees" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aAY-dZ-qej">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -146,11 +146,82 @@
         <!--Main Menu-->
         <scene sceneID="AZE-3H-hq0">
             <objects>
-                <viewController id="cuC-tN-Lay" customClass="MainMenuViewController" customModule="EmployeeManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cuC-tN-Lay" customClass="MainMenuViewController" customModule="Employees" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WZy-oJ-aWI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="vcj-33-OyU">
+                                <rect key="frame" x="0.0" y="304.66666666666669" width="375" height="203"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nw9-5n-PB3">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                        <state key="normal" title="View Employees">
+                                            <color key="titleColor" name="AppColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="viewEmployeesPressed:" destination="cuC-tN-Lay" eventType="touchUpInside" id="pwO-R5-cTR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Snk-kh-LZY">
+                                        <rect key="frame" x="0.0" y="78" width="375" height="48"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                        <state key="normal" title="Add Employee">
+                                            <color key="titleColor" name="AppColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addEmployeePressed:" destination="cuC-tN-Lay" eventType="touchUpInside" id="RDV-dR-aCD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiI-HJ-bH9">
+                                        <rect key="frame" x="0.0" y="156" width="375" height="47"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                        <state key="normal" title="About">
+                                            <color key="titleColor" name="AppColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="aboutPressed:" destination="cuC-tN-Lay" eventType="touchUpInside" id="Bgw-hj-qoa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Nw9-5n-PB3" secondAttribute="trailing" id="7UC-gy-VIx"/>
+                                    <constraint firstAttribute="trailing" secondItem="hiI-HJ-bH9" secondAttribute="trailing" id="8LK-F3-syu"/>
+                                    <constraint firstAttribute="trailing" secondItem="Snk-kh-LZY" secondAttribute="trailing" id="BAk-GX-2dd"/>
+                                    <constraint firstItem="Snk-kh-LZY" firstAttribute="leading" secondItem="vcj-33-OyU" secondAttribute="leading" id="ZUz-DZ-w4o"/>
+                                    <constraint firstItem="Nw9-5n-PB3" firstAttribute="leading" secondItem="vcj-33-OyU" secondAttribute="leading" id="qgC-kD-SOs"/>
+                                    <constraint firstItem="hiI-HJ-bH9" firstAttribute="leading" secondItem="vcj-33-OyU" secondAttribute="leading" id="zPa-OK-Pu7"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Choi 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tyi-HW-J7S">
+                                <rect key="frame" x="126.66666666666669" y="727.66666666666663" width="122" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="admin" translatesAutoresizingMaskIntoConstraints="NO" id="oCi-TI-73x">
+                                <rect key="frame" x="355" y="140" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="TAo-sf-Pqr"/>
+                                    <constraint firstAttribute="width" constant="20" id="TEg-hr-P9f"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" name="AppColor"/>
+                        <constraints>
+                            <constraint firstItem="VRd-5j-lSF" firstAttribute="trailing" secondItem="oCi-TI-73x" secondAttribute="trailing" id="0dx-Wn-9BE"/>
+                            <constraint firstItem="vcj-33-OyU" firstAttribute="leading" secondItem="VRd-5j-lSF" secondAttribute="leading" id="Dbk-2j-emr"/>
+                            <constraint firstItem="VRd-5j-lSF" firstAttribute="bottom" secondItem="Tyi-HW-J7S" secondAttribute="bottom" constant="30" id="Rxn-ZI-jX9"/>
+                            <constraint firstItem="VRd-5j-lSF" firstAttribute="trailing" secondItem="vcj-33-OyU" secondAttribute="trailing" id="ZgT-J3-csz"/>
+                            <constraint firstItem="vcj-33-OyU" firstAttribute="centerX" secondItem="WZy-oJ-aWI" secondAttribute="centerX" id="aSM-yf-IS2"/>
+                            <constraint firstItem="Tyi-HW-J7S" firstAttribute="centerX" secondItem="WZy-oJ-aWI" secondAttribute="centerX" id="ghk-sY-7FI"/>
+                            <constraint firstItem="oCi-TI-73x" firstAttribute="top" secondItem="VRd-5j-lSF" secondAttribute="top" id="sBK-1z-KHT"/>
+                            <constraint firstItem="vcj-33-OyU" firstAttribute="centerY" secondItem="WZy-oJ-aWI" secondAttribute="centerY" id="vVO-tq-2Jb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="VRd-5j-lSF"/>
                     </view>
                     <navigationItem key="navigationItem" title="Main Menu" id="3Jc-t8-VfQ">
@@ -162,17 +233,34 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="adminImage" destination="oCi-TI-73x" id="Mki-Db-2JI"/>
                         <segue destination="GwL-5E-hXy" kind="show" identifier="mainToTable" id="w8K-Cz-afI"/>
+                        <segue destination="Wfi-IK-d5U" kind="presentation" identifier="mainToAddEmployee" id="fLl-Ge-tCP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zOM-uY-PJH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3408.6956521739135" y="182.8125"/>
+            <point key="canvasLocation" x="3407.1999999999998" y="182.51231527093597"/>
         </scene>
-        <!--Employee Table View Controller-->
+        <!--Add Employee View Controller-->
+        <scene sceneID="mHi-aI-gA1">
+            <objects>
+                <viewController id="Wfi-IK-d5U" customClass="AddEmployeeViewController" customModule="Employees" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hsc-wL-Hq8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="3ff-Ko-oP0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j6h-h2-uJk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4551" y="691"/>
+        </scene>
+        <!--Employees-->
         <scene sceneID="MVw-pc-deu">
             <objects>
-                <viewController id="GwL-5E-hXy" customClass="EmployeeTableViewController" customModule="EmployeeManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GwL-5E-hXy" customClass="EmployeeTableViewController" customModule="Employees" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CEu-or-1QA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -180,6 +268,16 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uE3-Bt-E4Y">
                                 <rect key="frame" x="0.0" y="140" width="375" height="638"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="employeeCell" id="NNa-Zp-2A8">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NNa-Zp-2A8" id="iSo-3f-Xjs">
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" name="AppColor"/>
@@ -191,19 +289,36 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EZM-kc-bDv"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Gwx-SO-USJ"/>
+                    <navigationItem key="navigationItem" title="Employees" id="Gwx-SO-USJ"/>
                     <connections>
                         <outlet property="employeeTable" destination="uE3-Bt-E4Y" id="NaZ-wV-smJ"/>
+                        <segue destination="3HE-Qi-T2Y" kind="show" identifier="tableToEmployeeDetail" id="nfQ-jv-lAz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UWb-5G-VEj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4532" y="-52"/>
         </scene>
+        <!--Employee Detail-->
+        <scene sceneID="6MS-gZ-bD2">
+            <objects>
+                <viewController id="3HE-Qi-T2Y" customClass="EmployeeDetailViewController" customModule="Employees" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="56f-TT-03c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="AppColor"/>
+                        <viewLayoutGuide key="safeArea" id="BfX-hK-PLC"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Employee Detail" id="U5g-Nk-j1W"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hoW-rf-Dw3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5441" y="-52"/>
+        </scene>
         <!--Sign Up-->
         <scene sceneID="8wA-uU-6Om">
             <objects>
-                <viewController id="MoV-5r-8yg" customClass="SignUpViewController" customModule="EmployeeManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MoV-5r-8yg" customClass="SignUpViewController" customModule="Employees" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ckf-Xj-D4b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -305,6 +420,7 @@
         <segue reference="GEh-0w-ZgM"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="admin" width="170" height="170.66667175292969"/>
         <namedColor name="AppColor">
             <color red="0.23100000619888306" green="0.70999997854232788" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

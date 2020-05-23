@@ -22,6 +22,7 @@ class LogInViewController: UIViewController {
         // delegate setup
         emailField.delegate = self
         passwordField.delegate = self
+//        self.navigationItem.largeTitleDisplayMode = .never
     }
     
     @IBAction func logInPressed(_ sender: UIButton) {

@@ -21,6 +21,11 @@
 		D22C7A8F2473894D00FA5DFC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A8E2473894D00FA5DFC /* Constants.swift */; };
 		D22C7A932473936300FA5DFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D22C7A922473936300FA5DFC /* GoogleService-Info.plist */; };
 		D22C7A962473AC2F00FA5DFC /* EmployeeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A952473AC2F00FA5DFC /* EmployeeTableViewController.swift */; };
+		D26CE4942479614800C1A909 /* EmployeeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26CE4932479614800C1A909 /* EmployeeDetailViewController.swift */; };
+		D26CE4992479701400C1A909 /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26CE4972479701400C1A909 /* EmployeeTableViewCell.swift */; };
+		D26CE49A2479701400C1A909 /* EmployeeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D26CE4982479701400C1A909 /* EmployeeTableViewCell.xib */; };
+		D26CE49C247971FF00C1A909 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26CE49B247971FF00C1A909 /* Employee.swift */; };
+		D26CE49E24797A2600C1A909 /* AddEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26CE49D24797A2600C1A909 /* AddEmployeeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +47,11 @@
 		D22C7A8E2473894D00FA5DFC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D22C7A922473936300FA5DFC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D22C7A952473AC2F00FA5DFC /* EmployeeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewController.swift; sourceTree = "<group>"; };
+		D26CE4932479614800C1A909 /* EmployeeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailViewController.swift; sourceTree = "<group>"; };
+		D26CE4972479701400C1A909 /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
+		D26CE4982479701400C1A909 /* EmployeeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeTableViewCell.xib; sourceTree = "<group>"; };
+		D26CE49B247971FF00C1A909 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		D26CE49D24797A2600C1A909 /* AddEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +133,9 @@
 				D22C7A8A2473873B00FA5DFC /* LogInViewController.swift */,
 				D22C7A8C2473874900FA5DFC /* MainMenuViewController.swift */,
 				D22C7A952473AC2F00FA5DFC /* EmployeeTableViewController.swift */,
+				D26CE4932479614800C1A909 /* EmployeeDetailViewController.swift */,
+				D26CE4972479701400C1A909 /* EmployeeTableViewCell.swift */,
+				D26CE49D24797A2600C1A909 /* AddEmployeeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -131,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				D22C7A75247372FB00FA5DFC /* Main.storyboard */,
+				D26CE4982479701400C1A909 /* EmployeeTableViewCell.xib */,
 				D22C7A7A247372FE00FA5DFC /* LaunchScreen.storyboard */,
 			);
 			path = Views;
@@ -140,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				D22C7A86247376A000FA5DFC /* EmployeeManager.swift */,
+				D26CE49B247971FF00C1A909 /* Employee.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -205,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D22C7A932473936300FA5DFC /* GoogleService-Info.plist in Resources */,
+				D26CE49A2479701400C1A909 /* EmployeeTableViewCell.xib in Resources */,
 				D22C7A7C247372FE00FA5DFC /* LaunchScreen.storyboard in Resources */,
 				D22C7A79247372FE00FA5DFC /* Assets.xcassets in Resources */,
 				D22C7A77247372FB00FA5DFC /* Main.storyboard in Resources */,
@@ -261,14 +277,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				D22C7A74247372FB00FA5DFC /* WelcomeViewController.swift in Sources */,
+				D26CE49E24797A2600C1A909 /* AddEmployeeViewController.swift in Sources */,
+				D26CE49C247971FF00C1A909 /* Employee.swift in Sources */,
 				D22C7A70247372FB00FA5DFC /* AppDelegate.swift in Sources */,
 				D22C7A8B2473873B00FA5DFC /* LogInViewController.swift in Sources */,
 				D22C7A72247372FB00FA5DFC /* SceneDelegate.swift in Sources */,
 				D22C7A8D2473874900FA5DFC /* MainMenuViewController.swift in Sources */,
 				D22C7A87247376A000FA5DFC /* EmployeeManager.swift in Sources */,
+				D26CE4992479701400C1A909 /* EmployeeTableViewCell.swift in Sources */,
 				D22C7A892473873100FA5DFC /* SignUpViewController.swift in Sources */,
 				D22C7A962473AC2F00FA5DFC /* EmployeeTableViewController.swift in Sources */,
 				D22C7A8F2473894D00FA5DFC /* Constants.swift in Sources */,
+				D26CE4942479614800C1A909 /* EmployeeDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
