@@ -82,18 +82,60 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="138.61607142857142"/>
         </scene>
-        <!--Log In View Controller-->
+        <!--Welcome Back!-->
         <scene sceneID="PW9-uE-eyj">
             <objects>
                 <viewController id="q2O-JD-i7g" customClass="LogInViewController" customModule="EmployeeManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aAY-dZ-qej">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="FwH-7I-tQF">
+                                <rect key="frame" x="10" y="350" width="355" height="112"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OjX-ZA-Yss">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
+                                    </textField>
+                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wb5-en-8bV">
+                                        <rect key="frame" x="0.0" y="78" width="355" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5D-CE-iCG">
+                                <rect key="frame" x="100" y="698" width="175" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7F2-2o-2ap"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" name="AppColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="logInPressed:" destination="q2O-JD-i7g" eventType="touchUpInside" id="Boc-Ot-1mR"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" name="AppColor"/>
+                        <constraints>
+                            <constraint firstItem="czI-FT-wIf" firstAttribute="bottom" secondItem="d5D-CE-iCG" secondAttribute="bottom" constant="30" id="3cK-9o-lMU"/>
+                            <constraint firstItem="FwH-7I-tQF" firstAttribute="centerY" secondItem="aAY-dZ-qej" secondAttribute="centerY" id="ReZ-c9-PLI"/>
+                            <constraint firstItem="czI-FT-wIf" firstAttribute="trailing" secondItem="FwH-7I-tQF" secondAttribute="trailing" constant="10" id="TX3-4T-O61"/>
+                            <constraint firstItem="FwH-7I-tQF" firstAttribute="centerX" secondItem="aAY-dZ-qej" secondAttribute="centerX" id="V6R-yd-6GI"/>
+                            <constraint firstItem="FwH-7I-tQF" firstAttribute="leading" secondItem="czI-FT-wIf" secondAttribute="leading" constant="10" id="gZl-fN-OCo"/>
+                            <constraint firstItem="d5D-CE-iCG" firstAttribute="leading" secondItem="czI-FT-wIf" secondAttribute="leading" constant="100" id="iYs-Tj-C7E"/>
+                            <constraint firstItem="czI-FT-wIf" firstAttribute="trailing" secondItem="d5D-CE-iCG" secondAttribute="trailing" constant="100" id="lVF-yi-F83"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="czI-FT-wIf"/>
                     </view>
-                    <navigationItem key="navigationItem" id="QCe-aU-p1r"/>
+                    <navigationItem key="navigationItem" title="Welcome Back!" id="QCe-aU-p1r"/>
                     <connections>
+                        <outlet property="emailField" destination="OjX-ZA-Yss" id="LhV-d3-QxQ"/>
+                        <outlet property="passwordField" destination="Wb5-en-8bV" id="ShF-ly-NKN"/>
                         <segue destination="cuC-tN-Lay" kind="show" identifier="loginToMain" id="GEh-0w-ZgM"/>
                     </connections>
                 </viewController>
@@ -101,7 +143,7 @@
             </objects>
             <point key="canvasLocation" x="2226.0869565217395" y="563.83928571428567"/>
         </scene>
-        <!--Main Menu View Controller-->
+        <!--Main Menu-->
         <scene sceneID="AZE-3H-hq0">
             <objects>
                 <viewController id="cuC-tN-Lay" customClass="MainMenuViewController" customModule="EmployeeManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -111,7 +153,7 @@
                         <color key="backgroundColor" name="AppColor"/>
                         <viewLayoutGuide key="safeArea" id="VRd-5j-lSF"/>
                     </view>
-                    <navigationItem key="navigationItem" id="3Jc-t8-VfQ">
+                    <navigationItem key="navigationItem" title="Main Menu" id="3Jc-t8-VfQ">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="nL4-gK-tPh">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -158,7 +200,7 @@
             </objects>
             <point key="canvasLocation" x="4532" y="-52"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--Sign Up-->
         <scene sceneID="8wA-uU-6Om">
             <objects>
                 <viewController id="MoV-5r-8yg" customClass="SignUpViewController" customModule="EmployeeManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -220,7 +262,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Xx-Hb-tw4"/>
                     </view>
-                    <navigationItem key="navigationItem" id="s63-Nx-ZgF"/>
+                    <navigationItem key="navigationItem" title="Sign Up" id="s63-Nx-ZgF"/>
                     <connections>
                         <outlet property="confirmPasswordField" destination="77Z-Cn-cL6" id="iXI-2m-RGD"/>
                         <outlet property="emailField" destination="ggs-Ve-aGv" id="AEw-dC-nsb"/>
@@ -260,7 +302,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="TcM-ry-6NX"/>
+        <segue reference="GEh-0w-ZgM"/>
     </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="AppColor">

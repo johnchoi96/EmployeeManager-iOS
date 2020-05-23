@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController {
     
@@ -18,6 +19,7 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        title = "Sign Up"
         emailField.delegate = self
         passwordField.delegate = self
         confirmPasswordField.delegate = self
@@ -40,8 +42,15 @@ class SignUpViewController: UIViewController {
         if !isValidPassword() || !passwordsMatch() {
             return
         }
-        // TODO: Firebase Auth create user
-        performSegue(withIdentifier: K.Segues.signupToMain, sender: self)
+        // Firebase Auth create user
+        Auth.auth().createUser(withEmail: email, password: passwordField.text!) { authResult, error in
+            if error != nil {
+                self.displayAlert(title: "There was a issue signing up the user", message: "Please try again later")
+                return
+            }
+
+            self.performSegue(withIdentifier: K.Segues.signupToMain, sender: self)
+        }
     }
     
     /**

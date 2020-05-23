@@ -27,7 +27,7 @@
 		3815FC3CD5C02AE447D0B086 /* Pods-EmployeeManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmployeeManager.debug.xcconfig"; path = "Target Support Files/Pods-EmployeeManager/Pods-EmployeeManager.debug.xcconfig"; sourceTree = "<group>"; };
 		5C30AA165C6F0F089334D08A /* Pods-EmployeeManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmployeeManager.release.xcconfig"; path = "Target Support Files/Pods-EmployeeManager/Pods-EmployeeManager.release.xcconfig"; sourceTree = "<group>"; };
 		B2808F7250ADEAD6FC0C8F62 /* Pods_EmployeeManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmployeeManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D22C7A6C247372FB00FA5DFC /* EmployeeManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmployeeManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D22C7A6C247372FB00FA5DFC /* Employees.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Employees.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D22C7A6F247372FB00FA5DFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D22C7A71247372FB00FA5DFC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D22C7A73247372FB00FA5DFC /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 		D22C7A6D247372FB00FA5DFC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D22C7A6C247372FB00FA5DFC /* EmployeeManager.app */,
+				D22C7A6C247372FB00FA5DFC /* Employees.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,7 +163,7 @@
 			);
 			name = EmployeeManager;
 			productName = EmployeeManager;
-			productReference = D22C7A6C247372FB00FA5DFC /* EmployeeManager.app */;
+			productReference = D22C7A6C247372FB00FA5DFC /* Employees.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -421,7 +421,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.johnchoi96.EmployeeManager;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Employees;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -440,7 +440,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.johnchoi96.EmployeeManager;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Employees;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

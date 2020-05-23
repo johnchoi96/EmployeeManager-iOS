@@ -7,9 +7,27 @@
 //
 
 import UIKit
+import Firebase
 
 class MainMenuViewController: UIViewController {
+    
+    var handle: AuthStateDidChangeListenerHandle!
+    var userEmail: String!
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            self.userEmail = user!.email
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        Auth.auth().removeStateDidChangeListener(handle!)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
