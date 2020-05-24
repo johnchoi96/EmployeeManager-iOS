@@ -16,7 +16,7 @@ class EmployeeDetailViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print(employee.fullName)
+        title = employee.fullName
     }
     
 

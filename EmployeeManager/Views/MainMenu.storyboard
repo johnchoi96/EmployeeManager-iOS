@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Menu View Controller-->
+        <scene sceneID="Ozu-Jc-b4P">
+            <objects>
+                <viewController storyboardIdentifier="mainMenuVC" id="Gur-dT-MaA" customClass="MainMenuViewController" customModule="Employees" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FHz-Z7-2bK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="KPp-bl-qYU">
+                                <rect key="frame" x="0.0" y="346.5" width="414" height="203"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sh0-J9-Jjw">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                        <state key="normal" title="View Employees">
+                                            <color key="titleColor" name="AppColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="viewEmployeesPressed:" destination="Gur-dT-MaA" eventType="touchUpInside" id="ORv-ma-pIw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzl-E9-uA7">
+                                        <rect key="frame" x="0.0" y="78" width="414" height="48"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                        <state key="normal" title="Add Employee">
+                                            <color key="titleColor" name="AppColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addEmployeePressed:" destination="Gur-dT-MaA" eventType="touchUpInside" id="IQn-r3-m60"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbd-eZ-fKw">
+                                        <rect key="frame" x="0.0" y="156" width="414" height="47"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                        <state key="normal" title="About">
+                                            <color key="titleColor" name="AppColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="aboutPressed:" destination="Gur-dT-MaA" eventType="touchUpInside" id="a4W-my-O1T"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="wzl-E9-uA7" secondAttribute="trailing" id="590-7v-4au"/>
+                                    <constraint firstAttribute="trailing" secondItem="Sh0-J9-Jjw" secondAttribute="trailing" id="CMr-Kl-zSl"/>
+                                    <constraint firstAttribute="trailing" secondItem="tbd-eZ-fKw" secondAttribute="trailing" id="RqX-Mq-pqV"/>
+                                    <constraint firstItem="Sh0-J9-Jjw" firstAttribute="leading" secondItem="KPp-bl-qYU" secondAttribute="leading" id="eeA-vv-UYF"/>
+                                    <constraint firstItem="tbd-eZ-fKw" firstAttribute="leading" secondItem="KPp-bl-qYU" secondAttribute="leading" id="lA6-Rd-QJK"/>
+                                    <constraint firstItem="wzl-E9-uA7" firstAttribute="leading" secondItem="KPp-bl-qYU" secondAttribute="leading" id="naR-fc-tTa"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Choi 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DfF-GB-wwA">
+                                <rect key="frame" x="146" y="811.5" width="122" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="admin" translatesAutoresizingMaskIntoConstraints="NO" id="7bi-qu-Uyx">
+                                <rect key="frame" x="394" y="140" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="HiX-ic-1Re"/>
+                                    <constraint firstAttribute="width" constant="20" id="Niz-HM-f4y"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="AppColor"/>
+                        <constraints>
+                            <constraint firstItem="WQx-p5-Qpb" firstAttribute="bottom" secondItem="DfF-GB-wwA" secondAttribute="bottom" constant="30" id="60I-iO-YW4"/>
+                            <constraint firstItem="WQx-p5-Qpb" firstAttribute="trailing" secondItem="7bi-qu-Uyx" secondAttribute="trailing" id="93d-3i-XkA"/>
+                            <constraint firstItem="WQx-p5-Qpb" firstAttribute="trailing" secondItem="KPp-bl-qYU" secondAttribute="trailing" id="EXb-YW-H2Z"/>
+                            <constraint firstItem="KPp-bl-qYU" firstAttribute="centerY" secondItem="FHz-Z7-2bK" secondAttribute="centerY" id="KQO-94-ut4"/>
+                            <constraint firstItem="KPp-bl-qYU" firstAttribute="leading" secondItem="WQx-p5-Qpb" secondAttribute="leading" id="P5W-fV-T6V"/>
+                            <constraint firstItem="7bi-qu-Uyx" firstAttribute="top" secondItem="WQx-p5-Qpb" secondAttribute="top" id="SBR-9f-OU3"/>
+                            <constraint firstItem="KPp-bl-qYU" firstAttribute="centerX" secondItem="FHz-Z7-2bK" secondAttribute="centerX" id="XJG-2I-lZD"/>
+                            <constraint firstItem="DfF-GB-wwA" firstAttribute="centerX" secondItem="FHz-Z7-2bK" secondAttribute="centerX" id="ebb-ES-H0I"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WQx-p5-Qpb"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oQS-de-FNu">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="Tn2-Ux-5XA">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="logoutPressed:" destination="Gur-dT-MaA" id="ClK-8V-kKS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="adminImage" destination="7bi-qu-Uyx" id="Bb9-ec-bkv"/>
+                        <segue destination="JSo-em-hBb" kind="show" identifier="mainToTable" id="oMy-0H-Bj4"/>
+                        <segue destination="W1f-0m-ABP" kind="presentation" identifier="mainToAddEmployee" id="wpL-TF-ION"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EIJ-zC-Iha" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-39.130434782608695" y="219.64285714285714"/>
+        </scene>
+        <!--Add Employee View Controller-->
+        <scene sceneID="UiH-c8-oqm">
+            <objects>
+                <viewController id="W1f-0m-ABP" customClass="AddEmployeeViewController" customModule="Employees" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f91-oe-lgU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t4V-eG-Zv3">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Add Employee" id="h6E-tD-3q6">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="1jN-DS-8kt">
+                                            <connections>
+                                                <action selector="cancelPressed:" destination="W1f-0m-ABP" id="6X8-aE-Q6H"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="FwT-7g-DwJ">
+                                            <connections>
+                                                <action selector="savePressed:" destination="W1f-0m-ABP" id="Jfi-1n-KqK"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" name="AppColor"/>
+                        <viewLayoutGuide key="safeArea" id="DNV-9F-fTn"/>
+                    </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="t4V-eG-Zv3" id="Bf2-Fy-nyl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gyw-Po-H0K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1108.6956521739132" y="810.9375"/>
+        </scene>
+        <!--<Full Name>-->
+        <scene sceneID="XPS-Bp-FMZ">
+            <objects>
+                <viewController id="WVJ-ac-3kY" customClass="EmployeeDetailViewController" customModule="Employees" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dJQ-dM-KwK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="AppColor"/>
+                        <viewLayoutGuide key="safeArea" id="fNT-so-ksd"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="&lt;Full Name&gt;" id="G4e-aR-1FY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bYd-A9-NPM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2305.7971014492755" y="-46.205357142857139"/>
+        </scene>
+        <!--Employees-->
+        <scene sceneID="AQK-Xf-371">
+            <objects>
+                <viewController id="JSo-em-hBb" customClass="EmployeeTableViewController" customModule="Employees" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F9Z-pr-Fn5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Ea-3s-B07">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="employeeCell" id="ZGv-CE-jVL">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZGv-CE-jVL" id="pg0-yJ-za4">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" name="AppColor"/>
+                        <constraints>
+                            <constraint firstItem="6Ea-3s-B07" firstAttribute="leading" secondItem="iZ8-ZX-zud" secondAttribute="leading" id="57h-jX-wyC"/>
+                            <constraint firstItem="iZ8-ZX-zud" firstAttribute="trailing" secondItem="6Ea-3s-B07" secondAttribute="trailing" id="Yoe-Rc-gHB"/>
+                            <constraint firstItem="iZ8-ZX-zud" firstAttribute="bottom" secondItem="6Ea-3s-B07" secondAttribute="bottom" id="iHA-KI-ll2"/>
+                            <constraint firstItem="6Ea-3s-B07" firstAttribute="top" secondItem="iZ8-ZX-zud" secondAttribute="top" id="te1-Id-JsC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iZ8-ZX-zud"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Employees" id="mMK-Ye-LYS"/>
+                    <connections>
+                        <outlet property="employeeTable" destination="6Ea-3s-B07" id="VcW-gZ-Mvo"/>
+                        <segue destination="WVJ-ac-3kY" kind="show" identifier="tableToEmployeeDetail" id="VvX-xM-wmr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jPe-bt-0aM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1108.6956521739132" y="-46.205357142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vda-Na-Wh9">
+            <objects>
+                <navigationController storyboardIdentifier="navController" automaticallyAdjustsScrollViewInsets="NO" id="fWl-L5-ckA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Brw-qE-tbn">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Gur-dT-MaA" kind="relationship" relationship="rootViewController" id="88T-IJ-U8E"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yXe-Ko-kk5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-949.27536231884062" y="219.64285714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="admin" width="170" height="170.5"/>
+        <namedColor name="AppColor">
+            <color red="0.23100000619888306" green="0.70999997854232788" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
