@@ -138,8 +138,8 @@
 				D22C7A8C2473874900FA5DFC /* MainMenuViewController.swift */,
 				D22C7A952473AC2F00FA5DFC /* EmployeeTableViewController.swift */,
 				D26CE4932479614800C1A909 /* EmployeeDetailViewController.swift */,
-				D26CE4972479701400C1A909 /* EmployeeTableViewCell.swift */,
 				D26CE49D24797A2600C1A909 /* AddEmployeeViewController.swift */,
+				D26CE4972479701400C1A909 /* EmployeeTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -444,6 +444,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2JDGUK4DRH;
 				INFOPLIST_FILE = EmployeeManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -463,6 +464,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2JDGUK4DRH;
 				INFOPLIST_FILE = EmployeeManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
