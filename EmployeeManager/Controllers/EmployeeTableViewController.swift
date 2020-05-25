@@ -13,7 +13,7 @@ class EmployeeTableViewController: UIViewController {
 
     @IBOutlet weak var employeeTable: UITableView!
     
-    var employees = [Employee]()
+    let employeeManager = EmployeeManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +38,9 @@ class EmployeeTableViewController: UIViewController {
                     let lastName = document.data()["lastName"] as! String
                     let id = document.data()["id"] as! String
                     let middleName = document.data()["middleName"] as! String?
-                    let employee = Employee(firstName: firstName, middleName: middleName, lastName: lastName, id: id)
-                    self.employees.append(employee)
+                    let payRate = document.data()["payRate"] as! Float
+                    let employee = Employee(firstName: firstName, middleName: middleName, lastName: lastName, id: id, payRate: payRate)
+                    self.employeeManager.employees.append(employee)
                 }
                 // finished getting all employee data so reload the table
                 DispatchQueue.main.async {
@@ -53,13 +54,13 @@ class EmployeeTableViewController: UIViewController {
 // MARK: - Table View data source section
 extension EmployeeTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return employees.count
+        return employeeManager.employees.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.employeeCell, for: indexPath) as! EmployeeTableViewCell
-        cell.nameLabel.text = employees[indexPath.row].fullName
-        cell.idLabel.text = employees[indexPath.row].id
+        cell.nameLabel.text = employeeManager.employees[indexPath.row].fullName
+        cell.idLabel.text = employeeManager.employees[indexPath.row].id
         return cell
     }
 }
@@ -67,7 +68,8 @@ extension EmployeeTableViewController: UITableViewDataSource {
 // MARK: - Table View delegate section
 extension EmployeeTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: K.Segues.tableToEmployeeDetail, sender: employees[indexPath.row])
+        tableView.cellForRow(at: indexPath)?.isSelected = false
+        performSegue(withIdentifier: K.Segues.tableToEmployeeDetail, sender: employeeManager.employees[indexPath.row])
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

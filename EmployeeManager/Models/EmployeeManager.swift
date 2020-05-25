@@ -10,4 +10,9 @@ import Foundation
 
 class EmployeeManager {
     
+    var employees: [Employee]
+    
+    init() {
+        employees = [Employee]()
+    }
 }

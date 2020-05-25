@@ -10,6 +10,14 @@ import UIKit
 
 class EmployeeDetailViewController: UIViewController {
 
+    @IBOutlet weak var firstNameLabel: UILabel!
+    @IBOutlet weak var middleNameLabel: UILabel!
+    @IBOutlet weak var lastNameLabel: UILabel!
+    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var payRateLabel: UILabel!
+    @IBOutlet weak var hoursWorked: UIDatePicker!
+    @IBOutlet weak var payCheckLabel: UILabel!
+    
     var employee: Employee!
     
     override func viewDidLoad() {
@@ -17,17 +25,23 @@ class EmployeeDetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         title = employee.fullName
+        firstNameLabel.text = employee.firstName
+        if let middleName = employee.middleName {
+            middleNameLabel.text = middleName
+        } else {
+            middleNameLabel.text = ""
+        }
+        lastNameLabel.text = employee.lastName
+        idLabel.text = employee.id
+        payRateLabel.text = String(format: "$%.2f", employee.payRate)
+        payCheckLabel.text = String(format: "$%.2f", employee.getPaycheck(hours: 0, minutes: 1))
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func timeChanged(_ sender: UIDatePicker) {
+        let components = sender.calendar.dateComponents([.hour, .minute], from: sender.date)
+        let hour = components.hour!
+        let minute = components.minute!
+        let paycheck = employee.getPaycheck(hours: hour, minutes: minute)
+        payCheckLabel.text = String(format: "$%.2f", paycheck)
     }
-    */
-
 }

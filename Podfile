@@ -9,5 +9,6 @@ target 'EmployeeManager' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
+  pod 'IQKeyboardManagerSwift'
 
 end
