@@ -58,7 +58,7 @@
     <resources>
         <image name="icon" width="341.33334350585938" height="341.33334350585938"/>
         <namedColor name="AppColor">
-            <color red="0.23100000619888306" green="0.70999997854232788" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23137254901960785" green="0.70980392156862748" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
