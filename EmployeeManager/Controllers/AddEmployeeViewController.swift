@@ -18,6 +18,7 @@ class AddEmployeeViewController: UIViewController {
     @IBOutlet weak var payRateField: UITextField!
     
     let db = Firestore.firestore()
+    var edited = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +67,18 @@ class AddEmployeeViewController: UIViewController {
     }
     
     @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        if edited {
+            let alert = UIAlertController(title: "Data unsaved", message: "Are you sure you want to cancel?", preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                self.dismiss(animated: true, completion: nil)
+            }
+            let gobackAction = UIAlertAction(title: "Go Back", style: .default, handler: nil)
+            alert.addAction(cancelAction)
+            alert.addAction(gobackAction)
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
     }
     
     /**
@@ -145,6 +157,10 @@ extension AddEmployeeViewController: UITextFieldDelegate {
             textField.resignFirstResponder()
         }
         return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        edited = true
     }
 }
 
