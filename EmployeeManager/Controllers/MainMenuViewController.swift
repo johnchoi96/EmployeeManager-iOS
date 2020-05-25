@@ -16,7 +16,7 @@ class MainMenuViewController: UIViewController {
     var handle: AuthStateDidChangeListenerHandle!
     var userEmail: String!
     var db = Firestore.firestore()
-    var userIsAdmin: Bool!
+    var userIsAdmin = false
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
