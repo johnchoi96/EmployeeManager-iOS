@@ -34,7 +34,7 @@ class EmployeeDetailViewController: UIViewController {
         lastNameLabel.text = employee.lastName
         idLabel.text = employee.id
         payRateLabel.text = String(format: "$%.2f", employee.payRate)
-        payCheckLabel.text = String(format: "$%.2f", employee.getPaycheck(hours: 0, minutes: 1))
+        payCheckLabel.text = String(format: "$%.2f", employee.getPaycheck(hours: 1, minutes: 0))
     }
     
     @IBAction func timeChanged(_ sender: UIDatePicker) {
