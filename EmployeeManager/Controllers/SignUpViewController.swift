@@ -23,6 +23,7 @@ class SignUpViewController: UIViewController {
         emailField.delegate = self
         passwordField.delegate = self
         confirmPasswordField.delegate = self
+        emailField.becomeFirstResponder()
     }
     
     /**

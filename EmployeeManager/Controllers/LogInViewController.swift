@@ -28,6 +28,7 @@ class LogInViewController: UIViewController {
         if let email = defaults.string(forKey: "email") {
             emailField.text = email
         }
+        emailField.becomeFirstResponder()
     }
     
     @IBAction func logInPressed(_ sender: UIButton) {
