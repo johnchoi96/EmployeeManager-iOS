@@ -32,7 +32,7 @@ class EmployeeDetailViewController: UIViewController {
             middleNameLabel.text = ""
         }
         lastNameLabel.text = employee.lastName
-        idLabel.text = employee.id
+        idLabel.text = "\(employee.id)    " // 4 spaces at the end for label rotation
         payRateLabel.text = String(format: "$%.2f", employee.payRate)
         payCheckLabel.text = String(format: "$%.2f", employee.getPaycheck(hours: 1, minutes: 0))
     }

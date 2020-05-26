@@ -10,5 +10,6 @@ target 'EmployeeManager' do
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
   pod 'IQKeyboardManagerSwift'
+  pod 'MarqueeLabel'
 
 end
