@@ -57,7 +57,7 @@ class AddEmployeeViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             } else {
                 // display success message and dismiss the view
-                let alert = UIAlertController(title: "Success", message: "New employee, \(self.firstNameField.text!) successfully added", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Success", message: "New employee, \"\(self.firstNameField.text!)\", successfully added.\n\nID: \(employeeData["id"] as! String)", preferredStyle: .alert)
                 let action = UIAlertAction(title: "OK", style: .default) { (action) in
                     self.dismiss(animated: true, completion: nil)
                 }
