@@ -19,12 +19,27 @@ struct Employee {
     let id: String
     var payRate: Float
     
+    /**
+     Returns the full name for this employee.
+     If middle name is nil, only first and last names are returned.
+     */
     var fullName: String {
         if let middleName = middleName {
             return "\(firstName) \(middleName) \(lastName)"
         } else {
             return "\(firstName) \(lastName)"
         }
+    }
+    
+    /**
+     Omits the "E-" prefix at the start of the employee id.
+     */
+    var docId: String {
+        let start = id.index(id.startIndex, offsetBy: 2)
+        let end = id.endIndex
+        let range = start..<end
+        let docId = id[range]
+        return String(docId)
     }
     
     /**

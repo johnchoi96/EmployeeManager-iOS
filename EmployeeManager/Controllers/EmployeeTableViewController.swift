@@ -14,6 +14,7 @@ class EmployeeTableViewController: UIViewController {
     @IBOutlet weak var employeeTable: UITableView!
     
     let employeeManager = EmployeeManager()
+    var isAdmin: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,5 +78,31 @@ extension EmployeeTableViewController: UITableViewDelegate {
             let vc = segue.destination as! EmployeeDetailViewController
             vc.employee = sender as? Employee
         }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // delete data from Firebase
+            let db = Firestore.firestore()
+            // get employee document ID
+            let docId = employeeManager.employees[indexPath.row].docId
+            db.collection("employees").document(docId).delete() { err in
+                if let err = err {
+                    let alert = UIAlertController(title: "Problem occured while deleting employee!", message: "Error: \(err)", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    alert.addAction(action)
+                    self.present(alert, animated: true) {
+                        return
+                    }
+                }
+            }
+            employeeManager.employees.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .left)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // only allow cell deletion if the signed in user is a admin
+        return isAdmin
     }
 }

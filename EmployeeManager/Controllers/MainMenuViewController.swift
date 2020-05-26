@@ -49,6 +49,13 @@ class MainMenuViewController: UIViewController {
         performSegue(withIdentifier: K.Segues.mainToTable, sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.Segues.mainToTable {
+            let vc = segue.destination as! EmployeeTableViewController
+            vc.isAdmin = userIsAdmin
+        }
+    }
+    
     @IBAction func aboutPressed(_ sender: UIButton) {
         guard let url = URL(string: "https://johnchoi96.github.io/") else {
             let alert = UIAlertController(title: "Cannot load page", message: "Error occured while loading page", preferredStyle: .alert)
