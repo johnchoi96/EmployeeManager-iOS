@@ -12,7 +12,8 @@ import SafariServices
 
 class MainMenuViewController: UIViewController {
     
-    @IBOutlet weak var adminImage: UIImageView!
+    @IBOutlet weak var adminImage: UIButton!
+    
     var handle: AuthStateDidChangeListenerHandle!
     var userEmail: String!
     var db = Firestore.firestore()
@@ -82,6 +83,13 @@ class MainMenuViewController: UIViewController {
         } else {
             self.performSegue(withIdentifier: K.Segues.mainToAddEmployee, sender: self)
         }
+    }
+    
+    @IBAction func adminIndicatorPressed(_ sender: UIButton) {
+        let alert = UIAlertController(title: "You are an admin", message: "You may add or remove employee.", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Close", style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
     
     /**

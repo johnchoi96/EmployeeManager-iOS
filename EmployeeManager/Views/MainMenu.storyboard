@@ -68,24 +68,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="admin" translatesAutoresizingMaskIntoConstraints="NO" id="7bi-qu-Uyx">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rj-LP-gAM">
                                 <rect key="frame" x="355" y="140" width="20" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="HiX-ic-1Re"/>
-                                    <constraint firstAttribute="width" constant="20" id="Niz-HM-f4y"/>
+                                    <constraint firstAttribute="width" constant="20" id="x2V-69-Tnu"/>
+                                    <constraint firstAttribute="height" constant="20" id="xaC-gQ-qI6"/>
                                 </constraints>
-                            </imageView>
+                                <state key="normal" image="admin"/>
+                                <connections>
+                                    <action selector="adminIndicatorPressed:" destination="Gur-dT-MaA" eventType="touchUpInside" id="QZX-lT-3tn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="AppColor"/>
                         <constraints>
                             <constraint firstItem="WQx-p5-Qpb" firstAttribute="bottom" secondItem="DfF-GB-wwA" secondAttribute="bottom" constant="30" id="60I-iO-YW4"/>
-                            <constraint firstItem="WQx-p5-Qpb" firstAttribute="trailing" secondItem="7bi-qu-Uyx" secondAttribute="trailing" id="93d-3i-XkA"/>
+                            <constraint firstItem="WQx-p5-Qpb" firstAttribute="trailing" secondItem="6rj-LP-gAM" secondAttribute="trailing" id="8w9-1w-aDn"/>
                             <constraint firstItem="WQx-p5-Qpb" firstAttribute="trailing" secondItem="KPp-bl-qYU" secondAttribute="trailing" id="EXb-YW-H2Z"/>
                             <constraint firstItem="KPp-bl-qYU" firstAttribute="centerY" secondItem="FHz-Z7-2bK" secondAttribute="centerY" id="KQO-94-ut4"/>
                             <constraint firstItem="KPp-bl-qYU" firstAttribute="leading" secondItem="WQx-p5-Qpb" secondAttribute="leading" id="P5W-fV-T6V"/>
-                            <constraint firstItem="7bi-qu-Uyx" firstAttribute="top" secondItem="WQx-p5-Qpb" secondAttribute="top" id="SBR-9f-OU3"/>
                             <constraint firstItem="KPp-bl-qYU" firstAttribute="centerX" secondItem="FHz-Z7-2bK" secondAttribute="centerX" id="XJG-2I-lZD"/>
                             <constraint firstItem="DfF-GB-wwA" firstAttribute="centerX" secondItem="FHz-Z7-2bK" secondAttribute="centerX" id="ebb-ES-H0I"/>
+                            <constraint firstItem="6rj-LP-gAM" firstAttribute="top" secondItem="WQx-p5-Qpb" secondAttribute="top" id="qbN-zk-1YG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WQx-p5-Qpb"/>
                     </view>
@@ -98,14 +102,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="adminImage" destination="7bi-qu-Uyx" id="Bb9-ec-bkv"/>
+                        <outlet property="adminImage" destination="6rj-LP-gAM" id="xUW-jY-hdw"/>
                         <segue destination="JSo-em-hBb" kind="show" identifier="mainToTable" id="oMy-0H-Bj4"/>
                         <segue destination="W1f-0m-ABP" kind="presentation" identifier="mainToAddEmployee" id="wpL-TF-ION"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EIJ-zC-Iha" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-39.130434782608695" y="219.64285714285714"/>
+            <point key="canvasLocation" x="-39.200000000000003" y="219.45812807881774"/>
         </scene>
         <!--Add Employee View Controller-->
         <scene sceneID="UiH-c8-oqm">
