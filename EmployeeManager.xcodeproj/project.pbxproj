@@ -3,27 +3,59 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16ED873B3B53435E5AE7EA8B /* Pods_EmployeeManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2808F7250ADEAD6FC0C8F62 /* Pods_EmployeeManager.framework */; };
 		D22C7A70247372FB00FA5DFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A6F247372FB00FA5DFC /* AppDelegate.swift */; };
 		D22C7A72247372FB00FA5DFC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A71247372FB00FA5DFC /* SceneDelegate.swift */; };
-		D22C7A74247372FB00FA5DFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A73247372FB00FA5DFC /* ViewController.swift */; };
+		D22C7A74247372FB00FA5DFC /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A73247372FB00FA5DFC /* WelcomeViewController.swift */; };
 		D22C7A77247372FB00FA5DFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D22C7A75247372FB00FA5DFC /* Main.storyboard */; };
 		D22C7A79247372FE00FA5DFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D22C7A78247372FE00FA5DFC /* Assets.xcassets */; };
 		D22C7A7C247372FE00FA5DFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D22C7A7A247372FE00FA5DFC /* LaunchScreen.storyboard */; };
+		D22C7A87247376A000FA5DFC /* EmployeeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A86247376A000FA5DFC /* EmployeeManager.swift */; };
+		D22C7A892473873100FA5DFC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A882473873100FA5DFC /* SignUpViewController.swift */; };
+		D22C7A8B2473873B00FA5DFC /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A8A2473873B00FA5DFC /* LogInViewController.swift */; };
+		D22C7A8D2473874900FA5DFC /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A8C2473874900FA5DFC /* MainMenuViewController.swift */; };
+		D22C7A8F2473894D00FA5DFC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A8E2473894D00FA5DFC /* Constants.swift */; };
+		D22C7A932473936300FA5DFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D22C7A922473936300FA5DFC /* GoogleService-Info.plist */; };
+		D22C7A962473AC2F00FA5DFC /* EmployeeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A952473AC2F00FA5DFC /* EmployeeTableViewController.swift */; };
+		D26CE4942479614800C1A909 /* EmployeeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26CE4932479614800C1A909 /* EmployeeDetailViewController.swift */; };
+		D26CE4992479701400C1A909 /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26CE4972479701400C1A909 /* EmployeeTableViewCell.swift */; };
+		D26CE49A2479701400C1A909 /* EmployeeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D26CE4982479701400C1A909 /* EmployeeTableViewCell.xib */; };
+		D26CE49C247971FF00C1A909 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26CE49B247971FF00C1A909 /* Employee.swift */; };
+		D26CE49E24797A2600C1A909 /* AddEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26CE49D24797A2600C1A909 /* AddEmployeeViewController.swift */; };
+		D26CE4C0247A3E9A00C1A909 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D26CE4BF247A3E9A00C1A909 /* Authentication.storyboard */; };
+		D28D004F247A43400039C7CA /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28D004E247A43400039C7CA /* MainMenu.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D22C7A6C247372FB00FA5DFC /* EmployeeManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmployeeManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3815FC3CD5C02AE447D0B086 /* Pods-EmployeeManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmployeeManager.debug.xcconfig"; path = "Target Support Files/Pods-EmployeeManager/Pods-EmployeeManager.debug.xcconfig"; sourceTree = "<group>"; };
+		5C30AA165C6F0F089334D08A /* Pods-EmployeeManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmployeeManager.release.xcconfig"; path = "Target Support Files/Pods-EmployeeManager/Pods-EmployeeManager.release.xcconfig"; sourceTree = "<group>"; };
+		B2808F7250ADEAD6FC0C8F62 /* Pods_EmployeeManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmployeeManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D22C7A6C247372FB00FA5DFC /* Employees.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Employees.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D22C7A6F247372FB00FA5DFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D22C7A71247372FB00FA5DFC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D22C7A73247372FB00FA5DFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D22C7A73247372FB00FA5DFC /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		D22C7A76247372FB00FA5DFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D22C7A78247372FE00FA5DFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D22C7A7B247372FE00FA5DFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D22C7A7D247372FE00FA5DFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D22C7A86247376A000FA5DFC /* EmployeeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeManager.swift; sourceTree = "<group>"; };
+		D22C7A882473873100FA5DFC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		D22C7A8A2473873B00FA5DFC /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		D22C7A8C2473874900FA5DFC /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		D22C7A8E2473894D00FA5DFC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D22C7A922473936300FA5DFC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D22C7A952473AC2F00FA5DFC /* EmployeeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewController.swift; sourceTree = "<group>"; };
+		D26CE4932479614800C1A909 /* EmployeeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailViewController.swift; sourceTree = "<group>"; };
+		D26CE4972479701400C1A909 /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
+		D26CE4982479701400C1A909 /* EmployeeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeTableViewCell.xib; sourceTree = "<group>"; };
+		D26CE49B247971FF00C1A909 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		D26CE49D24797A2600C1A909 /* AddEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeViewController.swift; sourceTree = "<group>"; };
+		D26CE4BF247A3E9A00C1A909 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
+		D28D004E247A43400039C7CA /* MainMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainMenu.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,24 +63,44 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16ED873B3B53435E5AE7EA8B /* Pods_EmployeeManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00B69DD2C16E6F7F78C582CF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3815FC3CD5C02AE447D0B086 /* Pods-EmployeeManager.debug.xcconfig */,
+				5C30AA165C6F0F089334D08A /* Pods-EmployeeManager.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		69749E5053AB73EB44E3764B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B2808F7250ADEAD6FC0C8F62 /* Pods_EmployeeManager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D22C7A63247372FB00FA5DFC = {
 			isa = PBXGroup;
 			children = (
 				D22C7A6E247372FB00FA5DFC /* EmployeeManager */,
 				D22C7A6D247372FB00FA5DFC /* Products */,
+				00B69DD2C16E6F7F78C582CF /* Pods */,
+				69749E5053AB73EB44E3764B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		D22C7A6D247372FB00FA5DFC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D22C7A6C247372FB00FA5DFC /* EmployeeManager.app */,
+				D22C7A6C247372FB00FA5DFC /* Employees.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,15 +108,61 @@
 		D22C7A6E247372FB00FA5DFC /* EmployeeManager */ = {
 			isa = PBXGroup;
 			children = (
-				D22C7A6F247372FB00FA5DFC /* AppDelegate.swift */,
-				D22C7A71247372FB00FA5DFC /* SceneDelegate.swift */,
-				D22C7A73247372FB00FA5DFC /* ViewController.swift */,
-				D22C7A75247372FB00FA5DFC /* Main.storyboard */,
+				D22C7A832473740300FA5DFC /* Delegates */,
+				D22C7A842473740800FA5DFC /* Controllers */,
+				D22C7A852473741500FA5DFC /* Views */,
+				D22C7A942473A85A00FA5DFC /* Models */,
 				D22C7A78247372FE00FA5DFC /* Assets.xcassets */,
-				D22C7A7A247372FE00FA5DFC /* LaunchScreen.storyboard */,
 				D22C7A7D247372FE00FA5DFC /* Info.plist */,
+				D22C7A922473936300FA5DFC /* GoogleService-Info.plist */,
+				D22C7A8E2473894D00FA5DFC /* Constants.swift */,
 			);
 			path = EmployeeManager;
+			sourceTree = "<group>";
+		};
+		D22C7A832473740300FA5DFC /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				D22C7A6F247372FB00FA5DFC /* AppDelegate.swift */,
+				D22C7A71247372FB00FA5DFC /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		D22C7A842473740800FA5DFC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D22C7A73247372FB00FA5DFC /* WelcomeViewController.swift */,
+				D22C7A882473873100FA5DFC /* SignUpViewController.swift */,
+				D22C7A8A2473873B00FA5DFC /* LogInViewController.swift */,
+				D22C7A8C2473874900FA5DFC /* MainMenuViewController.swift */,
+				D22C7A952473AC2F00FA5DFC /* EmployeeTableViewController.swift */,
+				D26CE4932479614800C1A909 /* EmployeeDetailViewController.swift */,
+				D26CE49D24797A2600C1A909 /* AddEmployeeViewController.swift */,
+				D26CE4972479701400C1A909 /* EmployeeTableViewCell.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D22C7A852473741500FA5DFC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D26CE4BF247A3E9A00C1A909 /* Authentication.storyboard */,
+				D22C7A75247372FB00FA5DFC /* Main.storyboard */,
+				D28D004E247A43400039C7CA /* MainMenu.storyboard */,
+				D26CE4982479701400C1A909 /* EmployeeTableViewCell.xib */,
+				D22C7A7A247372FE00FA5DFC /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D22C7A942473A85A00FA5DFC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D22C7A86247376A000FA5DFC /* EmployeeManager.swift */,
+				D26CE49B247971FF00C1A909 /* Employee.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +172,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D22C7A80247372FE00FA5DFC /* Build configuration list for PBXNativeTarget "EmployeeManager" */;
 			buildPhases = (
+				173D432B7DBE445B8488D6D6 /* [CP] Check Pods Manifest.lock */,
 				D22C7A68247372FB00FA5DFC /* Sources */,
 				D22C7A69247372FB00FA5DFC /* Frameworks */,
 				D22C7A6A247372FB00FA5DFC /* Resources */,
+				B8B71C9E081A9A69C583BE28 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -84,7 +184,7 @@
 			);
 			name = EmployeeManager;
 			productName = EmployeeManager;
-			productReference = D22C7A6C247372FB00FA5DFC /* EmployeeManager.app */;
+			productReference = D22C7A6C247372FB00FA5DFC /* Employees.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -125,6 +225,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D26CE4C0247A3E9A00C1A909 /* Authentication.storyboard in Resources */,
+				D28D004F247A43400039C7CA /* MainMenu.storyboard in Resources */,
+				D22C7A932473936300FA5DFC /* GoogleService-Info.plist in Resources */,
+				D26CE49A2479701400C1A909 /* EmployeeTableViewCell.xib in Resources */,
 				D22C7A7C247372FE00FA5DFC /* LaunchScreen.storyboard in Resources */,
 				D22C7A79247372FE00FA5DFC /* Assets.xcassets in Resources */,
 				D22C7A77247372FB00FA5DFC /* Main.storyboard in Resources */,
@@ -133,14 +237,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		173D432B7DBE445B8488D6D6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EmployeeManager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8B71C9E081A9A69C583BE28 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EmployeeManager/Pods-EmployeeManager-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EmployeeManager/Pods-EmployeeManager-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EmployeeManager/Pods-EmployeeManager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D22C7A68247372FB00FA5DFC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D22C7A74247372FB00FA5DFC /* ViewController.swift in Sources */,
+				D22C7A74247372FB00FA5DFC /* WelcomeViewController.swift in Sources */,
+				D26CE49E24797A2600C1A909 /* AddEmployeeViewController.swift in Sources */,
+				D26CE49C247971FF00C1A909 /* Employee.swift in Sources */,
 				D22C7A70247372FB00FA5DFC /* AppDelegate.swift in Sources */,
+				D22C7A8B2473873B00FA5DFC /* LogInViewController.swift in Sources */,
 				D22C7A72247372FB00FA5DFC /* SceneDelegate.swift in Sources */,
+				D22C7A8D2473874900FA5DFC /* MainMenuViewController.swift in Sources */,
+				D22C7A87247376A000FA5DFC /* EmployeeManager.swift in Sources */,
+				D26CE4992479701400C1A909 /* EmployeeTableViewCell.swift in Sources */,
+				D22C7A892473873100FA5DFC /* SignUpViewController.swift in Sources */,
+				D22C7A962473AC2F00FA5DFC /* EmployeeTableViewController.swift in Sources */,
+				D22C7A8F2473894D00FA5DFC /* Constants.swift in Sources */,
+				D26CE4942479614800C1A909 /* EmployeeDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,17 +438,19 @@
 		};
 		D22C7A81247372FE00FA5DFC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3815FC3CD5C02AE447D0B086 /* Pods-EmployeeManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2JDGUK4DRH;
 				INFOPLIST_FILE = EmployeeManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.johnchoi96.EmployeeManager;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Employees;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -300,17 +458,19 @@
 		};
 		D22C7A82247372FE00FA5DFC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C30AA165C6F0F089334D08A /* Pods-EmployeeManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2JDGUK4DRH;
 				INFOPLIST_FILE = EmployeeManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.johnchoi96.EmployeeManager;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Employees;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
