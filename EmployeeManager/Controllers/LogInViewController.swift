@@ -13,6 +13,7 @@ class LogInViewController: UIViewController {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,10 @@ class LogInViewController: UIViewController {
         emailField.delegate = self
         passwordField.delegate = self
 //        self.navigationItem.largeTitleDisplayMode = .never
+        
+        if let email = defaults.string(forKey: "email") {
+            emailField.text = email
+        }
     }
     
     @IBAction func logInPressed(_ sender: UIButton) {
@@ -40,6 +45,8 @@ class LogInViewController: UIViewController {
                         return
                     })
                 }
+                // login should be successful so save the email to UserDefaults
+                strongSelf.defaults.set(strongSelf.emailField.text!, forKey: "email")
                 strongSelf.performSegue(withIdentifier: K.Segues.loginToMain, sender: self)
             }
             
@@ -81,6 +88,7 @@ class LogInViewController: UIViewController {
     }
 }
 
+// MARK: - UITextField delegate section
 extension LogInViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
