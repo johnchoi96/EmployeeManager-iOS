@@ -55,11 +55,10 @@
                                                     <action selector="aboutOrGithubPressed:" destination="Gur-dT-MaA" eventType="touchUpInside" id="a4W-my-O1T"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVR-Fr-RKp">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVR-Fr-RKp">
                                                 <rect key="frame" x="192.66666666666663" y="0.0" width="182.33333333333337" height="47"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
-                                                <state key="normal" title="GitHub">
+                                                <state key="normal" title="GitHub" image="github_logo">
                                                     <color key="titleColor" name="AppColor"/>
                                                 </state>
                                                 <connections>
@@ -568,6 +567,7 @@
     </scenes>
     <resources>
         <image name="admin" width="170" height="170.66667175292969"/>
+        <image name="github_logo" width="40" height="40"/>
         <namedColor name="AppColor">
             <color red="0.23100000619888306" green="0.70999997854232788" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
