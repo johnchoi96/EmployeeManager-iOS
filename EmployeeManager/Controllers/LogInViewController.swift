@@ -13,6 +13,9 @@ class LogInViewController: UIViewController {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var spinnerView: UIView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
@@ -25,6 +28,9 @@ class LogInViewController: UIViewController {
         passwordField.delegate = self
 //        self.navigationItem.largeTitleDisplayMode = .never
         
+        spinnerView.isHidden = true
+        spinnerView.layer.cornerRadius = 10
+        spinnerView.alpha = 0.7
         if let email = defaults.string(forKey: "email") {
             emailField.text = email
         }
@@ -32,6 +38,13 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func logInPressed(_ sender: UIButton) {
+        logIn()
+    }
+    
+    private func logIn() {
+        spinnerView.isHidden = false
+        spinner.startAnimating()
+        
         if checkEmail() && checkPassword() {
             // try logging in
             // if successful, call performSegue()
@@ -39,6 +52,8 @@ class LogInViewController: UIViewController {
                 guard let strongSelf = self else { return }
                 // issue signing in the user
                 if error != nil {
+                    strongSelf.spinner.stopAnimating()
+                    strongSelf.spinnerView.isHidden = true
                     let alert = UIAlertController(title: "Sign in failed!", message: "There was a problem signing in", preferredStyle: .alert)
                     let action = UIAlertAction(title: "OK", style: .default, handler: nil)
                     alert.addAction(action)
@@ -46,6 +61,8 @@ class LogInViewController: UIViewController {
                         return
                     })
                 }
+                strongSelf.spinner.stopAnimating()
+                strongSelf.spinnerView.isHidden = true
                 // login should be successful so save the email to UserDefaults
                 strongSelf.defaults.set(strongSelf.emailField.text!, forKey: "email")
                 strongSelf.performSegue(withIdentifier: K.Segues.loginToMain, sender: self)
@@ -103,6 +120,7 @@ extension LogInViewController: UITextFieldDelegate {
                 return false
             }
             textField.resignFirstResponder()
+            logIn()
         }
         return true
     }

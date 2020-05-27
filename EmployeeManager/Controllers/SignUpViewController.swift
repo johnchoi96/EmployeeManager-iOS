@@ -14,6 +14,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmPasswordField: UITextField!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var spinnerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,9 @@ class SignUpViewController: UIViewController {
         passwordField.delegate = self
         confirmPasswordField.delegate = self
         emailField.becomeFirstResponder()
+        spinnerView.layer.cornerRadius = 10
+        spinnerView.alpha = 0.7
+        spinnerView.isHidden = true
     }
     
     /**
@@ -31,6 +36,13 @@ class SignUpViewController: UIViewController {
      - Parameter sender: button that was pressed
      */
     @IBAction func signupPressed(_ sender: UIButton) {
+        signUp()
+    }
+    
+    /**
+     Signs up the user using the email and password in the respective text fields.
+     */
+    private func signUp() {
         guard let email = emailField.text, email.count > 0 else {
             displayAlert(title: "Please enter Email!", message: "Email must be provided")
             return
@@ -43,10 +55,14 @@ class SignUpViewController: UIViewController {
         if !isValidPassword() || !passwordsMatch() {
             return
         }
+        spinnerView.isHidden = false
+        spinner.startAnimating()
         // Firebase Auth create user
         Auth.auth().createUser(withEmail: email, password: passwordField.text!) { authResult, error in
             if error != nil {
                 self.displayAlert(title: "There was a issue signing up the user", message: "Please try again later")
+                self.spinner.stopAnimating()
+                self.spinnerView.isHidden = true
                 return
             }
 
@@ -116,9 +132,17 @@ extension SignUpViewController: UITextFieldDelegate {
                     displayAlert(title: "Invalid email!", message: "Please enter a valid email")
                     return false
                 }
+                passwordField.becomeFirstResponder()
             }
+        } else if textField.tag == 1 {
+            if isValidPassword() {
+                confirmPasswordField.becomeFirstResponder()
+                return true
+            }
+        } else {
+            signUp()
+            textField.resignFirstResponder()
         }
-        textField.resignFirstResponder()
         return true
     }
     
