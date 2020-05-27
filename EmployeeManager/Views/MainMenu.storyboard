@@ -41,24 +41,40 @@
                                             <action selector="addEmployeePressed:" destination="Gur-dT-MaA" eventType="touchUpInside" id="IQn-r3-m60"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbd-eZ-fKw">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MV5-ea-WaJ">
                                         <rect key="frame" x="0.0" y="156" width="375" height="47"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
-                                        <state key="normal" title="About">
-                                            <color key="titleColor" name="AppColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="aboutPressed:" destination="Gur-dT-MaA" eventType="touchUpInside" id="a4W-my-O1T"/>
-                                        </connections>
-                                    </button>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbd-eZ-fKw">
+                                                <rect key="frame" x="0.0" y="0.0" width="182.66666666666666" height="47"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                <state key="normal" title="About">
+                                                    <color key="titleColor" name="AppColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="aboutOrGithubPressed:" destination="Gur-dT-MaA" eventType="touchUpInside" id="a4W-my-O1T"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVR-Fr-RKp">
+                                                <rect key="frame" x="192.66666666666663" y="0.0" width="182.33333333333337" height="47"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                <state key="normal" title="GitHub">
+                                                    <color key="titleColor" name="AppColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="aboutOrGithubPressed:" destination="Gur-dT-MaA" eventType="touchUpInside" id="LZi-Ru-q0K"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="MV5-ea-WaJ" secondAttribute="trailing" id="3oe-y5-fLx"/>
                                     <constraint firstAttribute="trailing" secondItem="wzl-E9-uA7" secondAttribute="trailing" id="590-7v-4au"/>
                                     <constraint firstAttribute="trailing" secondItem="Sh0-J9-Jjw" secondAttribute="trailing" id="CMr-Kl-zSl"/>
-                                    <constraint firstAttribute="trailing" secondItem="tbd-eZ-fKw" secondAttribute="trailing" id="RqX-Mq-pqV"/>
+                                    <constraint firstItem="MV5-ea-WaJ" firstAttribute="leading" secondItem="KPp-bl-qYU" secondAttribute="leading" id="eEP-FK-tgI"/>
                                     <constraint firstItem="Sh0-J9-Jjw" firstAttribute="leading" secondItem="KPp-bl-qYU" secondAttribute="leading" id="eeA-vv-UYF"/>
-                                    <constraint firstItem="tbd-eZ-fKw" firstAttribute="leading" secondItem="KPp-bl-qYU" secondAttribute="leading" id="lA6-Rd-QJK"/>
                                     <constraint firstItem="wzl-E9-uA7" firstAttribute="leading" secondItem="KPp-bl-qYU" secondAttribute="leading" id="naR-fc-tTa"/>
                                 </constraints>
                             </stackView>

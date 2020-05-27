@@ -57,8 +57,19 @@ class MainMenuViewController: UIViewController {
         }
     }
     
-    @IBAction func aboutPressed(_ sender: UIButton) {
-        guard let url = URL(string: "https://johnchoi96.github.io/") else {
+    /**
+     Handles button behavior for the last row of buttons.
+     "About" button has tag 0, "GitHub" button has tag 1.
+     - Parameter sender: either About or GitHub button
+     */
+    @IBAction func aboutOrGithubPressed(_ sender: UIButton) {
+        var address = ""
+        if sender.tag == 0 {
+            address = "https://johnchoi96.github.io/"
+        } else {
+            address = "https://github.com/johnchoi96/EmployeeManager-iOS"
+        }
+        guard let url = URL(string: address) else {
             let alert = UIAlertController(title: "Cannot load page", message: "Error occured while loading page", preferredStyle: .alert)
             let action = UIAlertAction(title: "Close", style: .cancel) { (action) in
                 self.dismiss(animated: true, completion: nil)
