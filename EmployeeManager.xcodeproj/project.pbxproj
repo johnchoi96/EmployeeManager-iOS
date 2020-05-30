@@ -28,7 +28,27 @@
 		D26CE49E24797A2600C1A909 /* AddEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26CE49D24797A2600C1A909 /* AddEmployeeViewController.swift */; };
 		D26CE4C0247A3E9A00C1A909 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D26CE4BF247A3E9A00C1A909 /* Authentication.storyboard */; };
 		D28D004F247A43400039C7CA /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28D004E247A43400039C7CA /* MainMenu.storyboard */; };
+		D2BB60BE247F6B9E00EE499A /* EmployeeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BB60BD247F6B9E00EE499A /* EmployeeTest.swift */; };
+		D2BB60BF247F6C3600EE499A /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26CE49B247971FF00C1A909 /* Employee.swift */; };
+		D2BB60C7247F825600EE499A /* EmployeesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BB60C6247F825600EE499A /* EmployeesUITests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D2BB60B8247E6DE300EE499A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D22C7A64247372FB00FA5DFC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D22C7A6B247372FB00FA5DFC;
+			remoteInfo = EmployeeManager;
+		};
+		D2BB60C9247F825600EE499A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D22C7A64247372FB00FA5DFC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D22C7A6B247372FB00FA5DFC;
+			remoteInfo = EmployeeManager;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3815FC3CD5C02AE447D0B086 /* Pods-EmployeeManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmployeeManager.debug.xcconfig"; path = "Target Support Files/Pods-EmployeeManager/Pods-EmployeeManager.debug.xcconfig"; sourceTree = "<group>"; };
@@ -56,6 +76,12 @@
 		D26CE49D24797A2600C1A909 /* AddEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeViewController.swift; sourceTree = "<group>"; };
 		D26CE4BF247A3E9A00C1A909 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		D28D004E247A43400039C7CA /* MainMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainMenu.storyboard; sourceTree = "<group>"; };
+		D2BB60B3247E6DE300EE499A /* EmployeesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmployeesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2BB60B7247E6DE300EE499A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2BB60BD247F6B9E00EE499A /* EmployeeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTest.swift; sourceTree = "<group>"; };
+		D2BB60C4247F825600EE499A /* EmployeesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmployeesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2BB60C6247F825600EE499A /* EmployeesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesUITests.swift; sourceTree = "<group>"; };
+		D2BB60C8247F825600EE499A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +90,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				16ED873B3B53435E5AE7EA8B /* Pods_EmployeeManager.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2BB60B0247E6DE300EE499A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2BB60C1247F825600EE499A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				D22C7A6E247372FB00FA5DFC /* EmployeeManager */,
+				D2BB60B4247E6DE300EE499A /* EmployeesTests */,
+				D2BB60C5247F825600EE499A /* EmployeesUITests */,
 				D22C7A6D247372FB00FA5DFC /* Products */,
 				00B69DD2C16E6F7F78C582CF /* Pods */,
 				69749E5053AB73EB44E3764B /* Frameworks */,
@@ -101,6 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				D22C7A6C247372FB00FA5DFC /* Employees.app */,
+				D2BB60B3247E6DE300EE499A /* EmployeesTests.xctest */,
+				D2BB60C4247F825600EE499A /* EmployeesUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,6 +209,24 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		D2BB60B4247E6DE300EE499A /* EmployeesTests */ = {
+			isa = PBXGroup;
+			children = (
+				D2BB60BD247F6B9E00EE499A /* EmployeeTest.swift */,
+				D2BB60B7247E6DE300EE499A /* Info.plist */,
+			);
+			path = EmployeesTests;
+			sourceTree = "<group>";
+		};
+		D2BB60C5247F825600EE499A /* EmployeesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D2BB60C6247F825600EE499A /* EmployeesUITests.swift */,
+				D2BB60C8247F825600EE499A /* Info.plist */,
+			);
+			path = EmployeesUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -187,18 +249,62 @@
 			productReference = D22C7A6C247372FB00FA5DFC /* Employees.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D2BB60B2247E6DE300EE499A /* EmployeesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2BB60BA247E6DE300EE499A /* Build configuration list for PBXNativeTarget "EmployeesTests" */;
+			buildPhases = (
+				D2BB60AF247E6DE300EE499A /* Sources */,
+				D2BB60B0247E6DE300EE499A /* Frameworks */,
+				D2BB60B1247E6DE300EE499A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D2BB60B9247E6DE300EE499A /* PBXTargetDependency */,
+			);
+			name = EmployeesTests;
+			productName = EmployeesTests;
+			productReference = D2BB60B3247E6DE300EE499A /* EmployeesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D2BB60C3247F825600EE499A /* EmployeesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2BB60CB247F825600EE499A /* Build configuration list for PBXNativeTarget "EmployeesUITests" */;
+			buildPhases = (
+				D2BB60C0247F825600EE499A /* Sources */,
+				D2BB60C1247F825600EE499A /* Frameworks */,
+				D2BB60C2247F825600EE499A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D2BB60CA247F825600EE499A /* PBXTargetDependency */,
+			);
+			name = EmployeesUITests;
+			productName = EmployeesUITests;
+			productReference = D2BB60C4247F825600EE499A /* EmployeesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		D22C7A64247372FB00FA5DFC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "John Choi";
 				TargetAttributes = {
 					D22C7A6B247372FB00FA5DFC = {
 						CreatedOnToolsVersion = 11.4.1;
+					};
+					D2BB60B2247E6DE300EE499A = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = D22C7A6B247372FB00FA5DFC;
+					};
+					D2BB60C3247F825600EE499A = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = D22C7A6B247372FB00FA5DFC;
 					};
 				};
 			};
@@ -216,6 +322,8 @@
 			projectRoot = "";
 			targets = (
 				D22C7A6B247372FB00FA5DFC /* EmployeeManager */,
+				D2BB60B2247E6DE300EE499A /* EmployeesTests */,
+				D2BB60C3247F825600EE499A /* EmployeesUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -232,6 +340,20 @@
 				D22C7A7C247372FE00FA5DFC /* LaunchScreen.storyboard in Resources */,
 				D22C7A79247372FE00FA5DFC /* Assets.xcassets in Resources */,
 				D22C7A77247372FB00FA5DFC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2BB60B1247E6DE300EE499A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2BB60C2247F825600EE499A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +422,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D2BB60AF247E6DE300EE499A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2BB60BF247F6C3600EE499A /* Employee.swift in Sources */,
+				D2BB60BE247F6B9E00EE499A /* EmployeeTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2BB60C0247F825600EE499A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2BB60C7247F825600EE499A /* EmployeesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D2BB60B9247E6DE300EE499A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D22C7A6B247372FB00FA5DFC /* EmployeeManager */;
+			targetProxy = D2BB60B8247E6DE300EE499A /* PBXContainerItemProxy */;
+		};
+		D2BB60CA247F825600EE499A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D22C7A6B247372FB00FA5DFC /* EmployeeManager */;
+			targetProxy = D2BB60C9247F825600EE499A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D22C7A75247372FB00FA5DFC /* Main.storyboard */ = {
@@ -442,6 +594,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0rc1;
 				DEVELOPMENT_TEAM = 2JDGUK4DRH;
 				INFOPLIST_FILE = EmployeeManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -462,6 +615,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0rc1;
 				DEVELOPMENT_TEAM = 2JDGUK4DRH;
 				INFOPLIST_FILE = EmployeeManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -473,6 +627,92 @@
 				PRODUCT_NAME = Employees;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D2BB60BB247E6DE300EE499A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2JDGUK4DRH;
+				INFOPLIST_FILE = EmployeesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.johnchoi96.EmployeesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Employees.app/Employees";
+			};
+			name = Debug;
+		};
+		D2BB60BC247E6DE300EE499A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2JDGUK4DRH;
+				INFOPLIST_FILE = EmployeesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.johnchoi96.EmployeesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Employees.app/Employees";
+			};
+			name = Release;
+		};
+		D2BB60CC247F825600EE499A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2JDGUK4DRH;
+				INFOPLIST_FILE = EmployeesUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.johnchoi96.EmployeesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EmployeeManager;
+			};
+			name = Debug;
+		};
+		D2BB60CD247F825600EE499A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2JDGUK4DRH;
+				INFOPLIST_FILE = EmployeesUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.johnchoi96.EmployeesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EmployeeManager;
 			};
 			name = Release;
 		};
@@ -493,6 +733,24 @@
 			buildConfigurations = (
 				D22C7A81247372FE00FA5DFC /* Debug */,
 				D22C7A82247372FE00FA5DFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D2BB60BA247E6DE300EE499A /* Build configuration list for PBXNativeTarget "EmployeesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2BB60BB247E6DE300EE499A /* Debug */,
+				D2BB60BC247E6DE300EE499A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D2BB60CB247F825600EE499A /* Build configuration list for PBXNativeTarget "EmployeesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2BB60CC247F825600EE499A /* Debug */,
+				D2BB60CD247F825600EE499A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
