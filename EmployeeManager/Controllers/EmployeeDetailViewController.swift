@@ -44,4 +44,16 @@ class EmployeeDetailViewController: UIViewController {
         let paycheck = employee.getPaycheck(hours: hour, minutes: minute)
         payCheckLabel.text = String(format: "$%.2f", paycheck)
     }
+    
+    @IBAction func viewAddressPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: K.Segues.detailToAddress, sender: employee.address)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.Segues.detailToAddress {
+            let vc = segue.destination as! AddressViewController
+            vc.address = sender as? Address
+            vc.employeeName = employee.fullName
+        }
+    }
 }

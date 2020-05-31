@@ -17,8 +17,16 @@ class AddEmployeeViewController: UIViewController {
     @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var payRateField: UITextField!
     
+    @IBOutlet weak var streetField: UITextField!
+    @IBOutlet weak var optionalStreetField: UITextField!
+    @IBOutlet weak var cityField: UITextField!
+    @IBOutlet weak var statePicker: UIPickerView!
+    @IBOutlet weak var zipField: UITextField!
+    
     let db = Firestore.firestore()
     var edited = false
+    var requiredAddressFields = [UITextField]()
+    var state: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +38,11 @@ class AddEmployeeViewController: UIViewController {
         middleNameField.delegate = self
         lastNameField.delegate = self
         payRateField.delegate = self
+        statePicker.dataSource = self
+        statePicker.delegate = self
+        requiredAddressFields.append(streetField)
+        requiredAddressFields.append(cityField)
+        requiredAddressFields.append(zipField)
     }
     
     @IBAction func savePressed(_ sender: UIBarButtonItem) {
@@ -43,10 +56,19 @@ class AddEmployeeViewController: UIViewController {
             "firstName": firstNameField.text!,
             "lastName": lastNameField.text!,
             "id": generateID(with: ref.documentID),
-            "payRate": (payRateField.text! as NSString).floatValue
+            "payRate": (payRateField.text! as NSString).floatValue,
+            "street": streetField.text!,
+            "city": cityField.text!,
+            "state": state as Any,
+            "zip": zipField.text!
         ]
+        // if middle name is filled in, add the middle name to the data.
         if middleNameField.text != "" {
             employeeData["middleName"] = middleNameField.text
+        }
+        // if optional second street is filled in, add it to the data
+        if optionalStreetField.text != "" {
+            employeeData["optionalStreet"] = optionalStreetField.text!
         }
         ref.setData(employeeData) { (err) in
             if let err = err {
@@ -102,6 +124,7 @@ class AddEmployeeViewController: UIViewController {
      - Any of the name fields must not contain a space.
      - Any of the name fields must not contain a number.
      - Pay rate is guaranteed to be valid because of number pad keyboard for the text field.
+     - Every address fields except for the optional second street must be filled.
      - Returns: true if all the checks pass, false if any of the checks fail and will show an alert
      */
     private func meetsRequirement() -> Bool {
@@ -137,12 +160,23 @@ class AddEmployeeViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
             return false
         }
+        // check to see if every address fields are filled
+        for textField in requiredAddressFields {
+            if textField.text == "" {
+                let alert = UIAlertController(title: "Address incomplete!", message: "Street, City, State, and Zip Code are required.", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
+                return false
+            }
+        }
         return true
     }
 }
 
 // MARK: - UITextField delegate section
 extension AddEmployeeViewController: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField.tag {
         case 0:
@@ -159,6 +193,26 @@ extension AddEmployeeViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         edited = true
+    }
+}
+
+// MARK: - UIPickerView data source and delegate section
+extension AddEmployeeViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return K.states.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return K.states[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        state = K.states[row]
     }
 }
 

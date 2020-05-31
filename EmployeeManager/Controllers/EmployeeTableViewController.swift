@@ -40,7 +40,12 @@ class EmployeeTableViewController: UIViewController {
                     let id = document.data()["id"] as! String
                     let middleName = document.data()["middleName"] as! String?
                     let payRate = document.data()["payRate"] as! Float
-                    let employee = Employee(firstName: firstName, middleName: middleName, lastName: lastName, id: id, payRate: payRate)
+                    let address = Address(street: document.data()["street"] as! String,
+                                          street1: document.data()["optionalStreet"] as! String?,
+                                          city: document.data()["city"] as! String,
+                                          state: document.data()["state"] as! String,
+                                          zip: document.data()["zip"] as! String)
+                    let employee = Employee(firstName: firstName, middleName: middleName, lastName: lastName, id: id, payRate: payRate, address: address)
                     self.employeeManager.employees.append(employee)
                 }
                 // finished getting all employee data so reload the table
