@@ -16,6 +16,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var confirmPasswordField: UITextField!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var spinnerView: UIView!
+    @IBOutlet weak var signUpButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,14 +46,20 @@ class SignUpViewController: UIViewController {
     private func signUp() {
         guard let email = emailField.text, email.count > 0 else {
             displayAlert(title: "Please enter Email!", message: "Email must be provided")
+            signUpButton.isEnabled = true
+            emailField.becomeFirstResponder()
             return
         }
         // if email is invalid, do not let the user finish sign up
         if !email.isValidEmail() {
             displayAlert(title: "Invalid email!", message: "Please enter a valid email")
+            signUpButton.isEnabled = true
+            emailField.becomeFirstResponder()
             return
         }
         if !isValidPassword() || !passwordsMatch() {
+            signUpButton.isEnabled = true
+            passwordField.becomeFirstResponder()
             return
         }
         spinnerView.isHidden = false
@@ -140,6 +147,7 @@ extension SignUpViewController: UITextFieldDelegate {
                 return true
             }
         } else {
+            signUpButton.isEnabled = false
             signUp()
             textField.resignFirstResponder()
         }

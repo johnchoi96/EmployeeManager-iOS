@@ -92,6 +92,7 @@
                         <outlet property="confirmPasswordField" destination="uTo-Ej-qKN" id="ooy-WL-ITA"/>
                         <outlet property="emailField" destination="4rH-r4-HGD" id="d5d-1x-8Cd"/>
                         <outlet property="passwordField" destination="4eL-nC-Pnc" id="vBM-4I-Riu"/>
+                        <outlet property="signUpButton" destination="uId-AC-5pt" id="O4c-VE-TeC"/>
                         <outlet property="spinner" destination="30L-Q8-52N" id="eEk-5u-ww1"/>
                         <outlet property="spinnerView" destination="sfl-Uz-JJu" id="Rbd-nR-6Hs"/>
                         <segue destination="pCz-4x-1uf" kind="show" identifier="signupToMain" id="8KW-7B-ebt"/>
@@ -181,6 +182,7 @@
                     </view>
                     <connections>
                         <outlet property="emailField" destination="avo-62-iVm" id="bbC-Q4-PAv"/>
+                        <outlet property="logInButton" destination="MTp-cV-zyt" id="phu-XR-DgM"/>
                         <outlet property="passwordField" destination="fE9-f4-zok" id="rbf-fp-EA6"/>
                         <outlet property="spinner" destination="Lo4-iw-eWR" id="Rf9-EU-Ey4"/>
                         <outlet property="spinnerView" destination="LWM-aN-8h8" id="4hR-Th-4xm"/>

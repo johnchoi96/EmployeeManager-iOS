@@ -15,6 +15,7 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var spinnerView: UIView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var logInButton: UIButton!
     
     let defaults = UserDefaults.standard
     
@@ -35,6 +36,7 @@ class LogInViewController: UIViewController {
             emailField.text = email
         }
         emailField.becomeFirstResponder()
+        logInButton.isEnabled = true
     }
     
     @IBAction func logInPressed(_ sender: UIButton) {
@@ -54,6 +56,7 @@ class LogInViewController: UIViewController {
                 if error != nil {
                     strongSelf.spinner.stopAnimating()
                     strongSelf.spinnerView.isHidden = true
+                    strongSelf.logInButton.isEnabled = true
                     let alert = UIAlertController(title: "Sign in failed!", message: "There was a problem signing in", preferredStyle: .alert)
                     let action = UIAlertAction(title: "OK", style: .default, handler: nil)
                     alert.addAction(action)
@@ -68,6 +71,9 @@ class LogInViewController: UIViewController {
                 strongSelf.performSegue(withIdentifier: K.Segues.loginToMain, sender: self)
             }
             
+        } else {
+            spinner.stopAnimating()
+            spinnerView.isHidden = true
         }
     }
 
@@ -119,6 +125,7 @@ extension LogInViewController: UITextFieldDelegate {
             if !checkPassword() {
                 return false
             }
+            logInButton.isEnabled = false
             textField.resignFirstResponder()
             logIn()
         }
