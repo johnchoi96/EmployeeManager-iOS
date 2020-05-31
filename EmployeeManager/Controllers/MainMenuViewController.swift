@@ -67,7 +67,7 @@ class MainMenuViewController: UIViewController {
         if sender.tag == 0 {
             address = "https://johnchoi96.github.io/"
         } else {
-            address = "https://github.com/johnchoi96/EmployeeManager-iOS"
+            address = "https://johnchoi96.github.io/EmployeeManager-iOS/"
         }
         guard let url = URL(string: address) else {
             let alert = UIAlertController(title: "Cannot load page", message: "Error occured while loading page", preferredStyle: .alert)

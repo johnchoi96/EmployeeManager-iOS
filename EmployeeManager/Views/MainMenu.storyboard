@@ -401,11 +401,15 @@
                                                             <constraint firstItem="guS-rM-01L" firstAttribute="centerX" secondItem="Rdz-Bb-EMs" secondAttribute="centerX" id="oX8-tQ-E6T"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXY-7K-ZOI" customClass="MarqueeLabel" customModule="MarqueeLabel">
+                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXY-7K-ZOI" customClass="MarqueeLabel" customModule="MarqueeLabel">
                                                         <rect key="frame" x="197" y="0.0" width="178" height="50"/>
+                                                        <gestureRecognizers/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="FDA-tS-Ddj" appends="YES" id="Gsv-9C-dyl"/>
+                                                        </connections>
                                                     </label>
                                                 </subviews>
                                             </stackView>
@@ -542,12 +546,18 @@
                         <outlet property="idLabel" destination="JXY-7K-ZOI" id="fVU-Ly-A7K"/>
                         <outlet property="lastNameLabel" destination="75Z-Nq-ueN" id="c3g-fH-SiO"/>
                         <outlet property="middleNameLabel" destination="Chc-iU-QGF" id="FSn-y5-9gr"/>
+                        <outlet property="middleNameStackView" destination="VTz-yt-pJ1" id="dfs-SC-WWR"/>
                         <outlet property="payCheckLabel" destination="qq5-ds-rQW" id="9ik-aI-0Hu"/>
                         <outlet property="payRateLabel" destination="kJn-cM-RnD" id="wW7-rB-EIX"/>
                         <segue destination="VaG-YM-dsr" kind="show" identifier="detailToAddress" id="i0m-Vs-cQg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYd-A9-NPM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="FDA-tS-Ddj">
+                    <connections>
+                        <action selector="tapped:" destination="WVJ-ac-3kY" id="ZvU-PF-wND"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2305.7971014492755" y="-46.205357142857139"/>
         </scene>

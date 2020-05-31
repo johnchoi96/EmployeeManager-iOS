@@ -18,6 +18,8 @@ class EmployeeDetailViewController: UIViewController {
     @IBOutlet weak var hoursWorked: UIDatePicker!
     @IBOutlet weak var payCheckLabel: UILabel!
     
+    @IBOutlet weak var middleNameStackView: UIStackView!
+    
     var employee: Employee!
     
     override func viewDidLoad() {
@@ -29,7 +31,7 @@ class EmployeeDetailViewController: UIViewController {
         if let middleName = employee.middleName {
             middleNameLabel.text = middleName
         } else {
-            middleNameLabel.text = ""
+            middleNameStackView.isHidden = true
         }
         lastNameLabel.text = employee.lastName
         idLabel.text = "\(employee.id)    " // 4 spaces at the end for label rotation
@@ -47,6 +49,14 @@ class EmployeeDetailViewController: UIViewController {
     
     @IBAction func viewAddressPressed(_ sender: UIButton) {
         performSegue(withIdentifier: K.Segues.detailToAddress, sender: employee.address)
+    }
+    
+    @IBAction func tapped(_ sender: UILongPressGestureRecognizer) {
+        UIPasteboard.general.string = employee.id
+        let alert = UIAlertController(title: "Copied!", message: "", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Close", style: .default, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
