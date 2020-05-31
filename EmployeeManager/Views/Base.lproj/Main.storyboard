@@ -57,6 +57,9 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" name="AppColor"/>
+                        <accessibility key="accessibilityConfiguration" identifier="mainScreen">
+                            <bool key="isElement" value="YES"/>
+                        </accessibility>
                         <constraints>
                             <constraint firstItem="1aO-FW-M3y" firstAttribute="top" secondItem="j4a-yC-Rqy" secondAttribute="top" constant="85" id="4Pl-96-xyw">
                                 <variation key="heightClass=compact-widthClass=compact" constant="30"/>

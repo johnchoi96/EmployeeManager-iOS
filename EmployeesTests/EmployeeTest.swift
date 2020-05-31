@@ -15,15 +15,17 @@ class EmployeeTest: XCTestCase {
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        employee1 = Employee(firstName: "John", middleName: nil, lastName: "Choi", id: "E-1234567890", payRate: 25.0)
-        employee2 = Employee(firstName: "Shannon", middleName: "Kyle", lastName: "Meulink", id: "E-0987654321", payRate: 15.0)
+        let address1 = Address(street: "1 Infinite Loop", street1: nil, city: "Cupertino", state: "CA", zip: "95012")
+        let address2 = Address(street: "103 Telmew Ct", street1: nil, city: "Cary", state: "NC", zip: "27518")
+        employee1 = Employee(firstName: "John", middleName: nil, lastName: "Choi", id: "E-1234567890", payRate: 25.0, address: address1)
+        employee2 = Employee(firstName: "Shannon", middleName: "Kyle", lastName: "Meulink", id: "E-0987654321", payRate: 15.0, address: address2)
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func testEmployeeFullName() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         XCTAssertNotEqual(employee1.firstName, employee2.firstName)

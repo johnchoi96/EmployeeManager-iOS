@@ -13,3 +13,16 @@ target 'EmployeeManager' do
   pod 'MarqueeLabel'
 
 end
+
+target 'EmployeesTests' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for EmployeeTests
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
+  pod 'IQKeyboardManagerSwift'
+  pod 'MarqueeLabel'
+
+end
