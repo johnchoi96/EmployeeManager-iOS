@@ -4,6 +4,9 @@ iOS version of [Employee Manager](https://github.com/johnchoi96/EmployeeManager)
 ## Requirements
 iPhone or iPad running iOS 13.0 or later
 
+## Releases (For authorized devices only)
+[Microsoft App Center](https://appcenter.ms/users/johnchoi1003/apps/Employee-Manager/distribute/releases)
+
 ## CocoaPods dependencies
 
 * [Firebase/Auth](https://firebase.google.com)
