@@ -66,7 +66,7 @@ class MainMenuViewController: UIViewController {
         var address = ""
         if sender.tag == 0 {
             address = "https://johnchoi96.github.io/"
-        } else {
+        } else { // button has tag = 1
             address = "https://johnchoi96.github.io/EmployeeManager-iOS/"
         }
         guard let url = URL(string: address) else {
