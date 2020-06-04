@@ -38,6 +38,9 @@ class AddressViewController: UIViewController {
         stateLabel.text = address.state
         zipLabel.text = address.zip
         
+        // add employee annotation
+        addEmployeeAnnotation()
+        
         mapView.showsUserLocation = true
         
         // get current location
@@ -49,6 +52,7 @@ class AddressViewController: UIViewController {
             locationManager.requestWhenInUseAuthorization()
             fallthrough
         case .authorizedWhenInUse:
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startUpdatingLocation()
         case .denied:
             mapView.showsUserLocation = false
@@ -68,64 +72,11 @@ class AddressViewController: UIViewController {
     }
     
     /**
-     Makes an annotation for the map view using the physical address and the tag name.
-     Adds the generated annotation to the self.mapView.
-     - Parameter address: Physical address for the annotation to be displayed on the map
-     - Parameter tagName: Name of the annotation
+     Retrieves the coordinate with the physical address and make MKPointAnnotation and add it to the map view.
      */
-//    private func getAnnotation(address: String, tagName: String) {
-//        let geoCoder = CLGeocoder()
-//        geoCoder.geocodeAddressString(address) { (placemarks, error) in
-//            guard let placemarks = placemarks, let location = placemarks.first?.location else {
-//                let alert = UIAlertController(title: "Error while retrieving location", message: "", preferredStyle: .alert)
-//                let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-//                alert.addAction(action)
-//                self.present(alert, animated: true, completion: nil)
-//                return
-//            }
-//            let lat = location.coordinate.latitude
-//            let long = location.coordinate.longitude
-//            let clLocation = CLLocation(latitude: lat, longitude: long)
-//            // make annotation
-//            let annotation = MKPointAnnotation()
-//            annotation.coordinate = clLocation.coordinate
-//            annotation.title = tagName
-//            self.mapView.addAnnotation(annotation)
-////            self.mapView.centerToLocation(clLocation)
-//        }
-//    }
-    
-    /**
-     Makes an annotation for the map view using the coordinate passed in.
-     If the coordinate is nil, MKPointAnnotation with nil is returned.
-     - Parameter coordinate: coordinate of the annotation
-     - Returns: annotation generated with the coordinate passed in, nil if the coordinate was invalid
-     */
-//    private func getAnnotation(coordinate: CLLocationCoordinate2D?) -> MKPointAnnotation? {
-//        var annotation: MKPointAnnotation?
-//        if let coordinate = coordinate {
-//            annotation = MKPointAnnotation()
-//            annotation!.coordinate = coordinate
-//        }
-//        return annotation
-//    }
-}
-
-// MARK: - CLLocationManager delegate section
-extension AddressViewController: CLLocationManagerDelegate {
-    
-    /**
-     When the current location information is retrieved, two annotations are acquired:
-     1. Employee
-     2. Current location
-     These annotations are created and shown on the map.
-     */
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        manager.stopUpdatingLocation()
-        // get current location
-        mapView.showsUserLocation = true
+    private func addEmployeeAnnotation() {
         let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString(address.fullAddress) { (placemarks, error) in
+        geoCoder.geocodeAddressString(address.fullAddress) { (placemarks, err) in
             guard let placemarks = placemarks, let location = placemarks.first?.location else {
                 let alert = UIAlertController(title: "Error while retrieving location", message: "", preferredStyle: .alert)
                 let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -133,30 +84,43 @@ extension AddressViewController: CLLocationManagerDelegate {
                 self.present(alert, animated: true, completion: nil)
                 return
             }
-            let lat = location.coordinate.latitude
-            let long = location.coordinate.longitude
-            let initialLocation = CLLocation(latitude: lat, longitude: long)
-            self.mapView.centerToLocation(initialLocation)
-            // make annotation for employee
-            let employeeAnnotation = MKPointAnnotation()
-            employeeAnnotation.coordinate = location.coordinate
-            employeeAnnotation.title = self.employeeName
-            // make current location annotation
-            let currentLocationAnnotation = MKPointAnnotation()
-            currentLocationAnnotation.coordinate = (locations.first?.coordinate)!
-            self.mapView.showAnnotations([currentLocationAnnotation, employeeAnnotation], animated: true)
+
+            let annotation = MKPointAnnotation()
+            annotation.title = self.employeeName
+            annotation.coordinate = location.coordinate
+            self.mapView.addAnnotation(annotation)
+            self.mapView.showAnnotations(self.mapView.annotations, animated: true)
         }
+    }
+    
+    /**
+     Makes an annotation based on the current location of the device and adds to the map view.
+     - Parameter location: current location reported by CLLocationManager.
+     */
+    private func addCurrentLocationAnnotation(_ location: CLLocation?) {
+        // make current location annotation
+        let annotation = MKPointAnnotation()
+        annotation.subtitle = "Current Location"
+        guard let coordinate = location?.coordinate else {
+            return
+        }
+        annotation.coordinate = coordinate
+        mapView.addAnnotation(annotation)
+        mapView.showAnnotations(self.mapView.annotations, animated: true)
     }
 }
 
-private extension MKMapView {
-    func centerToLocation(_ location: CLLocation, regionRadius: CLLocationDistance = 1000) {
-        let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-        setRegion(coordinateRegion, animated: true)
-    }
+// MARK: - CLLocationManager delegate section
+extension AddressViewController: CLLocationManagerDelegate {
     
-//    func centerToLocation(_ location: CLLocationCoordinate2D, regionRadius: CLLocationDistance = 1000) {
-//        let coordinateRegion = MKCoordinateRegion(center: location, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-//        setRegion(coordinateRegion, animated: true)
-//    }
+    /**
+     When the current location information is retrieved, the current location is displayed on the map.
+     This annotation is created and displayed on the map.
+     */
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        manager.stopUpdatingLocation()
+        // get current location
+        mapView.showsUserLocation = true
+        self.addCurrentLocationAnnotation(locations.first)
+    }
 }
