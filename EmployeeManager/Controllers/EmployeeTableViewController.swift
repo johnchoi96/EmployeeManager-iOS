@@ -34,7 +34,6 @@ class EmployeeTableViewController: UIViewController {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
                     let firstName = document.data()["firstName"] as! String
                     let lastName = document.data()["lastName"] as! String
                     let id = document.data()["id"] as! String
