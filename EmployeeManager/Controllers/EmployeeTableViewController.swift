@@ -21,6 +21,7 @@ class EmployeeTableViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         title = "Employees"
+        employeeTable.rowHeight = 44
         employeeTable.dataSource = self
         employeeTable.delegate = self
         employeeTable.register(UINib(nibName: K.employeeCellName, bundle: nil), forCellReuseIdentifier: K.employeeCell)
