@@ -73,7 +73,7 @@ extension EmployeeTableViewController: UITableViewDataSource {
 // MARK: - Table View delegate section
 extension EmployeeTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.cellForRow(at: indexPath)?.isSelected = false
+        tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: K.Segues.tableToEmployeeDetail, sender: employeeManager.employees[indexPath.row])
     }
     
