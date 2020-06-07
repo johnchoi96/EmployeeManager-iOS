@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  EmployeeManager
+
+  Created by John Choi on 6/6/20.
+  Copyright © 2020 John Choi. All rights reserved.
+*/
+
+/** Authentication screens */
+
+// sign up screen
+"sign up title" = "Sign Up";
+"Email" = "Email";
+"New Password" = "New Password";
+"Confirm Password" = "Confirm Password";
+
+// log in screen
+"log in title" = "Welcome Back";
+"Sign Up" = "Sign Up";
+"Password" = "Password";
+"Log In" = "Log In";
+
+/** Main */
+
+/** MainMenu */
+
+/** EmployeeTableViewCell */

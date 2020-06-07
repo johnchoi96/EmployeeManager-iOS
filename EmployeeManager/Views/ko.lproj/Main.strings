@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "Employee Manager"; ObjectID = "1aO-FW-M3y"; */
+"1aO-FW-M3y.text" = "Employee Manager";
+
+/* Class = "UIButton"; normalTitle = "Log In"; ObjectID = "Idm-0J-bpV"; */
+"Idm-0J-bpV.normalTitle" = "Log In";
+
+/* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "P0R-lA-T5L"; */
+"P0R-lA-T5L.normalTitle" = "Sign Up";
+
+/* Class = "UILabel"; text = "John Choi 2020"; ObjectID = "R6a-np-71e"; */
+"R6a-np-71e.text" = "John Choi 2020";
