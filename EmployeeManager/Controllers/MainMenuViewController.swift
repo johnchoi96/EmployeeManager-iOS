@@ -91,8 +91,8 @@ class MainMenuViewController: UIViewController {
             address = "https://johnchoi96.github.io/EmployeeManager-iOS/"
         }
         guard let url = URL(string: address) else {
-            let alert = UIAlertController(title: "Cannot load page", message: "Error occured while loading page", preferredStyle: .alert)
-            let action = UIAlertAction(title: "Close", style: .cancel) { (action) in
+            let alert = UIAlertController(title: NSLocalizedString("cannot load page alert", comment: ""), message: NSLocalizedString("cannot load page alert message", comment: ""), preferredStyle: .alert)
+            let action = UIAlertAction(title: NSLocalizedString("Close message", comment: ""), style: .cancel) { (action) in
                 self.dismiss(animated: true, completion: nil)
             }
             alert.addAction(action)
@@ -106,10 +106,10 @@ class MainMenuViewController: UIViewController {
     
     @IBAction func addEmployeePressed(_ sender: UIButton) {
         if !userIsAdmin {
-            let alertTitle = "You do not have permission to add employee."
+            let alertTitle = NSLocalizedString("add employee permission issue alert", comment: "")
             let alertMessage = ""
             let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
-            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            let action = UIAlertAction(title: NSLocalizedString("OK message", comment: ""), style: .cancel, handler: nil)
             alert.addAction(action)
             self.present(alert, animated: true, completion: nil)
         } else {
@@ -118,8 +118,8 @@ class MainMenuViewController: UIViewController {
     }
     
     @IBAction func adminIndicatorPressed(_ sender: UIButton) {
-        let alert = UIAlertController(title: "You are an admin", message: "You may add or remove employee.", preferredStyle: .alert)
-        let action = UIAlertAction(title: "Close", style: .cancel, handler: nil)
+        let alert = UIAlertController(title: NSLocalizedString("you are an admin alert", comment: ""), message: NSLocalizedString("you are an admin alert message", comment: ""), preferredStyle: .alert)
+        let action = UIAlertAction(title: NSLocalizedString("Close message", comment: ""), style: .cancel, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }

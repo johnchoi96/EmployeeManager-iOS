@@ -58,14 +58,14 @@ class SignUpViewController: UIViewController {
      */
     private func signUp() {
         guard let email = emailField.text, email.count > 0 else {
-            displayAlert(title: "Please enter Email!", message: "Email must be provided")
+            displayAlert(title: NSLocalizedString("please enter email alert", comment: ""), message: NSLocalizedString("please enter email alert message", comment: ""))
             signUpButton.isEnabled = true
             emailField.becomeFirstResponder()
             return
         }
         // if email is invalid, do not let the user finish sign up
         if !email.isValidEmail() {
-            displayAlert(title: "Invalid email!", message: "Please enter a valid email")
+            displayAlert(title: NSLocalizedString("invalid email alert", comment: ""), message: NSLocalizedString("invalid email alert message", comment: ""))
             signUpButton.isEnabled = true
             emailField.becomeFirstResponder()
             return
@@ -80,7 +80,7 @@ class SignUpViewController: UIViewController {
         // Firebase Auth create user
         Auth.auth().createUser(withEmail: email, password: passwordField.text!) { authResult, error in
             if error != nil {
-                self.displayAlert(title: "There was a issue signing up the user", message: "Please try again later")
+                self.displayAlert(title: NSLocalizedString("sign up issue alert", comment: ""), message: NSLocalizedString("sign up issue alert message", comment: ""))
                 self.spinner.stopAnimating()
                 self.spinnerView.isHidden = true
                 return
@@ -100,11 +100,11 @@ class SignUpViewController: UIViewController {
             if password.count >= 6 {
                 return true
             } else {
-                displayAlert(title: "Invalid password!", message: "Password must be at least 6 characters long!")
+                displayAlert(title: NSLocalizedString("invalid password alert", comment: ""), message: NSLocalizedString("invalid password alert message", comment: ""))
                 return false
             }
         } else {
-            displayAlert(title: "Invalid password!", message: "Please enter password")
+            displayAlert(title: NSLocalizedString("invalid password alert", comment: ""), message: NSLocalizedString("invalid password no input alert message", comment: ""))
             return false
         }
     }
@@ -119,11 +119,11 @@ class SignUpViewController: UIViewController {
             if pw == pwConfirm {
                 return true
             } else {
-                displayAlert(title: "Password Mismatch!", message: "Passwords must match")
+                displayAlert(title: NSLocalizedString("password mismatch alert", comment: ""), message: NSLocalizedString("password mismatch alert message", comment: ""))
                 return false
             }
         } else {
-            displayAlert(title: "Please enter password", message: "")
+            displayAlert(title: NSLocalizedString("password request alert message", comment: ""), message: "")
             return false
         }
     }
@@ -135,7 +135,7 @@ class SignUpViewController: UIViewController {
      */
     private func displayAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let action = UIAlertAction(title: NSLocalizedString("OK message", comment: ""), style: .default, handler: nil)
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
     }
@@ -149,7 +149,7 @@ extension SignUpViewController: UITextFieldDelegate {
         if textField.tag == 0 {
             if let email = textField.text {
                 if !email.isValidEmail() {
-                    displayAlert(title: "Invalid email!", message: "Please enter a valid email")
+                    displayAlert(title: NSLocalizedString("invalid email alert", comment: ""), message: NSLocalizedString("invalid email alert message", comment: ""))
                     return false
                 }
                 passwordField.becomeFirstResponder()

@@ -32,6 +32,10 @@ class AddEmployeeViewController: UIViewController {
     var requiredAddressFields = [UITextField]()
     var state: String!
     
+    private let OK = NSLocalizedString("OK message", comment: "OK message used for alert action button label")
+    private let CANCEL = NSLocalizedString("Cancel message", comment: "Cancel message used for alert action button label")
+    private let GO_BACK = NSLocalizedString("go back message", comment: "Go Back message used for alert action button label")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -90,14 +94,15 @@ class AddEmployeeViewController: UIViewController {
         ref.setData(employeeData) { (err) in
             if let err = err {
                 print("Error adding document: \(err)")
-                let alert = UIAlertController(title: "Error", message: "Problem occured while saving. Please try again later", preferredStyle: .alert)
-                let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                let alert = UIAlertController(title: NSLocalizedString("Error message", comment: ""), message: NSLocalizedString("saving problem alert message", comment: ""), preferredStyle: .alert)
+                let action = UIAlertAction(title: self.OK, style: .cancel, handler: nil)
                 alert.addAction(action)
                 self.present(alert, animated: true, completion: nil)
             } else {
                 // display success message and dismiss the view
-                let alert = UIAlertController(title: "Success", message: "New employee, \"\(self.firstNameField.text!)\", successfully added.\n\nID: \(employeeData["id"] as! String)", preferredStyle: .alert)
-                let action = UIAlertAction(title: "OK", style: .default) { (action) in
+                let message = String.localizedStringWithFormat(NSLocalizedString("employee add confirmation message", comment: ""), self.firstNameField.text!, employeeData["id"] as! String)
+                let alert = UIAlertController(title: NSLocalizedString("Success message", comment: ""), message: message, preferredStyle: .alert)
+                let action = UIAlertAction(title: self.OK, style: .default) { (action) in
                     self.dismiss(animated: true, completion: nil)
                 }
                 alert.addAction(action)
@@ -108,11 +113,11 @@ class AddEmployeeViewController: UIViewController {
     
     @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
         if edited {
-            let alert = UIAlertController(title: "Data unsaved", message: "Are you sure you want to cancel?", preferredStyle: .alert)
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+            let alert = UIAlertController(title: NSLocalizedString("cancel confirmation alert", comment: ""), message: NSLocalizedString("cancel confirmation alert message", comment: ""), preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: self.CANCEL, style: .cancel) { (action) in
                 self.dismiss(animated: true, completion: nil)
             }
-            let gobackAction = UIAlertAction(title: "Go Back", style: .default, handler: nil)
+            let gobackAction = UIAlertAction(title: self.GO_BACK, style: .default, handler: nil)
             alert.addAction(cancelAction)
             alert.addAction(gobackAction)
             self.present(alert, animated: true, completion: nil)
@@ -147,32 +152,32 @@ class AddEmployeeViewController: UIViewController {
     private func meetsRequirement() -> Bool {
         // check to see if every name text field except for middle name is filled.
         if firstNameField.text == "" || lastNameField.text == "" {
-            let alert = UIAlertController(title: "Name required!", message: "First and last names must be provided.", preferredStyle: .alert)
-            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            let alert = UIAlertController(title: NSLocalizedString("name required alert", comment: ""), message: NSLocalizedString("name required alert message", comment: ""), preferredStyle: .alert)
+            let action = UIAlertAction(title: OK, style: .cancel, handler: nil)
             alert.addAction(action)
             self.present(alert, animated: true, completion: nil)
             return false
         }
         // check to see if the pay rate is provided
         if payRateField.text == "" {
-            let alert = UIAlertController(title: "Pay rate must be provided!", message: "", preferredStyle: .alert)
-            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            let alert = UIAlertController(title: NSLocalizedString("hourly rate required alert", comment: ""), message: "", preferredStyle: .alert)
+            let action = UIAlertAction(title: OK, style: .cancel, handler: nil)
             alert.addAction(action)
             self.present(alert, animated: true, completion: nil)
             return false
         }
         // check to see if name contains spaces
         if firstNameField.text!.containsWhiteSpace() || middleNameField.text!.containsWhiteSpace() || lastNameField.text!.containsWhiteSpace() {
-            let alert = UIAlertController(title: "Name fields may not contain spaces.", message: "Please retype the name.", preferredStyle: .alert)
-            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            let alert = UIAlertController(title: NSLocalizedString("cannot contain space alert", comment: ""), message: NSLocalizedString("please retype name message", comment: ""), preferredStyle: .alert)
+            let action = UIAlertAction(title: OK, style: .cancel, handler: nil)
             alert.addAction(action)
             self.present(alert, animated: true, completion: nil)
             return false
         }
         // check to see if name contains number
         if firstNameField.text!.containsNumbers() || middleNameField.text!.containsNumbers() || lastNameField.text!.containsNumbers() {
-            let alert = UIAlertController(title: "Name may not contain numbers.", message: "Please retype the name.", preferredStyle: .alert)
-            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            let alert = UIAlertController(title: NSLocalizedString("cannot contain numbers alert", comment: ""), message: NSLocalizedString("please retype name message", comment: ""), preferredStyle: .alert)
+            let action = UIAlertAction(title: OK, style: .cancel, handler: nil)
             alert.addAction(action)
             self.present(alert, animated: true, completion: nil)
             return false
@@ -180,8 +185,8 @@ class AddEmployeeViewController: UIViewController {
         // check to see if every address fields are filled
         for textField in requiredAddressFields {
             if textField.text == "" {
-                let alert = UIAlertController(title: "Address incomplete!", message: "Street, City, State, and Zip Code are required.", preferredStyle: .alert)
-                let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                let alert = UIAlertController(title: NSLocalizedString("address incomplete alert", comment: ""), message: NSLocalizedString("address incomplete alert message", comment: ""), preferredStyle: .alert)
+                let action = UIAlertAction(title: OK, style: .cancel, handler: nil)
                 alert.addAction(action)
                 self.present(alert, animated: true, completion: nil)
                 return false

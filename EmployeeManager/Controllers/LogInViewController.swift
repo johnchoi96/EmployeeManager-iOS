@@ -69,8 +69,8 @@ class LogInViewController: UIViewController {
                     strongSelf.spinner.stopAnimating()
                     strongSelf.spinnerView.isHidden = true
                     strongSelf.logInButton.isEnabled = true
-                    let alert = UIAlertController(title: "Sign in failed!", message: "There was a problem signing in", preferredStyle: .alert)
-                    let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    let alert = UIAlertController(title: NSLocalizedString("sign in failed alert", comment: ""), message: NSLocalizedString("sign in failed alert message", comment: ""), preferredStyle: .alert)
+                    let action = UIAlertAction(title: NSLocalizedString("OK message", comment: ""), style: .default, handler: nil)
                     alert.addAction(action)
                     strongSelf.present(alert, animated: true, completion: {
                         return
@@ -96,8 +96,8 @@ class LogInViewController: UIViewController {
     private func checkEmail() -> Bool {
         if let email = emailField.text {
             if !email.isValidEmail() {
-                let alert = UIAlertController(title: "Invalid email!", message: "Please enter valid email", preferredStyle: .alert)
-                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                let alert = UIAlertController(title: NSLocalizedString("invalid email alert", comment: ""), message: NSLocalizedString("invalid email alert message", comment: ""), preferredStyle: .alert)
+                let action = UIAlertAction(title: NSLocalizedString("OK message", comment: ""), style: .default, handler: nil)
                 alert.addAction(action)
                 self.present(alert, animated: true, completion: nil)
                 return false
@@ -113,8 +113,8 @@ class LogInViewController: UIViewController {
     private func checkPassword() -> Bool {
         if let password = passwordField.text {
             if password.count == 0 {
-                let alert = UIAlertController(title: "Please enter password", message: "", preferredStyle: .alert)
-                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                let alert = UIAlertController(title: NSLocalizedString("invalid password no input alert message", comment: ""), message: "", preferredStyle: .alert)
+                let action = UIAlertAction(title: NSLocalizedString("OK message", comment: ""), style: .default, handler: nil)
                 alert.addAction(action)
                 self.present(alert, animated: true, completion: nil)
                 return false

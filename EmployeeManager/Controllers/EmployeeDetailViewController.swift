@@ -67,8 +67,8 @@ class EmployeeDetailViewController: UIViewController {
     
     @IBAction func tapped(_ sender: UILongPressGestureRecognizer) {
         UIPasteboard.general.string = employee.id
-        let alert = UIAlertController(title: "Copied!", message: "", preferredStyle: .alert)
-        let action = UIAlertAction(title: "Close", style: .default, handler: nil)
+        let alert = UIAlertController(title: NSLocalizedString("copied confirmation alert", comment: ""), message: "", preferredStyle: .alert)
+        let action = UIAlertAction(title: NSLocalizedString("Close message", comment: ""), style: .default, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }

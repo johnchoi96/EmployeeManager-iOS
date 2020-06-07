@@ -98,8 +98,9 @@ extension EmployeeTableViewController: UITableViewDelegate {
             let docId = employeeManager.employees[indexPath.row].docId
             db.collection("employees").document(docId).delete() { err in
                 if let err = err {
-                    let alert = UIAlertController(title: "Problem occured while deleting employee!", message: "Error: \(err)", preferredStyle: .alert)
-                    let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    let errorMessage = String.localizedStringWithFormat(NSLocalizedString("error while deleting employee alert message", comment: ""), String(describing: err))
+                    let alert = UIAlertController(title: NSLocalizedString("error while deleting employee alert", comment: ""), message: errorMessage, preferredStyle: .alert)
+                    let action = UIAlertAction(title: NSLocalizedString("OK message", comment: ""), style: .default, handler: nil)
                     alert.addAction(action)
                     self.present(alert, animated: true) {
                         return

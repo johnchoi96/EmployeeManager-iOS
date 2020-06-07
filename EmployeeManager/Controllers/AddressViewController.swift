@@ -30,6 +30,10 @@ class AddressViewController: UIViewController {
     var employeeName: String!
     
     let locationManager = CLLocationManager()
+    
+    private let YES = NSLocalizedString("Yes message", comment: "Yes button label for alert action")
+    private let NO = NSLocalizedString("No message", comment: "No button label for alert action")
+    private let OK = NSLocalizedString("OK message", comment: "OK button label for alert action")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,13 +68,13 @@ class AddressViewController: UIViewController {
             locationManager.startUpdatingLocation()
         case .denied:
             mapView.showsUserLocation = false
-            let alert = UIAlertController(title: "Location permission denied.", message: "Would you like to manually approve?", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Yes", style: .default) { (handler) in
+            let alert = UIAlertController(title: NSLocalizedString("location permission denied alert", comment: ""), message: NSLocalizedString("location permission denied alert message", comment: ""), preferredStyle: .alert)
+            let okAction = UIAlertAction(title: YES, style: .default) { (handler) in
                 if let url = URL(string: UIApplication.openSettingsURLString) {
                     UIApplication.shared.open(url, completionHandler: nil)
                 }
             }
-            let cancelAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: NO, style: .cancel, handler: nil)
             alert.addAction(okAction)
             alert.addAction(cancelAction)
             present(alert, animated: true, completion: nil)
@@ -94,8 +98,8 @@ class AddressViewController: UIViewController {
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(address.fullAddress) { (placemarks, err) in
             guard let placemarks = placemarks, let location = placemarks.first?.location else {
-                let alert = UIAlertController(title: "Error while retrieving location", message: "", preferredStyle: .alert)
-                let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                let alert = UIAlertController(title: NSLocalizedString("error getting location", comment: ""), message: "", preferredStyle: .alert)
+                let action = UIAlertAction(title: self.OK, style: .cancel, handler: nil)
                 alert.addAction(action)
                 self.present(alert, animated: true, completion: nil)
                 return
@@ -116,7 +120,7 @@ class AddressViewController: UIViewController {
     private func addCurrentLocationAnnotation(_ location: CLLocation?) {
         // make current location annotation
         let annotation = MKPointAnnotation()
-        annotation.subtitle = "Current Location"
+        annotation.subtitle = NSLocalizedString("annotation current location", comment: "")
         guard let coordinate = location?.coordinate else {
             return
         }
