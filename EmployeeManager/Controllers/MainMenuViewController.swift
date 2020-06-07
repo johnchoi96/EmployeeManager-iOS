@@ -13,10 +13,11 @@ import SafariServices
 class MainMenuViewController: UIViewController {
     
     @IBOutlet weak var adminImage: UIButton!
-    @IBOutlet weak var viewEmployeesButtonView: UIButton!
-    @IBOutlet weak var addEmployeeButtonView: UIButton!
-    @IBOutlet weak var aboutButtonView: UIButton!
-    @IBOutlet weak var githubButtonView: UIButton!
+    @IBOutlet weak var viewEmployeesButton: UIButton!
+    @IBOutlet weak var addEmployeeButton: UIButton!
+    @IBOutlet weak var aboutButton: UIButton!
+    @IBOutlet weak var githubButton: UIButton!
+    @IBOutlet weak var logoutButton: UIBarButtonItem!
     
     var handle: AuthStateDidChangeListenerHandle!
     var userEmail: String!
@@ -40,17 +41,26 @@ class MainMenuViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        title = "Main Menu"
+        applyLocalization()
         
         // button view corner radius setup
-        viewEmployeesButtonView.layer.cornerRadius = 25
-        addEmployeeButtonView.layer.cornerRadius = 25
-        aboutButtonView.layer.cornerRadius = 25
-        githubButtonView.layer.cornerRadius = 25
+        viewEmployeesButton.layer.cornerRadius = 25
+        addEmployeeButton.layer.cornerRadius = 25
+        aboutButton.layer.cornerRadius = 25
+        githubButton.layer.cornerRadius = 25
         
         navigationItem.hidesBackButton = true
         adminImage.isHidden = true
         checkIfAdmin()
+    }
+    
+    private func applyLocalization() {
+        title = NSLocalizedString("main menu title", comment: "Main menu title")
+        viewEmployeesButton.setTitle(NSLocalizedString("view employees button label", comment: "View employees button label"), for: .normal)
+        addEmployeeButton.setTitle((NSLocalizedString("add employee button label", comment: "Add employee button label")), for: .normal)
+        aboutButton.setTitle(NSLocalizedString("about button label", comment: "About button label"), for: .normal)
+        githubButton.setTitle(NSLocalizedString("github button label", comment: "Github button label"), for: .normal)
+        logoutButton.title = NSLocalizedString("logout button label", comment: "Log out button label")
     }
     
     @IBAction func logoutPressed(_ sender: UIBarButtonItem) {

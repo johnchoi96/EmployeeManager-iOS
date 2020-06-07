@@ -20,12 +20,17 @@ class EmployeeTableViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        title = "Employees"
+        applyLocalization()
+        
         employeeTable.rowHeight = 44
         employeeTable.dataSource = self
         employeeTable.delegate = self
         employeeTable.register(UINib(nibName: K.employeeCellName, bundle: nil), forCellReuseIdentifier: K.employeeCell)
         readData()
+    }
+    
+    private func applyLocalization() {
+        title = NSLocalizedString("table view title", comment: "Table view title")
     }
     
     private func readData() {

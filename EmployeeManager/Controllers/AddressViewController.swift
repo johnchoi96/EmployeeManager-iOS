@@ -20,6 +20,12 @@ class AddressViewController: UIViewController {
     @IBOutlet weak var optionalStreetStack: UIStackView!
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var streetTitleLabel: UILabel!
+    @IBOutlet weak var street1TitleLabel: UILabel!
+    @IBOutlet weak var cityTitleLabel: UILabel!
+    @IBOutlet weak var stateTitleLabel: UILabel!
+    @IBOutlet weak var zipTitleLabel: UILabel!
+    
     var address: Address!
     var employeeName: String!
     
@@ -29,6 +35,8 @@ class AddressViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        applyLocalization()
+        
         streetLabel.text = address.street
         if let secondStreet = address.street1 {
             optionalStreetStack.isHidden = false
@@ -69,6 +77,14 @@ class AddressViewController: UIViewController {
         default:
             print("should not be here")
         }
+    }
+    
+    private func applyLocalization() {
+        streetTitleLabel.text = NSLocalizedString("street label", comment: "Street label")
+        street1TitleLabel.text = NSLocalizedString("street 2 label", comment: "Street 1 label")
+        cityTitleLabel.text = NSLocalizedString("city label", comment: "City label")
+        stateTitleLabel.text = NSLocalizedString("state label", comment: "State label")
+        zipTitleLabel.text = NSLocalizedString("zip label", comment: "Zip label")
     }
     
     /**

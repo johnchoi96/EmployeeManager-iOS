@@ -4,24 +4,65 @@
 
   Created by John Choi on 6/6/20.
   Copyright © 2020 John Choi. All rights reserved.
+ 
+  Definitions:
+   ph: placeholder
+   tf: text field
 */
 
+/** UI */
 /** Authentication screens */
 
+"email ph" = "이메일";
+
 // sign up screen
-"sign up title" = "Sign Up";
-"Email" = "Email";
-"New Password" = "New Password";
-"Confirm Password" = "Confirm Password";
+"sign up title" = "회원가입";
+"new password ph" = "새로운 비밀번호";
+"confirm password ph" = "비밀번호 확인";
+"sign up button label" = "회원가입";
 
 // log in screen
-"log in title" = "Welcome Back";
-"Sign Up" = "Sign Up";
-"Password" = "Password";
-"Log In" = "Log In";
+"log in title" = "환영합니다!";
+"password ph" = "비밀번호";
+"log in button label" = "로그인";
 
-/** Main */
+/** Welcome screen */
+"sign up button label" = "회원가입";
+"log in button label" = "로그인";
 
 /** MainMenu */
+"main menu title" = "메인메뉴";
+"view employees button label" = "직원들 보기";
+"add employee button label" = "직원 생성";
+"about button label" = "About";
+"github button label" = "GitHub";
+"logout button label" = "로그아웃";
 
-/** EmployeeTableViewCell */
+/** EmployeeTableView */
+"table view title" = "직원명단";
+
+/** Add Employee View */
+"add employee bar title" = "직원 생성";
+"cancel button" = "취소";
+"save button" = "저장";
+"pay rate tf ph" = "시급 ($)";
+"street tf ph" = "길";
+"street 2 tf ph" = "길 2 (선택)";
+"city tf ph" = "도시";
+"state tf" = "주";
+"zip code tf ph" = "우편번호";
+
+/** Employee Detail View */
+"view address button label" = "주소 보기";
+"pay rate label" = "시급:";
+"hours worked label" = "일한 시간:";
+"pay check label" = "급여:";
+
+/** Address View */
+"street label" = "길";
+"street 2 label" = "길 2";
+"city label" = "도시";
+"state label" = "주";
+"zip label" = "우편번호";
+
+/** Alert Messages */

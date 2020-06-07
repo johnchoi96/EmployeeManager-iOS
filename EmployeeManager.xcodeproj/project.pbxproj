@@ -22,13 +22,14 @@
 		D22C7A8F2473894D00FA5DFC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A8E2473894D00FA5DFC /* Constants.swift */; };
 		D22C7A932473936300FA5DFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D22C7A922473936300FA5DFC /* GoogleService-Info.plist */; };
 		D22C7A962473AC2F00FA5DFC /* EmployeeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A952473AC2F00FA5DFC /* EmployeeTableViewController.swift */; };
+		D24ABC6B248C82E000016D2E /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D24ABC6D248C82E000016D2E /* Authentication.storyboard */; };
+		D24ABC6E248C82E900016D2E /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D24ABC70248C82E900016D2E /* MainMenu.storyboard */; };
+		D24ABC75248C834900016D2E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D24ABC77248C834900016D2E /* Localizable.strings */; };
 		D26CE4942479614800C1A909 /* EmployeeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26CE4932479614800C1A909 /* EmployeeDetailViewController.swift */; };
 		D26CE4992479701400C1A909 /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26CE4972479701400C1A909 /* EmployeeTableViewCell.swift */; };
 		D26CE49A2479701400C1A909 /* EmployeeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D26CE4982479701400C1A909 /* EmployeeTableViewCell.xib */; };
 		D26CE49C247971FF00C1A909 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26CE49B247971FF00C1A909 /* Employee.swift */; };
 		D26CE49E24797A2600C1A909 /* AddEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26CE49D24797A2600C1A909 /* AddEmployeeViewController.swift */; };
-		D26CE4C0247A3E9A00C1A909 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D26CE4BF247A3E9A00C1A909 /* Authentication.storyboard */; };
-		D28D004F247A43400039C7CA /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28D004E247A43400039C7CA /* MainMenu.storyboard */; };
 		D2BB60BE247F6B9E00EE499A /* EmployeeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BB60BD247F6B9E00EE499A /* EmployeeTest.swift */; };
 		D2FB0C322483375200CB62F0 /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB0C312483375200CB62F0 /* AddressViewController.swift */; };
 		D2FB0C34248339ED00CB62F0 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB0C33248339ED00CB62F0 /* Address.swift */; };
@@ -67,13 +68,19 @@
 		D22C7A8E2473894D00FA5DFC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D22C7A922473936300FA5DFC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D22C7A952473AC2F00FA5DFC /* EmployeeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewController.swift; sourceTree = "<group>"; };
+		D24ABC6C248C82E000016D2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Authentication.storyboard; sourceTree = "<group>"; };
+		D24ABC6F248C82E900016D2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainMenu.storyboard; sourceTree = "<group>"; };
+		D24ABC71248C831800016D2E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Authentication.strings; sourceTree = "<group>"; };
+		D24ABC72248C831900016D2E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		D24ABC73248C831A00016D2E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		D24ABC74248C831A00016D2E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		D24ABC76248C834900016D2E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D24ABC79248CCA5B00016D2E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D26CE4932479614800C1A909 /* EmployeeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailViewController.swift; sourceTree = "<group>"; };
 		D26CE4972479701400C1A909 /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
 		D26CE4982479701400C1A909 /* EmployeeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeTableViewCell.xib; sourceTree = "<group>"; };
 		D26CE49B247971FF00C1A909 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		D26CE49D24797A2600C1A909 /* AddEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeViewController.swift; sourceTree = "<group>"; };
-		D26CE4BF247A3E9A00C1A909 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
-		D28D004E247A43400039C7CA /* MainMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainMenu.storyboard; sourceTree = "<group>"; };
 		D2BB60B3247E6DE300EE499A /* EmployeesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmployeesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2BB60B7247E6DE300EE499A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2BB60BD247F6B9E00EE499A /* EmployeeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTest.swift; sourceTree = "<group>"; };
@@ -153,6 +160,7 @@
 				D22C7A7D247372FE00FA5DFC /* Info.plist */,
 				D22C7A922473936300FA5DFC /* GoogleService-Info.plist */,
 				D22C7A8E2473894D00FA5DFC /* Constants.swift */,
+				D24ABC77248C834900016D2E /* Localizable.strings */,
 			);
 			path = EmployeeManager;
 			sourceTree = "<group>";
@@ -185,9 +193,9 @@
 		D22C7A852473741500FA5DFC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D26CE4BF247A3E9A00C1A909 /* Authentication.storyboard */,
+				D24ABC6D248C82E000016D2E /* Authentication.storyboard */,
 				D22C7A75247372FB00FA5DFC /* Main.storyboard */,
-				D28D004E247A43400039C7CA /* MainMenu.storyboard */,
+				D24ABC70248C82E900016D2E /* MainMenu.storyboard */,
 				D26CE4982479701400C1A909 /* EmployeeTableViewCell.xib */,
 				D22C7A7A247372FE00FA5DFC /* LaunchScreen.storyboard */,
 			);
@@ -281,6 +289,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = D22C7A63247372FB00FA5DFC;
 			productRefGroup = D22C7A6D247372FB00FA5DFC /* Products */;
@@ -298,11 +307,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D26CE4C0247A3E9A00C1A909 /* Authentication.storyboard in Resources */,
-				D28D004F247A43400039C7CA /* MainMenu.storyboard in Resources */,
+				D24ABC6B248C82E000016D2E /* Authentication.storyboard in Resources */,
+				D24ABC6E248C82E900016D2E /* MainMenu.storyboard in Resources */,
 				D22C7A932473936300FA5DFC /* GoogleService-Info.plist in Resources */,
 				D26CE49A2479701400C1A909 /* EmployeeTableViewCell.xib in Resources */,
 				D22C7A7C247372FE00FA5DFC /* LaunchScreen.storyboard in Resources */,
+				D24ABC75248C834900016D2E /* Localizable.strings in Resources */,
 				D22C7A79247372FE00FA5DFC /* Assets.xcassets in Resources */,
 				D22C7A77247372FB00FA5DFC /* Main.storyboard in Resources */,
 			);
@@ -446,6 +456,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D22C7A76247372FB00FA5DFC /* Base */,
+				D24ABC72248C831900016D2E /* ko */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -454,8 +465,36 @@
 			isa = PBXVariantGroup;
 			children = (
 				D22C7A7B247372FE00FA5DFC /* Base */,
+				D24ABC74248C831A00016D2E /* ko */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D24ABC6D248C82E000016D2E /* Authentication.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D24ABC6C248C82E000016D2E /* Base */,
+				D24ABC71248C831800016D2E /* ko */,
+			);
+			name = Authentication.storyboard;
+			sourceTree = "<group>";
+		};
+		D24ABC70248C82E900016D2E /* MainMenu.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D24ABC6F248C82E900016D2E /* Base */,
+				D24ABC73248C831A00016D2E /* ko */,
+			);
+			name = MainMenu.storyboard;
+			sourceTree = "<group>";
+		};
+		D24ABC77248C834900016D2E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D24ABC76248C834900016D2E /* en */,
+				D24ABC79248CCA5B00016D2E /* ko */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -465,6 +504,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -525,6 +565,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

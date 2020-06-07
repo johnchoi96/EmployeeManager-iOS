@@ -24,7 +24,8 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        title = "Sign Up"
+        applyLocalization()
+        
         emailField.delegate = self
         passwordField.delegate = self
         confirmPasswordField.delegate = self
@@ -34,6 +35,14 @@ class SignUpViewController: UIViewController {
         spinnerView.isHidden = true
         
         signupView.layer.cornerRadius = 25
+    }
+    
+    private func applyLocalization() {
+        title = NSLocalizedString("sign up title", comment: "Title for sign up page - hence the large letters")
+        emailField.placeholder = NSLocalizedString("email ph", comment: "Email text field placeholder")
+        passwordField.placeholder = NSLocalizedString("new password ph", comment: "New password text field placeholder")
+        confirmPasswordField.placeholder = NSLocalizedString("confirm password ph", comment: "Confirm password text field placeholder")
+        signUpButton.setTitle(NSLocalizedString("sign up button label", comment: "Sign up button label"), for: .normal)
     }
     
     /**

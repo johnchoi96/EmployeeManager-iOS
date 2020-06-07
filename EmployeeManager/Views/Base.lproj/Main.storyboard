@@ -80,8 +80,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="a3S-c6-FeE"/>
                     <connections>
-                        <outlet property="loginView" destination="Idm-0J-bpV" id="oH1-XI-Inj"/>
-                        <outlet property="signupView" destination="P0R-lA-T5L" id="i4z-vg-NTX"/>
+                        <outlet property="loginButton" destination="Idm-0J-bpV" id="oH1-XI-Inj"/>
+                        <outlet property="signupButton" destination="P0R-lA-T5L" id="i4z-vg-NTX"/>
                         <segue destination="6qk-yM-55q" kind="show" identifier="welcomeToSignup" id="NNA-WB-v3R"/>
                         <segue destination="mJE-25-rcM" kind="show" identifier="welcomeToLogin" id="Sa1-hE-DLd"/>
                     </connections>

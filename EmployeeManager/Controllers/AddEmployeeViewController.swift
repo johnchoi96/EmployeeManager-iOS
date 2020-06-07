@@ -20,8 +20,12 @@ class AddEmployeeViewController: UIViewController {
     @IBOutlet weak var streetField: UITextField!
     @IBOutlet weak var optionalStreetField: UITextField!
     @IBOutlet weak var cityField: UITextField!
+    @IBOutlet weak var stateLabel: UILabel!
     @IBOutlet weak var statePicker: UIPickerView!
     @IBOutlet weak var zipField: UITextField!
+    
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     let db = Firestore.firestore()
     var edited = false
@@ -32,8 +36,9 @@ class AddEmployeeViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        navigationBar.topItem?.title = "Add Employee"
-        isModalInPresentation = true
+        applyLocalization()
+        
+        isModalInPresentation = true // disable swipe down to dismiss
         firstNameField.delegate = self
         middleNameField.delegate = self
         lastNameField.delegate = self
@@ -43,6 +48,18 @@ class AddEmployeeViewController: UIViewController {
         requiredAddressFields.append(streetField)
         requiredAddressFields.append(cityField)
         requiredAddressFields.append(zipField)
+    }
+    
+    private func applyLocalization() {
+        navigationBar.topItem?.title = NSLocalizedString("add employee bar title", comment: "Page title")
+        cancelButton.title = NSLocalizedString("cancel button", comment: "Cancel button")
+        saveButton.title = NSLocalizedString("save button", comment: "Save button")
+        streetField.placeholder = NSLocalizedString("street tf ph", comment: "Street label")
+        optionalStreetField.placeholder = NSLocalizedString("street 2 tf ph", comment: "Street 2 label")
+        payRateField.placeholder = NSLocalizedString("pay rate tf ph", comment: "Pay rate label")
+        cityField.placeholder = NSLocalizedString("city tf ph", comment: "City label")
+        stateLabel.text = NSLocalizedString("state tf", comment: "State label")
+        zipField.placeholder = NSLocalizedString("zip code tf ph", comment: "Zip code label")
     }
     
     @IBAction func savePressed(_ sender: UIBarButtonItem) {

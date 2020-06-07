@@ -117,11 +117,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="aboutButtonView" destination="tbd-eZ-fKw" id="M2f-pu-O2n"/>
-                        <outlet property="addEmployeeButtonView" destination="wzl-E9-uA7" id="zgj-QC-0IX"/>
+                        <outlet property="aboutButton" destination="tbd-eZ-fKw" id="M2f-pu-O2n"/>
+                        <outlet property="addEmployeeButton" destination="wzl-E9-uA7" id="zgj-QC-0IX"/>
                         <outlet property="adminImage" destination="6rj-LP-gAM" id="xUW-jY-hdw"/>
-                        <outlet property="githubButtonView" destination="MVR-Fr-RKp" id="U2G-qQ-71z"/>
-                        <outlet property="viewEmployeesButtonView" destination="Sh0-J9-Jjw" id="gpo-aj-EnM"/>
+                        <outlet property="githubButton" destination="MVR-Fr-RKp" id="U2G-qQ-71z"/>
+                        <outlet property="logoutButton" destination="Tn2-Ux-5XA" id="ahv-rR-XK9"/>
+                        <outlet property="viewEmployeesButton" destination="Sh0-J9-Jjw" id="gpo-aj-EnM"/>
                         <segue destination="JSo-em-hBb" kind="show" identifier="mainToTable" id="oMy-0H-Bj4"/>
                         <segue destination="W1f-0m-ABP" kind="presentation" identifier="mainToAddEmployee" id="wpL-TF-ION"/>
                     </connections>
@@ -274,6 +275,7 @@
                         <viewLayoutGuide key="safeArea" id="DNV-9F-fTn"/>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="1jN-DS-8kt" id="mc0-pJ-egs"/>
                         <outlet property="cityField" destination="tRC-R7-u08" id="d1L-cK-kiV"/>
                         <outlet property="firstNameField" destination="Npa-Zy-BHq" id="USr-Ch-Hlw"/>
                         <outlet property="lastNameField" destination="SBX-68-OFq" id="9Qe-LU-32W"/>
@@ -281,6 +283,8 @@
                         <outlet property="navigationBar" destination="t4V-eG-Zv3" id="Bf2-Fy-nyl"/>
                         <outlet property="optionalStreetField" destination="iUg-uh-0LY" id="d5w-Qx-Mzh"/>
                         <outlet property="payRateField" destination="FNI-ii-XYY" id="4pz-Lp-0fk"/>
+                        <outlet property="saveButton" destination="FwT-7g-DwJ" id="BDy-hv-HSy"/>
+                        <outlet property="stateLabel" destination="kO5-BM-usk" id="UJt-H6-xC5"/>
                         <outlet property="statePicker" destination="3cG-3Y-o0t" id="Au4-fJ-O3y"/>
                         <outlet property="streetField" destination="h6F-dE-XpM" id="nfi-7P-ceE"/>
                         <outlet property="zipField" destination="l5p-kf-XzW" id="doW-B3-R7K"/>
@@ -321,7 +325,7 @@
                                                         <constraints>
                                                             <constraint firstItem="B7o-HP-Q5N" firstAttribute="leading" secondItem="2HD-ZF-I4F" secondAttribute="leading" constant="10" id="UCo-9w-dHu"/>
                                                             <constraint firstItem="B7o-HP-Q5N" firstAttribute="centerX" secondItem="2HD-ZF-I4F" secondAttribute="centerX" id="UUZ-T8-gio"/>
-                                                            <constraint firstAttribute="trailing" secondItem="B7o-HP-Q5N" secondAttribute="trailing" constant="10" id="as2-RW-vmf"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="B7o-HP-Q5N" secondAttribute="trailing" id="as2-RW-vmf"/>
                                                             <constraint firstAttribute="height" constant="50" id="pUq-2V-igc"/>
                                                             <constraint firstItem="B7o-HP-Q5N" firstAttribute="centerY" secondItem="2HD-ZF-I4F" secondAttribute="centerY" id="zX4-Dh-K0h"/>
                                                         </constraints>
@@ -351,7 +355,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="Dg7-ZX-EQ0"/>
                                                             <constraint firstItem="5F8-Zo-AZS" firstAttribute="centerX" secondItem="Rh2-SA-dER" secondAttribute="centerX" id="YRV-af-02z"/>
-                                                            <constraint firstAttribute="trailing" secondItem="5F8-Zo-AZS" secondAttribute="trailing" constant="10" id="oaM-4O-RiI"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5F8-Zo-AZS" secondAttribute="trailing" id="oaM-4O-RiI"/>
                                                             <constraint firstItem="5F8-Zo-AZS" firstAttribute="centerY" secondItem="Rh2-SA-dER" secondAttribute="centerY" id="pej-he-Cg5"/>
                                                             <constraint firstItem="5F8-Zo-AZS" firstAttribute="leading" secondItem="Rh2-SA-dER" secondAttribute="leading" constant="10" id="wwg-aJ-bPD"/>
                                                         </constraints>
@@ -382,7 +386,7 @@
                                                             <constraint firstAttribute="height" constant="50" id="D9U-EU-2tJ"/>
                                                             <constraint firstItem="O0L-yf-8Zm" firstAttribute="centerX" secondItem="fUi-1l-LIr" secondAttribute="centerX" id="Tmp-al-Klc"/>
                                                             <constraint firstItem="O0L-yf-8Zm" firstAttribute="leading" secondItem="fUi-1l-LIr" secondAttribute="leading" constant="10" id="h37-nn-BTk"/>
-                                                            <constraint firstAttribute="trailing" secondItem="O0L-yf-8Zm" secondAttribute="trailing" constant="10" id="tkb-eM-GsR"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="O0L-yf-8Zm" secondAttribute="trailing" id="tkb-eM-GsR"/>
                                                             <constraint firstItem="O0L-yf-8Zm" firstAttribute="centerY" secondItem="fUi-1l-LIr" secondAttribute="centerY" id="upv-rv-SQw"/>
                                                         </constraints>
                                                     </view>
@@ -412,7 +416,7 @@
                                                             <constraint firstAttribute="trailing" secondItem="guS-rM-01L" secondAttribute="trailing" constant="10" id="8MD-nn-5OR"/>
                                                             <constraint firstAttribute="height" constant="50" id="NaX-p7-Vkp"/>
                                                             <constraint firstItem="guS-rM-01L" firstAttribute="centerY" secondItem="Rdz-Bb-EMs" secondAttribute="centerY" id="Wge-f9-gNA"/>
-                                                            <constraint firstItem="guS-rM-01L" firstAttribute="leading" secondItem="Rdz-Bb-EMs" secondAttribute="leading" constant="10" id="YjX-Er-fyV"/>
+                                                            <constraint firstItem="guS-rM-01L" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Rdz-Bb-EMs" secondAttribute="leading" id="YjX-Er-fyV"/>
                                                             <constraint firstItem="guS-rM-01L" firstAttribute="centerX" secondItem="Rdz-Bb-EMs" secondAttribute="centerX" id="oX8-tQ-E6T"/>
                                                         </constraints>
                                                     </view>
@@ -456,7 +460,7 @@
                                                         <constraints>
                                                             <constraint firstItem="lSb-cT-krB" firstAttribute="centerX" secondItem="jsU-uJ-UYJ" secondAttribute="centerX" id="LIe-hX-6Ec"/>
                                                             <constraint firstAttribute="height" constant="50" id="Xe2-cA-aDe"/>
-                                                            <constraint firstAttribute="trailing" secondItem="lSb-cT-krB" secondAttribute="trailing" constant="10" id="gJb-Cw-J0L"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lSb-cT-krB" secondAttribute="trailing" id="gJb-Cw-J0L"/>
                                                             <constraint firstItem="lSb-cT-krB" firstAttribute="centerY" secondItem="jsU-uJ-UYJ" secondAttribute="centerY" id="iKL-pd-TCX"/>
                                                             <constraint firstItem="lSb-cT-krB" firstAttribute="leading" secondItem="jsU-uJ-UYJ" secondAttribute="leading" constant="10" id="kXe-jh-l0T"/>
                                                         </constraints>
@@ -520,7 +524,7 @@
                                                             <constraint firstItem="Kck-z2-7Xb" firstAttribute="leading" secondItem="sNV-N0-Ybu" secondAttribute="leading" constant="10" id="Esd-2r-E9s"/>
                                                             <constraint firstItem="Kck-z2-7Xb" firstAttribute="centerX" secondItem="sNV-N0-Ybu" secondAttribute="centerX" id="KMm-Bp-4y0"/>
                                                             <constraint firstItem="Kck-z2-7Xb" firstAttribute="centerY" secondItem="sNV-N0-Ybu" secondAttribute="centerY" id="X07-1l-Yb9"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Kck-z2-7Xb" secondAttribute="trailing" constant="10" id="zpU-ek-FXu"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Kck-z2-7Xb" secondAttribute="trailing" id="zpU-ek-FXu"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qq5-ds-rQW">
@@ -558,12 +562,16 @@
                     <connections>
                         <outlet property="firstNameLabel" destination="0ca-Qj-RAm" id="NeR-4K-vkg"/>
                         <outlet property="hoursWorked" destination="68h-4V-3nH" id="WEp-K0-tVV"/>
+                        <outlet property="hoursWorkedLabel" destination="reO-Bg-dK8" id="9UZ-5o-6ul"/>
                         <outlet property="idLabel" destination="JXY-7K-ZOI" id="fVU-Ly-A7K"/>
                         <outlet property="lastNameLabel" destination="75Z-Nq-ueN" id="c3g-fH-SiO"/>
                         <outlet property="middleNameLabel" destination="Chc-iU-QGF" id="FSn-y5-9gr"/>
                         <outlet property="middleNameStackView" destination="VTz-yt-pJ1" id="dfs-SC-WWR"/>
                         <outlet property="payCheckLabel" destination="qq5-ds-rQW" id="9ik-aI-0Hu"/>
                         <outlet property="payRateLabel" destination="kJn-cM-RnD" id="wW7-rB-EIX"/>
+                        <outlet property="paycheckLabel" destination="Kck-z2-7Xb" id="0kF-WO-o6f"/>
+                        <outlet property="payrateLabel" destination="lSb-cT-krB" id="uBY-kD-Vdv"/>
+                        <outlet property="viewAddressButton" destination="H1v-Wy-bEY" id="5DW-Sq-fCU"/>
                         <segue destination="VaG-YM-dsr" kind="show" identifier="detailToAddress" id="i0m-Vs-cQg"/>
                     </connections>
                 </viewController>
@@ -707,12 +715,17 @@
                     </view>
                     <connections>
                         <outlet property="cityLabel" destination="8xB-pU-L32" id="zLj-A5-NRN"/>
+                        <outlet property="cityTitleLabel" destination="FOf-TN-ET4" id="yrD-Sy-0zf"/>
                         <outlet property="mapView" destination="KTZ-UE-5nT" id="Odi-BJ-kuV"/>
                         <outlet property="optionalStreetLabel" destination="RhI-ab-kGi" id="Bl8-ky-GDq"/>
                         <outlet property="optionalStreetStack" destination="PqP-vj-LQ1" id="GBV-y4-cFr"/>
                         <outlet property="stateLabel" destination="aga-Qf-vat" id="QVi-Ql-sDz"/>
+                        <outlet property="stateTitleLabel" destination="kh0-Pc-EcF" id="WcC-IU-xS8"/>
+                        <outlet property="street1TitleLabel" destination="GCg-gi-NSn" id="ZWG-XS-Pf3"/>
                         <outlet property="streetLabel" destination="WA0-VQ-oyE" id="hyc-cT-Eyw"/>
+                        <outlet property="streetTitleLabel" destination="TTP-AR-UYr" id="4VJ-lH-nnP"/>
                         <outlet property="zipLabel" destination="l5s-9m-c8i" id="4QB-mc-a2J"/>
+                        <outlet property="zipTitleLabel" destination="U3N-bE-np9" id="V24-Xe-QPo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IdL-fW-TPa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

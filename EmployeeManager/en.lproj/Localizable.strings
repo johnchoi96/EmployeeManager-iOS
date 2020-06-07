@@ -4,24 +4,65 @@
 
   Created by John Choi on 6/6/20.
   Copyright © 2020 John Choi. All rights reserved.
+ 
+  Definitions:
+   ph: placeholder
+   tf: text field
 */
 
+/** UI */
 /** Authentication screens */
+
+"email ph" = "Email";
 
 // sign up screen
 "sign up title" = "Sign Up";
-"Email" = "Email";
-"New Password" = "New Password";
-"Confirm Password" = "Confirm Password";
+"new password ph" = "New Password";
+"confirm password ph" = "Confirm Password";
+"sign up button label" = "Sign Up";
 
 // log in screen
-"log in title" = "Welcome Back";
-"Sign Up" = "Sign Up";
-"Password" = "Password";
-"Log In" = "Log In";
+"log in title" = "Welcome Back!";
+"password ph" = "Password";
+"log in button label" = "Log In";
 
-/** Main */
+/** Welcome screen */
+"sign up button label" = "Sign Up";
+"log in button label" = "Log In";
 
 /** MainMenu */
+"main menu title" = "Main Menu";
+"view employees button label" = "View Employees";
+"add employee button label" = "Add Employee";
+"about button label" = "About";
+"github button label" = "GitHub";
+"logout button label" = "Logout";
 
-/** EmployeeTableViewCell */
+/** EmployeeTableView */
+"table view title" = "Employees";
+
+/** Add Employee View */
+"add employee bar title" = "Add Employee";
+"cancel button" = "Cancel";
+"save button" = "Save";
+"pay rate tf ph" = "Hourly Rate ($)";
+"street tf ph" = "Street";
+"street 2 tf ph" = "Street 2 (Optional)";
+"city tf ph" = "City";
+"state tf" = "State";
+"zip code tf ph" = "Zip Code";
+
+/** Employee Detail View */
+"view address button label" = "View Address";
+"pay rate label" = "Hourly Rate:";
+"hours worked label" = "Hours Worked:";
+"pay check label" = "Pay Check:";
+
+/** Address View */
+"street label" = "Street";
+"street 2 label" = "Street 2";
+"city label" = "City";
+"state label" = "State";
+"zip label" = "Zip";
+
+/** Alert Messages */

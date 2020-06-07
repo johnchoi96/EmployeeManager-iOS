@@ -25,7 +25,8 @@ class LogInViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        title = "Welcome Back!"
+        applyLocalization()
+        
         // delegate setup
         emailField.delegate = self
         passwordField.delegate = self
@@ -41,6 +42,13 @@ class LogInViewController: UIViewController {
         logInButton.isEnabled = true
         
         loginView.layer.cornerRadius = 25
+    }
+    
+    private func applyLocalization() {
+        title = NSLocalizedString("log in title", comment: "Title for log in screen")
+        emailField.placeholder = NSLocalizedString("email ph", comment: "Email field placeholder")
+        passwordField.placeholder = NSLocalizedString("password ph", comment: "Password field placeholder")
+        logInButton.setTitle(NSLocalizedString("log in button label", comment: "Log in button label"), for: .normal)
     }
     
     @IBAction func logInPressed(_ sender: UIButton) {

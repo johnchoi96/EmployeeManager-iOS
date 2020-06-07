@@ -10,17 +10,24 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
-    @IBOutlet weak var signupView: UIButton!
-    @IBOutlet weak var loginView: UIButton!
+    @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        applyLocalization()
+        
         navigationController?.isNavigationBarHidden = true
-        signupView.layer.cornerRadius = 25
-        loginView.layer.cornerRadius = 25
+        signupButton.layer.cornerRadius = 25
+        loginButton.layer.cornerRadius = 25
     }
 
+    private func applyLocalization() {
+        signupButton.setTitle(NSLocalizedString("sign up button label", comment: "Sign up button label"), for: .normal)
+        loginButton.setTitle(NSLocalizedString("log in button label", comment: "Log in button label"), for: .normal)
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         navigationController?.isNavigationBarHidden = false
