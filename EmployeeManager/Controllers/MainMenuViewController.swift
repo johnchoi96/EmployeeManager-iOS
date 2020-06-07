@@ -13,6 +13,10 @@ import SafariServices
 class MainMenuViewController: UIViewController {
     
     @IBOutlet weak var adminImage: UIButton!
+    @IBOutlet weak var viewEmployeesButtonView: UIButton!
+    @IBOutlet weak var addEmployeeButtonView: UIButton!
+    @IBOutlet weak var aboutButtonView: UIButton!
+    @IBOutlet weak var githubButtonView: UIButton!
     
     var handle: AuthStateDidChangeListenerHandle!
     var userEmail: String!
@@ -37,6 +41,13 @@ class MainMenuViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         title = "Main Menu"
+        
+        // button view corner radius setup
+        viewEmployeesButtonView.layer.cornerRadius = 25
+        addEmployeeButtonView.layer.cornerRadius = 25
+        aboutButtonView.layer.cornerRadius = 25
+        githubButtonView.layer.cornerRadius = 25
+        
         navigationItem.hidesBackButton = true
         adminImage.isHidden = true
         checkIfAdmin()

@@ -18,6 +18,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var spinnerView: UIView!
     @IBOutlet weak var signUpButton: UIButton!
     
+    @IBOutlet weak var signupView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +32,8 @@ class SignUpViewController: UIViewController {
         spinnerView.layer.cornerRadius = 10
         spinnerView.alpha = 0.7
         spinnerView.isHidden = true
+        
+        signupView.layer.cornerRadius = 25
     }
     
     /**

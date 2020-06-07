@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i51-VO-Zz3">
-    <device id="retina5_9" orientation="portrait" appearance="dark"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -29,10 +29,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="Osp-oH-lJM">
-                                <rect key="frame" x="0.0" y="339" width="375" height="134"/>
+                                <rect key="frame" x="40" y="339" width="295" height="134"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0R-lA-T5L">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="48"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                         <state key="normal" title="Sign Up">
@@ -43,7 +43,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Idm-0J-bpV">
-                                        <rect key="frame" x="0.0" y="86" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="86" width="295" height="48"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                         <state key="normal" title="Log In">
@@ -68,9 +68,9 @@
                             </constraint>
                             <constraint firstItem="1aO-FW-M3y" firstAttribute="centerX" secondItem="Ih2-Od-gWK" secondAttribute="centerX" id="Blu-sR-rP2"/>
                             <constraint firstItem="R6a-np-71e" firstAttribute="centerX" secondItem="Ih2-Od-gWK" secondAttribute="centerX" id="Fpl-4z-e4K"/>
-                            <constraint firstItem="Osp-oH-lJM" firstAttribute="leading" secondItem="j4a-yC-Rqy" secondAttribute="leading" id="GlW-EX-QHG"/>
+                            <constraint firstItem="Osp-oH-lJM" firstAttribute="leading" secondItem="j4a-yC-Rqy" secondAttribute="leading" constant="40" id="GlW-EX-QHG"/>
                             <constraint firstItem="j4a-yC-Rqy" firstAttribute="bottom" secondItem="R6a-np-71e" secondAttribute="bottom" constant="30" id="KC6-du-tAe"/>
-                            <constraint firstItem="j4a-yC-Rqy" firstAttribute="trailing" secondItem="Osp-oH-lJM" secondAttribute="trailing" id="XAR-se-CTi"/>
+                            <constraint firstItem="j4a-yC-Rqy" firstAttribute="trailing" secondItem="Osp-oH-lJM" secondAttribute="trailing" constant="40" id="XAR-se-CTi"/>
                             <constraint firstItem="Osp-oH-lJM" firstAttribute="centerX" secondItem="Ih2-Od-gWK" secondAttribute="centerX" id="pyf-gh-Znx"/>
                             <constraint firstItem="Osp-oH-lJM" firstAttribute="centerY" secondItem="Ih2-Od-gWK" secondAttribute="centerY" id="qXL-8g-2Rd">
                                 <variation key="heightClass=compact-widthClass=compact" constant="35"/>
@@ -80,6 +80,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="a3S-c6-FeE"/>
                     <connections>
+                        <outlet property="loginView" destination="Idm-0J-bpV" id="oH1-XI-Inj"/>
+                        <outlet property="signupView" destination="P0R-lA-T5L" id="i4z-vg-NTX"/>
                         <segue destination="6qk-yM-55q" kind="show" identifier="welcomeToSignup" id="NNA-WB-v3R"/>
                         <segue destination="mJE-25-rcM" kind="show" identifier="welcomeToLogin" id="Sa1-hE-DLd"/>
                     </connections>

@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="KPp-bl-qYU">
-                                <rect key="frame" x="0.0" y="304.66666666666669" width="375" height="203"/>
+                                <rect key="frame" x="30" y="304.66666666666669" width="315" height="203"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sh0-J9-Jjw">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="48"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                         <state key="normal" title="View Employees">
@@ -31,7 +31,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzl-E9-uA7">
-                                        <rect key="frame" x="0.0" y="78" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="78" width="315" height="48"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                         <state key="normal" title="Add Employee">
@@ -42,10 +42,10 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MV5-ea-WaJ">
-                                        <rect key="frame" x="0.0" y="156" width="375" height="47"/>
+                                        <rect key="frame" x="0.0" y="156" width="315" height="47"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbd-eZ-fKw">
-                                                <rect key="frame" x="0.0" y="0.0" width="182.66666666666666" height="47"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="152.66666666666666" height="47"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                                 <state key="normal" title="About">
@@ -56,7 +56,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVR-Fr-RKp">
-                                                <rect key="frame" x="192.66666666666663" y="0.0" width="182.33333333333337" height="47"/>
+                                                <rect key="frame" x="162.66666666666663" y="0.0" width="152.33333333333337" height="47"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="GitHub" image="github_logo">
                                                     <color key="titleColor" name="AppColor"/>
@@ -99,9 +99,9 @@
                         <constraints>
                             <constraint firstItem="WQx-p5-Qpb" firstAttribute="bottom" secondItem="DfF-GB-wwA" secondAttribute="bottom" constant="30" id="60I-iO-YW4"/>
                             <constraint firstItem="WQx-p5-Qpb" firstAttribute="trailing" secondItem="6rj-LP-gAM" secondAttribute="trailing" id="8w9-1w-aDn"/>
-                            <constraint firstItem="WQx-p5-Qpb" firstAttribute="trailing" secondItem="KPp-bl-qYU" secondAttribute="trailing" id="EXb-YW-H2Z"/>
+                            <constraint firstItem="WQx-p5-Qpb" firstAttribute="trailing" secondItem="KPp-bl-qYU" secondAttribute="trailing" constant="30" id="EXb-YW-H2Z"/>
                             <constraint firstItem="KPp-bl-qYU" firstAttribute="centerY" secondItem="FHz-Z7-2bK" secondAttribute="centerY" id="KQO-94-ut4"/>
-                            <constraint firstItem="KPp-bl-qYU" firstAttribute="leading" secondItem="WQx-p5-Qpb" secondAttribute="leading" id="P5W-fV-T6V"/>
+                            <constraint firstItem="KPp-bl-qYU" firstAttribute="leading" secondItem="WQx-p5-Qpb" secondAttribute="leading" constant="30" id="P5W-fV-T6V"/>
                             <constraint firstItem="KPp-bl-qYU" firstAttribute="centerX" secondItem="FHz-Z7-2bK" secondAttribute="centerX" id="XJG-2I-lZD"/>
                             <constraint firstItem="DfF-GB-wwA" firstAttribute="centerX" secondItem="FHz-Z7-2bK" secondAttribute="centerX" id="ebb-ES-H0I"/>
                             <constraint firstItem="6rj-LP-gAM" firstAttribute="top" secondItem="WQx-p5-Qpb" secondAttribute="top" id="qbN-zk-1YG"/>
@@ -117,7 +117,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="aboutButtonView" destination="tbd-eZ-fKw" id="M2f-pu-O2n"/>
+                        <outlet property="addEmployeeButtonView" destination="wzl-E9-uA7" id="zgj-QC-0IX"/>
                         <outlet property="adminImage" destination="6rj-LP-gAM" id="xUW-jY-hdw"/>
+                        <outlet property="githubButtonView" destination="MVR-Fr-RKp" id="U2G-qQ-71z"/>
+                        <outlet property="viewEmployeesButtonView" destination="Sh0-J9-Jjw" id="gpo-aj-EnM"/>
                         <segue destination="JSo-em-hBb" kind="show" identifier="mainToTable" id="oMy-0H-Bj4"/>
                         <segue destination="W1f-0m-ABP" kind="presentation" identifier="mainToAddEmployee" id="wpL-TF-ION"/>
                     </connections>

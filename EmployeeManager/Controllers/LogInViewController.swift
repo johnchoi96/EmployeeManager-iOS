@@ -17,6 +17,8 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var logInButton: UIButton!
     
+    @IBOutlet weak var loginView: UIButton!
+    
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
@@ -37,6 +39,8 @@ class LogInViewController: UIViewController {
         }
         emailField.becomeFirstResponder()
         logInButton.isEnabled = true
+        
+        loginView.layer.cornerRadius = 25
     }
     
     @IBAction func logInPressed(_ sender: UIButton) {

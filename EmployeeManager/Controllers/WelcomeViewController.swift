@@ -10,10 +10,15 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
+    @IBOutlet weak var signupView: UIButton!
+    @IBOutlet weak var loginView: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         navigationController?.isNavigationBarHidden = true
+        signupView.layer.cornerRadius = 25
+        loginView.layer.cornerRadius = 25
     }
 
     override func viewWillDisappear(_ animated: Bool) {
