@@ -35,6 +35,7 @@ class AddEmployeeViewController: UIViewController {
     private let OK = NSLocalizedString("OK message", comment: "OK message used for alert action button label")
     private let CANCEL = NSLocalizedString("Cancel message", comment: "Cancel message used for alert action button label")
     private let GO_BACK = NSLocalizedString("go back message", comment: "Go Back message used for alert action button label")
+    private let YES = NSLocalizedString("Yes message", comment: "Yes message used for alert action button label")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,7 +115,7 @@ class AddEmployeeViewController: UIViewController {
     @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
         if edited {
             let alert = UIAlertController(title: NSLocalizedString("cancel confirmation alert", comment: ""), message: NSLocalizedString("cancel confirmation alert message", comment: ""), preferredStyle: .alert)
-            let cancelAction = UIAlertAction(title: self.CANCEL, style: .cancel) { (action) in
+            let cancelAction = UIAlertAction(title: self.YES, style: .cancel) { (action) in
                 self.dismiss(animated: true, completion: nil)
             }
             let gobackAction = UIAlertAction(title: self.GO_BACK, style: .default, handler: nil)
