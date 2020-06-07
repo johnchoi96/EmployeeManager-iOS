@@ -80,7 +80,13 @@ class SignUpViewController: UIViewController {
         // Firebase Auth create user
         Auth.auth().createUser(withEmail: email, password: passwordField.text!) { authResult, error in
             if error != nil {
-                self.displayAlert(title: NSLocalizedString("sign up issue alert", comment: ""), message: NSLocalizedString("sign up issue alert message", comment: ""))
+                var alertTitle = NSLocalizedString("sign up issue alert", comment: "")
+                var alertMessage = NSLocalizedString("sign up issue alert message", comment: "")
+                if error!.localizedDescription == "The email address is already in use by another account." {
+                    alertTitle = NSLocalizedString("email already taken alert", comment: "")
+                    alertMessage = NSLocalizedString("email already taken alert message", comment: "")
+                }
+                self.displayAlert(title: alertTitle, message: alertMessage)
                 self.spinner.stopAnimating()
                 self.spinnerView.isHidden = true
                 return

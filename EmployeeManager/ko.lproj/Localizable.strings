@@ -89,6 +89,8 @@
 "password mismatch alert" = "비밀번호가 일치하지 않습니다!";
 "password mismatch alert message" = "비밀번호를 다시 입력해주세요";
 "password request alert message" = "비밀번호를 입력해주세요";
+"email already taken alert" = "이미 사용중인 이메일 입니다.";
+"email already taken alert message" = "다른 이메일을 사용해주세요.";
 
 /** LogInViewController */
 

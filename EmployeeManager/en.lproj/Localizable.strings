@@ -89,6 +89,8 @@
 "password mismatch alert" = "Password mismatch!";
 "password mismatch alert message" = "Passwords must match";
 "password request alert message" = "Please enter password";
+"email already taken alert" = "The email address is already in use by another account.";
+"email already taken alert message" = "Please choose another email.";
 
 /** LogInViewController */
 
