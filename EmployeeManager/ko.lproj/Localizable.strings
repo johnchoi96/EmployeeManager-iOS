@@ -65,6 +65,16 @@
 "state label" = "주";
 "zip label" = "우편번호";
 
+/** About View */
+
+"app version label" = "버전:";
+"build number label" = "빌드:";
+
+
+
+
+
+
 /** Alert Messages */
 
 "OK message" = "확인";

@@ -29,6 +29,7 @@ struct K {
         static let tableToEmployeeDetail = "tableToEmployeeDetail"
         static let mainToAddEmployee = "mainToAddEmployee"
         static let detailToAddress = "detailToAddress"
+        static let mainToAbout = "mainToAbout"
     }
     
     static var APP_VERSION: String {
@@ -37,5 +38,9 @@ struct K {
     
     static var BUILD_NUMBER: String {
         return Bundle.main.infoDictionary?["CFBundleVersion"] as! String
+    }
+    
+    static var OS: String {
+        return Bundle.main.infoDictionary?["DTPlatformVersion"] as! String
     }
 }

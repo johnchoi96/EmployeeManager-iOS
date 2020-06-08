@@ -65,6 +65,12 @@
 "state label" = "State";
 "zip label" = "Zip";
 
+/** About View */
+
+"app version label" = "App Version:";
+"build number label" = "Build Number:";
+
+
 /** Alert Messages */
 
 "OK message" = "OK";
