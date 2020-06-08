@@ -18,6 +18,7 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var aboutButton: UIButton!
     @IBOutlet weak var githubButton: UIButton!
     @IBOutlet weak var logoutButton: UIBarButtonItem!
+    @IBOutlet weak var buildNumberLabel: UILabel!
     
     var handle: AuthStateDidChangeListenerHandle!
     var userEmail: String!
@@ -51,6 +52,8 @@ class MainMenuViewController: UIViewController {
         
         navigationItem.hidesBackButton = true
         adminImage.isHidden = true
+        
+        buildNumberLabel.text = String(format: "Version: %@, Build %@", K.APP_VERSION, K.BUILD_NUMBER)
         checkIfAdmin()
     }
     

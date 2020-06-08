@@ -94,6 +94,12 @@
                                     <action selector="adminIndicatorPressed:" destination="Gur-dT-MaA" eventType="touchUpInside" id="QZX-lT-3tn"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Build Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmQ-eM-7r9">
+                                <rect key="frame" x="135.33333333333334" y="758" width="104.33333333333334" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" name="AppColor"/>
                         <constraints>
@@ -104,7 +110,9 @@
                             <constraint firstItem="KPp-bl-qYU" firstAttribute="leading" secondItem="WQx-p5-Qpb" secondAttribute="leading" constant="30" id="P5W-fV-T6V"/>
                             <constraint firstItem="KPp-bl-qYU" firstAttribute="centerX" secondItem="FHz-Z7-2bK" secondAttribute="centerX" id="XJG-2I-lZD"/>
                             <constraint firstItem="DfF-GB-wwA" firstAttribute="centerX" secondItem="FHz-Z7-2bK" secondAttribute="centerX" id="ebb-ES-H0I"/>
+                            <constraint firstItem="kmQ-eM-7r9" firstAttribute="top" secondItem="DfF-GB-wwA" secondAttribute="bottom" constant="10" id="kFH-H5-xUD"/>
                             <constraint firstItem="6rj-LP-gAM" firstAttribute="top" secondItem="WQx-p5-Qpb" secondAttribute="top" id="qbN-zk-1YG"/>
+                            <constraint firstItem="kmQ-eM-7r9" firstAttribute="centerX" secondItem="FHz-Z7-2bK" secondAttribute="centerX" id="xev-Pt-8bs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WQx-p5-Qpb"/>
                     </view>
@@ -120,6 +128,7 @@
                         <outlet property="aboutButton" destination="tbd-eZ-fKw" id="M2f-pu-O2n"/>
                         <outlet property="addEmployeeButton" destination="wzl-E9-uA7" id="zgj-QC-0IX"/>
                         <outlet property="adminImage" destination="6rj-LP-gAM" id="xUW-jY-hdw"/>
+                        <outlet property="buildNumberLabel" destination="kmQ-eM-7r9" id="bHZ-KO-63h"/>
                         <outlet property="githubButton" destination="MVR-Fr-RKp" id="U2G-qQ-71z"/>
                         <outlet property="logoutButton" destination="Tn2-Ux-5XA" id="ahv-rR-XK9"/>
                         <outlet property="viewEmployeesButton" destination="Sh0-J9-Jjw" id="gpo-aj-EnM"/>

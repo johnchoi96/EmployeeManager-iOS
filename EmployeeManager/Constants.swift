@@ -30,4 +30,12 @@ struct K {
         static let mainToAddEmployee = "mainToAddEmployee"
         static let detailToAddress = "detailToAddress"
     }
+    
+    static var APP_VERSION: String {
+        return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+    }
+    
+    static var BUILD_NUMBER: String {
+        return Bundle.main.infoDictionary?["CFBundleVersion"] as! String
+    }
 }
