@@ -18,7 +18,6 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var aboutButton: UIButton!
     @IBOutlet weak var githubButton: UIButton!
     @IBOutlet weak var logoutButton: UIBarButtonItem!
-    @IBOutlet weak var buildNumberLabel: UILabel!
     
     var handle: AuthStateDidChangeListenerHandle!
     var userEmail: String!
@@ -53,7 +52,6 @@ class MainMenuViewController: UIViewController {
         navigationItem.hidesBackButton = true
         adminImage.isHidden = true
         
-        buildNumberLabel.text = String(format: "Version: %@, Build %@", K.APP_VERSION, K.BUILD_NUMBER)
         checkIfAdmin()
     }
     
@@ -81,18 +79,18 @@ class MainMenuViewController: UIViewController {
         }
     }
     
+    @IBAction func aboutPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: K.Segues.mainToAbout, sender: self)
+    }
+    
     /**
-     Handles button behavior for the last row of buttons.
-     "About" button has tag 0, "GitHub" button has tag 1.
-     - Parameter sender: either About or GitHub button
+     Handles button behavior for the github button.
+     Shows the repo for this app.
+     - Parameter sender: GitHub button
      */
-    @IBAction func aboutOrGithubPressed(_ sender: UIButton) {
-        var address = ""
-        if sender.tag == 0 {
-            address = "https://johnchoi96.github.io/"
-        } else { // button has tag = 1
-            address = "https://johnchoi96.github.io/EmployeeManager-iOS/"
-        }
+    @IBAction func githubPressed(_ sender: UIButton) {
+        let address = "https://johnchoi96.github.io/EmployeeManager-iOS/"
+
         guard let url = URL(string: address) else {
             let alert = UIAlertController(title: NSLocalizedString("cannot load page alert", comment: ""), message: NSLocalizedString("cannot load page alert message", comment: ""), preferredStyle: .alert)
             let action = UIAlertAction(title: NSLocalizedString("Close message", comment: ""), style: .cancel) { (action) in
