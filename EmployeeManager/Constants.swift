@@ -41,6 +41,6 @@ struct K {
     }
     
     static var OS: String {
-        return Bundle.main.infoDictionary?["DTPlatformVersion"] as! String
+        return "iOS \(Bundle.main.infoDictionary?["DTPlatformVersion"] as! String)"
     }
 }
