@@ -18,7 +18,8 @@ struct Employee {
     let lastName: String
     let id: String
     var payRate: Float
-    
+    let address: Address
+
     /**
      Returns the full name for this employee.
      If middle name is nil, only first and last names are returned.

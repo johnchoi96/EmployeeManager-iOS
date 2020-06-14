@@ -12,7 +12,14 @@ struct K {
     
     static let employeeCell = "employeeCell"
     static let employeeCellName = "EmployeeTableViewCell"
-    
+    static let states = ["AK", "AL", "AR", "AZ", "CA", "CO", "CT",
+                         "DE", "FL", "GA", "HI", "IA", "ID", "IL",
+                         "IN", "KS", "KY", "LA", "MA", "MD", "ME",
+                         "MI", "MN", "MO", "MS", "MT", "NC", "ND",
+                         "NE", "NH", "NJ", "NM", "NV", "NY", "OH",
+                         "OK", "OR", "PA", "RI", "SC", "SD", "TN",
+                         "TX", "UT", "VA", "VT", "WA", "WI", "WV",
+                         "WY"]
     struct Segues {
         static let welcomeToSignup = "welcomeToSignup"
         static let welcomeToLogin = "welcomeToLogin"
@@ -21,5 +28,19 @@ struct K {
         static let mainToTable = "mainToTable"
         static let tableToEmployeeDetail = "tableToEmployeeDetail"
         static let mainToAddEmployee = "mainToAddEmployee"
+        static let detailToAddress = "detailToAddress"
+        static let mainToAbout = "mainToAbout"
+    }
+    
+    static var APP_VERSION: String {
+        return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+    }
+    
+    static var BUILD_NUMBER: String {
+        return Bundle.main.infoDictionary?["CFBundleVersion"] as! String
+    }
+    
+    static var OS: String {
+        return "iOS \(Bundle.main.infoDictionary?["DTPlatformVersion"] as! String)"
     }
 }

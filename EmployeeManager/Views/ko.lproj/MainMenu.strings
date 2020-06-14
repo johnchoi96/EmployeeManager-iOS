@@ -1,0 +1,126 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "0ca-Qj-RAm"; */
+"0ca-Qj-RAm.text" = "Label";
+
+/* Class = "UILabel"; text = "Middle Name:"; ObjectID = "5F8-Zo-AZS"; */
+"5F8-Zo-AZS.text" = "Middle Name:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "75Z-Nq-ueN"; */
+"75Z-Nq-ueN.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "8xB-pU-L32"; */
+"8xB-pU-L32.text" = "Label";
+
+/* Class = "UILabel"; text = "First Name:"; ObjectID = "B7o-HP-Q5N"; */
+"B7o-HP-Q5N.text" = "First Name:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Chc-iU-QGF"; */
+"Chc-iU-QGF.text" = "Label";
+
+/* Class = "UILabel"; text = "John Choi 2020"; ObjectID = "DfF-GB-wwA"; */
+"DfF-GB-wwA.text" = "John Choi 2020";
+
+/* Class = "UITextField"; placeholder = "Pay Rate ($)"; ObjectID = "FNI-ii-XYY"; */
+"FNI-ii-XYY.placeholder" = "Pay Rate ($)";
+
+/* Class = "UILabel"; text = "City"; ObjectID = "FOf-TN-ET4"; */
+"FOf-TN-ET4.text" = "City";
+
+/* Class = "UINavigationItem"; title = "<Full Name>"; ObjectID = "G4e-aR-1FY"; */
+"G4e-aR-1FY.title" = "<Full Name>";
+
+/* Class = "UILabel"; text = "Street1"; ObjectID = "GCg-gi-NSn"; */
+"GCg-gi-NSn.text" = "Street1";
+
+/* Class = "UIButton"; normalTitle = "View Address"; ObjectID = "H1v-Wy-bEY"; */
+"H1v-Wy-bEY.normalTitle" = "View Address";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "JXY-7K-ZOI"; */
+"JXY-7K-ZOI.text" = "Label";
+
+/* Class = "UILabel"; text = "Pay Check:"; ObjectID = "Kck-z2-7Xb"; */
+"Kck-z2-7Xb.text" = "Pay Check:";
+
+/* Class = "UIButton"; normalTitle = "GitHub"; ObjectID = "MVR-Fr-RKp"; */
+"MVR-Fr-RKp.normalTitle" = "GitHub";
+
+/* Class = "UITextField"; placeholder = "First Name"; ObjectID = "Npa-Zy-BHq"; */
+"Npa-Zy-BHq.placeholder" = "First Name";
+
+/* Class = "UILabel"; text = "Last Name:"; ObjectID = "O0L-yf-8Zm"; */
+"O0L-yf-8Zm.text" = "Last Name:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "RhI-ab-kGi"; */
+"RhI-ab-kGi.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Last Name"; ObjectID = "SBX-68-OFq"; */
+"SBX-68-OFq.placeholder" = "Last Name";
+
+/* Class = "UIButton"; normalTitle = "View Employees"; ObjectID = "Sh0-J9-Jjw"; */
+"Sh0-J9-Jjw.normalTitle" = "View Employees";
+
+/* Class = "UILabel"; text = "Street"; ObjectID = "TTP-AR-UYr"; */
+"TTP-AR-UYr.text" = "Street";
+
+/* Class = "UIBarButtonItem"; title = "Logout"; ObjectID = "Tn2-Ux-5XA"; */
+"Tn2-Ux-5XA.title" = "Logout";
+
+/* Class = "UILabel"; text = "Zip"; ObjectID = "U3N-bE-np9"; */
+"U3N-bE-np9.text" = "Zip";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "WA0-VQ-oyE"; */
+"WA0-VQ-oyE.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "aga-Qf-vat"; */
+"aga-Qf-vat.text" = "Label";
+
+/* Class = "UILabel"; text = "ID:"; ObjectID = "guS-rM-01L"; */
+"guS-rM-01L.text" = "ID:";
+
+/* Class = "UINavigationItem"; title = "Add Employee"; ObjectID = "h6E-tD-3q6"; */
+"h6E-tD-3q6.title" = "Add Employee";
+
+/* Class = "UITextField"; placeholder = "Street"; ObjectID = "h6F-dE-XpM"; */
+"h6F-dE-XpM.placeholder" = "Street";
+
+/* Class = "UITextField"; placeholder = "Street 2 (Optional)"; ObjectID = "iUg-uh-0LY"; */
+"iUg-uh-0LY.placeholder" = "Street 2 (Optional)";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "kJn-cM-RnD"; */
+"kJn-cM-RnD.text" = "Label";
+
+/* Class = "UILabel"; text = "State: "; ObjectID = "kO5-BM-usk"; */
+"kO5-BM-usk.text" = "State: ";
+
+/* Class = "UILabel"; text = "State"; ObjectID = "kh0-Pc-EcF"; */
+"kh0-Pc-EcF.text" = "State";
+
+/* Class = "UITextField"; placeholder = "Zip Code"; ObjectID = "l5p-kf-XzW"; */
+"l5p-kf-XzW.placeholder" = "Zip Code";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "l5s-9m-c8i"; */
+"l5s-9m-c8i.text" = "Label";
+
+/* Class = "UILabel"; text = "Pay Rate:"; ObjectID = "lSb-cT-krB"; */
+"lSb-cT-krB.text" = "Pay Rate:";
+
+/* Class = "UINavigationItem"; title = "Employees"; ObjectID = "mMK-Ye-LYS"; */
+"mMK-Ye-LYS.title" = "Employees";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qq5-ds-rQW"; */
+"qq5-ds-rQW.text" = "Label";
+
+/* Class = "UILabel"; text = "Hours Worked:"; ObjectID = "reO-Bg-dK8"; */
+"reO-Bg-dK8.text" = "Hours Worked:";
+
+/* Class = "UITextField"; placeholder = "City"; ObjectID = "tRC-R7-u08"; */
+"tRC-R7-u08.placeholder" = "City";
+
+/* Class = "UIButton"; normalTitle = "About"; ObjectID = "tbd-eZ-fKw"; */
+"tbd-eZ-fKw.normalTitle" = "About";
+
+/* Class = "UITextField"; placeholder = "Middle Name (Optional)"; ObjectID = "vYr-Xv-dN1"; */
+"vYr-Xv-dN1.placeholder" = "Middle Name (Optional)";
+
+/* Class = "UIButton"; normalTitle = "Add Employee"; ObjectID = "wzl-E9-uA7"; */
+"wzl-E9-uA7.normalTitle" = "Add Employee";

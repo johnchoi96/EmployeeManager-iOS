@@ -15,6 +15,9 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var spinnerView: UIView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var logInButton: UIButton!
+    
+    @IBOutlet weak var loginView: UIButton!
     
     let defaults = UserDefaults.standard
     
@@ -22,7 +25,8 @@ class LogInViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        title = "Welcome Back!"
+        applyLocalization()
+        
         // delegate setup
         emailField.delegate = self
         passwordField.delegate = self
@@ -35,6 +39,16 @@ class LogInViewController: UIViewController {
             emailField.text = email
         }
         emailField.becomeFirstResponder()
+        logInButton.isEnabled = true
+        
+        loginView.layer.cornerRadius = 25
+    }
+    
+    private func applyLocalization() {
+        title = NSLocalizedString("log in title", comment: "Title for log in screen")
+        emailField.placeholder = NSLocalizedString("email ph", comment: "Email field placeholder")
+        passwordField.placeholder = NSLocalizedString("password ph", comment: "Password field placeholder")
+        logInButton.setTitle(NSLocalizedString("log in button label", comment: "Log in button label"), for: .normal)
     }
     
     @IBAction func logInPressed(_ sender: UIButton) {
@@ -54,8 +68,9 @@ class LogInViewController: UIViewController {
                 if error != nil {
                     strongSelf.spinner.stopAnimating()
                     strongSelf.spinnerView.isHidden = true
-                    let alert = UIAlertController(title: "Sign in failed!", message: "There was a problem signing in", preferredStyle: .alert)
-                    let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    strongSelf.logInButton.isEnabled = true
+                    let alert = UIAlertController(title: NSLocalizedString("sign in failed alert", comment: ""), message: NSLocalizedString("sign in failed alert message", comment: ""), preferredStyle: .alert)
+                    let action = UIAlertAction(title: NSLocalizedString("OK message", comment: ""), style: .default, handler: nil)
                     alert.addAction(action)
                     strongSelf.present(alert, animated: true, completion: {
                         return
@@ -68,6 +83,9 @@ class LogInViewController: UIViewController {
                 strongSelf.performSegue(withIdentifier: K.Segues.loginToMain, sender: self)
             }
             
+        } else {
+            spinner.stopAnimating()
+            spinnerView.isHidden = true
         }
     }
 
@@ -78,8 +96,8 @@ class LogInViewController: UIViewController {
     private func checkEmail() -> Bool {
         if let email = emailField.text {
             if !email.isValidEmail() {
-                let alert = UIAlertController(title: "Invalid email!", message: "Please enter valid email", preferredStyle: .alert)
-                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                let alert = UIAlertController(title: NSLocalizedString("invalid email alert", comment: ""), message: NSLocalizedString("invalid email alert message", comment: ""), preferredStyle: .alert)
+                let action = UIAlertAction(title: NSLocalizedString("OK message", comment: ""), style: .default, handler: nil)
                 alert.addAction(action)
                 self.present(alert, animated: true, completion: nil)
                 return false
@@ -95,8 +113,8 @@ class LogInViewController: UIViewController {
     private func checkPassword() -> Bool {
         if let password = passwordField.text {
             if password.count == 0 {
-                let alert = UIAlertController(title: "Please enter password", message: "", preferredStyle: .alert)
-                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                let alert = UIAlertController(title: NSLocalizedString("invalid password no input alert message", comment: ""), message: "", preferredStyle: .alert)
+                let action = UIAlertAction(title: NSLocalizedString("OK message", comment: ""), style: .default, handler: nil)
                 alert.addAction(action)
                 self.present(alert, animated: true, completion: nil)
                 return false
@@ -119,6 +137,7 @@ extension LogInViewController: UITextFieldDelegate {
             if !checkPassword() {
                 return false
             }
+            logInButton.isEnabled = false
             textField.resignFirstResponder()
             logIn()
         }

@@ -20,11 +20,17 @@ class EmployeeTableViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        title = "Employees"
+        applyLocalization()
+        
+        employeeTable.rowHeight = 44
         employeeTable.dataSource = self
         employeeTable.delegate = self
         employeeTable.register(UINib(nibName: K.employeeCellName, bundle: nil), forCellReuseIdentifier: K.employeeCell)
         readData()
+    }
+    
+    private func applyLocalization() {
+        title = NSLocalizedString("table view title", comment: "Table view title")
     }
     
     private func readData() {
@@ -34,13 +40,17 @@ class EmployeeTableViewController: UIViewController {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
                     let firstName = document.data()["firstName"] as! String
                     let lastName = document.data()["lastName"] as! String
                     let id = document.data()["id"] as! String
                     let middleName = document.data()["middleName"] as! String?
                     let payRate = document.data()["payRate"] as! Float
-                    let employee = Employee(firstName: firstName, middleName: middleName, lastName: lastName, id: id, payRate: payRate)
+                    let address = Address(street: document.data()["street"] as! String,
+                                          street1: document.data()["optionalStreet"] as! String?,
+                                          city: document.data()["city"] as! String,
+                                          state: document.data()["state"] as! String,
+                                          zip: document.data()["zip"] as! String)
+                    let employee = Employee(firstName: firstName, middleName: middleName, lastName: lastName, id: id, payRate: payRate, address: address)
                     self.employeeManager.employees.append(employee)
                 }
                 // finished getting all employee data so reload the table
@@ -69,7 +79,7 @@ extension EmployeeTableViewController: UITableViewDataSource {
 // MARK: - Table View delegate section
 extension EmployeeTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.cellForRow(at: indexPath)?.isSelected = false
+        tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: K.Segues.tableToEmployeeDetail, sender: employeeManager.employees[indexPath.row])
     }
     
@@ -88,8 +98,9 @@ extension EmployeeTableViewController: UITableViewDelegate {
             let docId = employeeManager.employees[indexPath.row].docId
             db.collection("employees").document(docId).delete() { err in
                 if let err = err {
-                    let alert = UIAlertController(title: "Problem occured while deleting employee!", message: "Error: \(err)", preferredStyle: .alert)
-                    let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    let errorMessage = String.localizedStringWithFormat(NSLocalizedString("error while deleting employee alert message", comment: ""), String(describing: err))
+                    let alert = UIAlertController(title: NSLocalizedString("error while deleting employee alert", comment: ""), message: errorMessage, preferredStyle: .alert)
+                    let action = UIAlertAction(title: NSLocalizedString("OK message", comment: ""), style: .default, handler: nil)
                     alert.addAction(action)
                     self.present(alert, animated: true) {
                         return

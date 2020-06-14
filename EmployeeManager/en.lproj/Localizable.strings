@@ -1,0 +1,144 @@
+/* 
+  Localizable.strings
+  EmployeeManager
+
+  Created by John Choi on 6/6/20.
+  Copyright © 2020 John Choi. All rights reserved.
+ 
+  Definitions:
+   ph: placeholder
+   tf: text field
+*/
+
+/** UI */
+/** Authentication screens */
+
+"email ph" = "Email";
+
+// sign up screen
+"sign up title" = "Sign Up";
+"new password ph" = "New Password";
+"confirm password ph" = "Confirm Password";
+"sign up button label" = "Sign Up";
+
+// log in screen
+"log in title" = "Welcome Back!";
+"password ph" = "Password";
+"log in button label" = "Log In";
+
+/** Welcome screen */
+"sign up button label" = "Sign Up";
+"log in button label" = "Log In";
+
+/** MainMenu */
+"main menu title" = "Main Menu";
+"view employees button label" = "View Employees";
+"add employee button label" = "Add Employee";
+"about button label" = "About";
+"github button label" = "GitHub";
+"logout button label" = "Logout";
+
+/** EmployeeTableView */
+"table view title" = "Employees";
+
+/** Add Employee View */
+"add employee bar title" = "Add Employee";
+"cancel button" = "Cancel";
+"save button" = "Save";
+"pay rate tf ph" = "Hourly Rate ($)";
+"street tf ph" = "Street";
+"street 2 tf ph" = "Street 2 (Optional)";
+"city tf ph" = "City";
+"state tf" = "State";
+"zip code tf ph" = "Zip Code";
+
+/** Employee Detail View */
+"view address button label" = "View Address";
+"pay rate label" = "Hourly Rate:";
+"hours worked label" = "Hours Worked:";
+"pay check label" = "Pay Check:";
+
+/** Address View */
+"street label" = "Street";
+"street 2 label" = "Street 2";
+"city label" = "City";
+"state label" = "State";
+"zip label" = "Zip";
+
+/** About View */
+
+"app version label" = "App Version:";
+"build number label" = "Build Number:";
+
+
+/** Alert Messages */
+
+"OK message" = "OK";
+"Cancel message" = "Cancel";
+"Close message" = "Close";
+"Error message" = "Error";
+"Success message" = "Success";
+"Yes message" = "Yes";
+"No message" = "No";
+
+/** SignUpViewController */
+
+"please enter email alert" = "Please enter email!";
+"please enter email alert message" = "Email must be provided";
+"invalid email alert" = "Invalid email!";
+"invalid email alert message" = "Please enter a valid email";
+"sign up issue alert" = "There was a issue signing up the user";
+"sign up issue alert message" = "Please try again later";
+"invalid password alert" = "Invalid password!";
+"invalid password alert message" = "Password must be at least 6 characters long!";
+"invalid password no input alert message" = "Please enter password";
+"password mismatch alert" = "Password mismatch!";
+"password mismatch alert message" = "Passwords must match";
+"password request alert message" = "Please enter password";
+"email already taken alert" = "The email address is already in use by another account.";
+"email already taken alert message" = "Please choose another email.";
+
+/** LogInViewController */
+
+"sign in failed alert" = "Sign in failed!";
+"sign in failed alert message" = "There was a problem signing in";
+
+/** MainMenuViewController */
+
+"cannot load page alert" = "Cannot load page";
+"cannot load page alert message" = "Error occurred while loading page";
+"add employee permission issue alert" = "You do not have permission to add employee";
+"you are an admin alert" = "You are an admin";
+"you are an admin alert message" = "You may add or remove employee.";
+
+/** EmployeeTableViewController */
+
+"error while deleting employee alert" = "Problem occured while deleting employee!";
+"error while deleting employee alert message" = "Error: %s";
+
+/** AddEmployeeViewController */
+
+"saving problem alert message" = "Problem occured while saving. Please try again later";
+"employee add confirmation message" = "New employee, \"%s\", successfully added.\n\nID: %s";
+"cancel confirmation alert" = "Data unsaved";
+"cancel confirmation alert message" = "Are you sure you want to cancel?";
+"go back message" = "Go Back";
+"name required alert" = "Name required!";
+"name required alert message" = "First and last names must be provided.";
+"hourly rate required alert" = "Hourly rate must be provided";
+"cannot contain space alert" = "Name fields may not contain spaces.";
+"please retype name message" = "Please retype the name.";
+"cannot contain numbers alert" = "Name may not contain numbers.";
+"address incomplete alert" = "Address incomplete!";
+"address incomplete alert message" = "Street, City, State, and Zip Code are required.";
+
+/** EmployeeDetailViewController */
+
+"copied confirmation alert" = "Copied!";
+
+/** AddressViewController */
+
+"location permission denied alert" = "Location permission denied.";
+"location permission denied alert message" = "Would you like to manually approve?";
+"error getting location" = "Problem occured while retrieving location";
+"annotation current location" = "Current Location";

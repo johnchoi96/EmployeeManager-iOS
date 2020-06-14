@@ -1,0 +1,148 @@
+/* 
+  Localizable.strings
+  EmployeeManager
+
+  Created by John Choi on 6/6/20.
+  Copyright © 2020 John Choi. All rights reserved.
+ 
+  Definitions:
+   ph: placeholder
+   tf: text field
+*/
+
+/** UI */
+/** Authentication screens */
+
+"email ph" = "이메일";
+
+// sign up screen
+"sign up title" = "회원가입";
+"new password ph" = "새로운 비밀번호";
+"confirm password ph" = "비밀번호 확인";
+"sign up button label" = "회원가입";
+
+// log in screen
+"log in title" = "환영합니다!";
+"password ph" = "비밀번호";
+"log in button label" = "로그인";
+
+/** Welcome screen */
+"sign up button label" = "회원가입";
+"log in button label" = "로그인";
+
+/** MainMenu */
+"main menu title" = "메인메뉴";
+"view employees button label" = "직원들 보기";
+"add employee button label" = "직원 생성";
+"about button label" = "About";
+"github button label" = "GitHub";
+"logout button label" = "로그아웃";
+
+/** EmployeeTableView */
+"table view title" = "직원명단";
+
+/** Add Employee View */
+"add employee bar title" = "직원 생성";
+"cancel button" = "취소";
+"save button" = "저장";
+"pay rate tf ph" = "시급 ($)";
+"street tf ph" = "길";
+"street 2 tf ph" = "길 2 (선택)";
+"city tf ph" = "도시";
+"state tf" = "주";
+"zip code tf ph" = "우편번호";
+
+/** Employee Detail View */
+"view address button label" = "주소 보기";
+"pay rate label" = "시급:";
+"hours worked label" = "일한 시간:";
+"pay check label" = "급여:";
+
+/** Address View */
+"street label" = "길";
+"street 2 label" = "길 2";
+"city label" = "도시";
+"state label" = "주";
+"zip label" = "우편번호";
+
+/** About View */
+
+"app version label" = "버전:";
+"build number label" = "빌드:";
+
+
+
+
+
+
+/** Alert Messages */
+
+"OK message" = "확인";
+"Cancel message" = "취소";
+"Close message" = "닫기";
+"Error message" = "에러";
+"Success message" = "성공";
+"Yes message" = "네";
+"No message" = "아니오";
+
+/** SignUpViewController */
+
+"please enter email alert" = "이메일을 입력하세요!";
+"please enter email alert message" = "이메일이 필요합니다";
+"invalid email alert" = "잘못된 이메일 주소입니다!";
+"invalid email alert message" = "올바른 이메일을 입력하세요";
+"sign up issue alert" = "회원가입 도중 문제가 발생했습니다";
+"sign up issue alert message" = "나중에 다시 시도해주세요";
+"invalid password alert" = "잘못된 비밀번호입니다!";
+"invalid password alert message" = "비밀번호는 6자리 이상이여야 합니다!";
+"invalid password no input alert message" = "비밀번호를 입력하세요";
+"password mismatch alert" = "비밀번호가 일치하지 않습니다!";
+"password mismatch alert message" = "비밀번호를 다시 입력해주세요";
+"password request alert message" = "비밀번호를 입력해주세요";
+"email already taken alert" = "이미 사용중인 이메일 입니다.";
+"email already taken alert message" = "다른 이메일을 사용해주세요.";
+
+/** LogInViewController */
+
+"sign in failed alert" = "로그인 도중 문제가 발생했습니다!";
+"sign in failed alert message" = "이메일과 비밀번호를 확인하시고 다시 시도해주세요";
+
+/** MainMenuViewController */
+
+"cannot load page alert" = "페이지를 열 수 없습니다";
+"cannot load page alert message" = "페이지를 로딩중 문제가 발생했습니다";
+"add employee permission issue alert" = "권한이 없습니다";
+"you are an admin alert" = "관리자 입니다";
+"you are an admin alert message" = "직원을 추가하거나 삭제할수 있습니다.";
+
+/** EmployeeTableViewController */
+
+"error while deleting employee alert" = "직원을 삭제하는 도중 문제가 발생했습니다!";
+"error while deleting employee alert message" = "에러: %s";
+
+/** AddEmployeeViewController */
+
+"saving problem alert message" = "정보를 저장 중 문제가 발생했습니다";
+"employee add confirmation message" = "새로운 직원, \"%s\", 님을 성공적으로 추가했습니다.\n\nID: %s";
+"cancel confirmation alert" = "저장되지 않은 정보가 있습니다";
+"cancel confirmation alert message" = "정말로 닫으시겠습니까?";
+"go back message" = "아니오";
+"name required alert" = "이름이 필요합니다!";
+"name required alert message" = "이름과 성이 필요합니다.";
+"hourly rate required alert" = "시급을 입력하세요";
+"cannot contain space alert" = "이름엔 공백이 있을 수 없습니다.";
+"please retype name message" = "이름을 재입력 해주세요.";
+"cannot contain numbers alert" = "이름엔 숫자가 있을 수 없습니다.";
+"address incomplete alert" = "잘못 된 주소입니다!";
+"address incomplete alert message" = "길, 도시, 주, 그리고 우편번호를 입력하세요.";
+
+/** EmployeeDetailViewController */
+
+"copied confirmation alert" = "복사됨!";
+
+/** AddressViewController */
+
+"location permission denied alert" = "위치서비스가 비활성화 되어있습니다.";
+"location permission denied alert message" = "위치서비스를 켜겠습니까?";
+"error getting location" = "위치 정보를 받는 도중 문제가 발생했습니다";
+"annotation current location" = "현재 위치";
