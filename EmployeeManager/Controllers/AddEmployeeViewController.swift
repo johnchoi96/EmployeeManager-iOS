@@ -235,7 +235,8 @@ extension AddEmployeeViewController: UIPickerViewDataSource, UIPickerViewDelegat
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        state = K.states[row]
+        let stateName = K.states[row]
+        state = K.statesDictionary[stateName]
     }
 }
 

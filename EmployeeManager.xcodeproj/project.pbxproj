@@ -22,6 +22,7 @@
 		D22C7A8F2473894D00FA5DFC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A8E2473894D00FA5DFC /* Constants.swift */; };
 		D22C7A962473AC2F00FA5DFC /* EmployeeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A952473AC2F00FA5DFC /* EmployeeTableViewController.swift */; };
 		D2454B9B24AD94E000624B37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2454B9A24AD94E000624B37 /* GoogleService-Info.plist */; };
+		D2454B9D24ADA2CA00624B37 /* ConstantTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2454B9C24ADA2C900624B37 /* ConstantTest.swift */; };
 		D24ABC6B248C82E000016D2E /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D24ABC6D248C82E000016D2E /* Authentication.storyboard */; };
 		D24ABC6E248C82E900016D2E /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D24ABC70248C82E900016D2E /* MainMenu.storyboard */; };
 		D24ABC75248C834900016D2E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D24ABC77248C834900016D2E /* Localizable.strings */; };
@@ -69,6 +70,7 @@
 		D22C7A8E2473894D00FA5DFC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D22C7A952473AC2F00FA5DFC /* EmployeeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewController.swift; sourceTree = "<group>"; };
 		D2454B9A24AD94E000624B37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D2454B9C24ADA2C900624B37 /* ConstantTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantTest.swift; sourceTree = "<group>"; };
 		D24ABC6C248C82E000016D2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Authentication.storyboard; sourceTree = "<group>"; };
 		D24ABC6F248C82E900016D2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainMenu.storyboard; sourceTree = "<group>"; };
 		D24ABC71248C831800016D2E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Authentication.strings; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			children = (
 				D2BB60BD247F6B9E00EE499A /* EmployeeTest.swift */,
 				D2BB60B7247E6DE300EE499A /* Info.plist */,
+				D2454B9C24ADA2C900624B37 /* ConstantTest.swift */,
 			);
 			path = EmployeesTests;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				D2FB0C3824838A3200CB62F0 /* Employee.swift in Sources */,
 				D2FB0C3924838A3200CB62F0 /* Address.swift in Sources */,
 				D2BB60BE247F6B9E00EE499A /* EmployeeTest.swift in Sources */,
+				D2454B9D24ADA2CA00624B37 /* ConstantTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

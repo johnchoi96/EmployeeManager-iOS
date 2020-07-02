@@ -8,6 +8,8 @@
 
 import XCTest
 
+@testable import Employees
+
 class EmployeeTest: XCTestCase {
 
     var employee1: Employee!
