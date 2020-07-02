@@ -119,7 +119,7 @@
 /** AddEmployeeViewController */
 
 "saving problem alert message" = "Problem occured while saving. Please try again later";
-"employee add confirmation message" = "New employee, \"%s\", successfully added.\n\nID: %s";
+"employee add confirmation message" = "New employee, \"%@\", successfully added.\n\nID: %@";
 "cancel confirmation alert" = "Data unsaved";
 "cancel confirmation alert message" = "Are you sure you want to cancel?";
 "go back message" = "Go Back";
