@@ -20,8 +20,8 @@
 		D22C7A8B2473873B00FA5DFC /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A8A2473873B00FA5DFC /* LogInViewController.swift */; };
 		D22C7A8D2473874900FA5DFC /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A8C2473874900FA5DFC /* MainMenuViewController.swift */; };
 		D22C7A8F2473894D00FA5DFC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A8E2473894D00FA5DFC /* Constants.swift */; };
-		D22C7A932473936300FA5DFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D22C7A922473936300FA5DFC /* GoogleService-Info.plist */; };
 		D22C7A962473AC2F00FA5DFC /* EmployeeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A952473AC2F00FA5DFC /* EmployeeTableViewController.swift */; };
+		D2454B9B24AD94E000624B37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2454B9A24AD94E000624B37 /* GoogleService-Info.plist */; };
 		D24ABC6B248C82E000016D2E /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D24ABC6D248C82E000016D2E /* Authentication.storyboard */; };
 		D24ABC6E248C82E900016D2E /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D24ABC70248C82E900016D2E /* MainMenu.storyboard */; };
 		D24ABC75248C834900016D2E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D24ABC77248C834900016D2E /* Localizable.strings */; };
@@ -67,8 +67,8 @@
 		D22C7A8A2473873B00FA5DFC /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		D22C7A8C2473874900FA5DFC /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		D22C7A8E2473894D00FA5DFC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		D22C7A922473936300FA5DFC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D22C7A952473AC2F00FA5DFC /* EmployeeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewController.swift; sourceTree = "<group>"; };
+		D2454B9A24AD94E000624B37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D24ABC6C248C82E000016D2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Authentication.storyboard; sourceTree = "<group>"; };
 		D24ABC6F248C82E900016D2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainMenu.storyboard; sourceTree = "<group>"; };
 		D24ABC71248C831800016D2E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Authentication.strings; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 				D22C7A942473A85A00FA5DFC /* Models */,
 				D22C7A78247372FE00FA5DFC /* Assets.xcassets */,
 				D22C7A7D247372FE00FA5DFC /* Info.plist */,
-				D22C7A922473936300FA5DFC /* GoogleService-Info.plist */,
+				D2454B9A24AD94E000624B37 /* GoogleService-Info.plist */,
 				D22C7A8E2473894D00FA5DFC /* Constants.swift */,
 				D24ABC77248C834900016D2E /* Localizable.strings */,
 			);
@@ -311,8 +311,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D24ABC6B248C82E000016D2E /* Authentication.storyboard in Resources */,
+				D2454B9B24AD94E000624B37 /* GoogleService-Info.plist in Resources */,
 				D24ABC6E248C82E900016D2E /* MainMenu.storyboard in Resources */,
-				D22C7A932473936300FA5DFC /* GoogleService-Info.plist in Resources */,
 				D26CE49A2479701400C1A909 /* EmployeeTableViewCell.xib in Resources */,
 				D22C7A7C247372FE00FA5DFC /* LaunchScreen.storyboard in Resources */,
 				D24ABC75248C834900016D2E /* Localizable.strings in Resources */,
@@ -626,7 +626,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0rc12;
+				CURRENT_PROJECT_VERSION = 1007;
 				DEVELOPMENT_TEAM = 2JDGUK4DRH;
 				INFOPLIST_FILE = EmployeeManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -634,6 +634,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.johnchoi96.EmployeeManager;
 				PRODUCT_NAME = Employees;
 				SWIFT_VERSION = 5.0;
@@ -647,7 +648,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0rc12;
+				CURRENT_PROJECT_VERSION = 1007;
 				DEVELOPMENT_TEAM = 2JDGUK4DRH;
 				INFOPLIST_FILE = EmployeeManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -655,6 +656,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.johnchoi96.EmployeeManager;
 				PRODUCT_NAME = Employees;
 				SWIFT_VERSION = 5.0;

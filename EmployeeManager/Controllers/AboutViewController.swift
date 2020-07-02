@@ -26,7 +26,7 @@ class AboutViewController: UIViewController {
         // Do any additional setup after loading the view.
         applyLocalization()
         
-        devWebsiteButton.layer.cornerRadius = 25
+        devWebsiteButton.layer.cornerRadius = 15
         
         appVersionLabel.text = K.APP_VERSION
         buildNumberLabel.text = K.BUILD_NUMBER

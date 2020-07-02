@@ -6,6 +6,7 @@
 //  Copyright © 2020 John Choi. All rights reserved.
 //
 
+import UIKit
 import Foundation
 
 struct K {
@@ -41,6 +42,16 @@ struct K {
     }
     
     static var OS: String {
-        return "iOS \(Bundle.main.infoDictionary?["DTPlatformVersion"] as! String)"
+        var osLabel: String
+        switch UIDevice.current.userInterfaceIdiom {
+        case .phone:
+            osLabel = "iOS"
+        case .pad:
+            osLabel = "iPadOS"
+        default:
+            osLabel = "iOS"
+        }
+        osLabel += " \(Bundle.main.infoDictionary?["DTPlatformVersion"] as! String)"
+        return osLabel
     }
 }
