@@ -46,6 +46,14 @@ class EmployeeDetailViewController: UIViewController {
         payCheckLabel.text = String(format: "$%.2f", employee.getPaycheck(hours: 1, minutes: 0))
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // fixes the UIDatePicker not triggering the value changed method for the first try
+        let countDownDuration = hoursWorked.countDownDuration
+        hoursWorked.countDownDuration = countDownDuration
+    }
+    
     private func applyLocalization() {
         viewAddressButton.setTitle(NSLocalizedString("view address button label", comment: "View address button label"), for: .normal)
         payrateLabel.text = NSLocalizedString("pay rate label", comment: "Pay rate label")
