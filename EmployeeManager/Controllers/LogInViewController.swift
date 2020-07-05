@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import LocalAuthentication
 
 class LogInViewController: UIViewController {
 
@@ -89,6 +90,32 @@ class LogInViewController: UIViewController {
         }
     }
 
+    @IBAction func faceIDLoginPressed(_ sender: UIButton) {
+        let localAuthenticationContext = LAContext()
+        localAuthenticationContext.localizedFallbackTitle = "Please use your password"
+        
+        // check if biometric is available
+        var authorizationError: NSError?
+        if localAuthenticationContext.canEvaluatePolicy(LAPolicy.deviceOwnerAuthentication, error: &authorizationError) {
+            print("Biometrics is supported")
+            switch localAuthenticationContext.biometryType {
+            case .faceID:
+                fallthrough
+            case .touchID:
+                localAuthenticationContext.evaluatePolicy(LAPolicy.deviceOwnerAuthentication, localizedReason: "Authentication is required") { (success, error) in
+                    if success {
+                        print("Success")
+                    } else {
+                        print("Error \(String(describing: error))")
+                    }
+                }
+            default:
+                print("Biometric not available")
+            }
+            
+        }
+    }
+    
     /**
      Returns true if the email in the email text field is a valid email.
      - Returns: true if the email entry is a valid email
