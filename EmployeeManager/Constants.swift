@@ -14,10 +14,11 @@ struct K {
     static let employeeCell = "employeeCell"
     static let employeeCellName = "EmployeeTableViewCell"
     
-    static let states = ["North Carolina", "Alaska", "Alabama", "Arkansas", "Arizona", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Iowa", "Idaho", "Illinois", "Indiana"
-        , "Kansas", "Kentucky", "Louisiana", "Massachusetts", "Maryland", "Maine", "Michigan", "Minnesota", "Missouri", "Mississippi", "Montana", "North Dakota",
-          "Nebraska", "New Hampshire", "New Jersey", "New Mexico", "Nevada", "New York", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina"
-        , "South Dakota", "Tennessee", "Texas", "Utah", "Virginia", "Vermont", "Washington", "Wisconsin", "West Virginia", "Wyoming"]
+    static let states = ["North Carolina", "Alaska", "Alabama", "Arkansas", "Arizona", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Iowa", "Idaho", "Illinois", "Indiana",
+                         "Kansas", "Kentucky", "Louisiana", "Massachusetts", "Maryland", "Maine", "Michigan", "Minnesota", "Missouri", "Mississippi", "Montana", "North Dakota",
+                         "Nebraska", "New Hampshire", "New Jersey", "New Mexico", "Nevada", "New York", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina",
+                         "South Dakota", "Tennessee", "Texas", "Utah", "Virginia", "Vermont", "Washington", "Wisconsin", "West Virginia", "Wyoming"
+    ]
     
     static let statesDictionary = ["Louisiana": "LA", "Washington": "WA", "Iowa": "IA", "Nevada": "NV", "Oklahoma": "OK",
                                    "Rhode Island": "RI", "Maine": "ME", "New Jersey": "NJ", "New Mexico": "NM", "Arizona": "AZ",
@@ -28,7 +29,8 @@ struct K {
                                    "Wyoming": "WY", "Florida": "FL", "South Dakota": "SD", "Georgia": "GA", "Arkansas": "AR",
                                    "Ohio": "OH", "Oregon": "OR", "California": "CA", "Pennsylvania": "PA", "West Virginia": "WV",
                                    "Idaho": "ID", "Kentucky": "KY", "Alabama": "AL", "Delaware": "DE", "Massachusetts": "MA",
-                                   "North Dakota": "ND", "Wisconsin": "WI", "Connecticut": "CT", "New Hampshire": "NH", "New York": "NY"]
+                                   "North Dakota": "ND", "Wisconsin": "WI", "Connecticut": "CT", "New Hampshire": "NH", "New York": "NY"
+    ]
     
     struct Segues {
         static let welcomeToSignup = "welcomeToSignup"
