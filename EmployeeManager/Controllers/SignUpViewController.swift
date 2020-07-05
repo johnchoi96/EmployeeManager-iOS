@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import KeychainSwift
 
 class SignUpViewController: UIViewController {
     
@@ -92,6 +93,11 @@ class SignUpViewController: UIViewController {
                 return
             }
 
+            // save credentials to keychain
+            let keychain = KeychainSwift()
+            keychain.set(email, forKey: "userEmail")
+            keychain.set(self.passwordField.text!, forKey: "userPassword")
+            
             self.performSegue(withIdentifier: K.Segues.signupToMain, sender: self)
         }
     }

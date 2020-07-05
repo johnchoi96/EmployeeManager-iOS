@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		16ED873B3B53435E5AE7EA8B /* Pods_EmployeeManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2808F7250ADEAD6FC0C8F62 /* Pods_EmployeeManager.framework */; };
 		3AAC8A0CD75E10DF5A231DB5 /* Pods_EmployeesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73FA17AED670DA6151877327 /* Pods_EmployeesTests.framework */; };
+		D21AD5F324B27CA30065BF10 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D21AD5F224B27CA30065BF10 /* KeychainSwift */; };
 		D22C7A70247372FB00FA5DFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A6F247372FB00FA5DFC /* AppDelegate.swift */; };
 		D22C7A72247372FB00FA5DFC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A71247372FB00FA5DFC /* SceneDelegate.swift */; };
 		D22C7A74247372FB00FA5DFC /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A73247372FB00FA5DFC /* WelcomeViewController.swift */; };
@@ -71,6 +72,7 @@
 		D22C7A952473AC2F00FA5DFC /* EmployeeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewController.swift; sourceTree = "<group>"; };
 		D2454B9C24ADA2C900624B37 /* ConstantTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantTest.swift; sourceTree = "<group>"; };
 		D2454BA024B1A8BA00624B37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D2454BA224B25EA700624B37 /* Employees.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Employees.entitlements; sourceTree = "<group>"; };
 		D24ABC6C248C82E000016D2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Authentication.storyboard; sourceTree = "<group>"; };
 		D24ABC6F248C82E900016D2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainMenu.storyboard; sourceTree = "<group>"; };
 		D24ABC71248C831800016D2E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Authentication.strings; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D21AD5F324B27CA30065BF10 /* KeychainSwift in Frameworks */,
 				16ED873B3B53435E5AE7EA8B /* Pods_EmployeeManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,6 +159,7 @@
 		D22C7A6E247372FB00FA5DFC /* EmployeeManager */ = {
 			isa = PBXGroup;
 			children = (
+				D2454BA224B25EA700624B37 /* Employees.entitlements */,
 				D22C7A832473740300FA5DFC /* Delegates */,
 				D22C7A842473740800FA5DFC /* Controllers */,
 				D22C7A852473741500FA5DFC /* Views */,
@@ -245,6 +249,9 @@
 			dependencies = (
 			);
 			name = EmployeeManager;
+			packageProductDependencies = (
+				D21AD5F224B27CA30065BF10 /* KeychainSwift */,
+			);
 			productName = EmployeeManager;
 			productReference = D22C7A6C247372FB00FA5DFC /* Employees.app */;
 			productType = "com.apple.product-type.application";
@@ -298,6 +305,9 @@
 				ko,
 			);
 			mainGroup = D22C7A63247372FB00FA5DFC;
+			packageReferences = (
+				D21AD5F124B27CA30065BF10 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+			);
 			productRefGroup = D22C7A6D247372FB00FA5DFC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -629,8 +639,9 @@
 			baseConfigurationReference = 3815FC3CD5C02AE447D0B086 /* Pods-EmployeeManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EmployeeManager/Employees.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1107;
+				CURRENT_PROJECT_VERSION = 200705;
 				DEVELOPMENT_TEAM = 2JDGUK4DRH;
 				INFOPLIST_FILE = EmployeeManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -651,8 +662,9 @@
 			baseConfigurationReference = 5C30AA165C6F0F089334D08A /* Pods-EmployeeManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EmployeeManager/Employees.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1107;
+				CURRENT_PROJECT_VERSION = 200705;
 				DEVELOPMENT_TEAM = 2JDGUK4DRH;
 				INFOPLIST_FILE = EmployeeManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -745,6 +757,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D21AD5F124B27CA30065BF10 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 19.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D21AD5F224B27CA30065BF10 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D21AD5F124B27CA30065BF10 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D22C7A64247372FB00FA5DFC /* Project object */;
 }

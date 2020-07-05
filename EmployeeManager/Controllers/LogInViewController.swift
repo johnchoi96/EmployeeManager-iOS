@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import LocalAuthentication
+import KeychainSwift
 
 class LogInViewController: UIViewController {
 
@@ -39,10 +40,19 @@ class LogInViewController: UIViewController {
         if let email = defaults.string(forKey: "email") {
             emailField.text = email
         }
-        emailField.becomeFirstResponder()
         logInButton.isEnabled = true
         
         loginView.layer.cornerRadius = 25
+        
+        // try to log in with biometric method
+        // grab email and password from keychain
+        let keychain = KeychainSwift()
+        // check if credentials exist in keychain
+        if let userEmail = keychain.get("userEmail"), let userPassword = keychain.get("userPassword") {
+            logInWithBiometrics(email: userEmail, password: userPassword)
+        } else {
+            emailField.becomeFirstResponder()
+        }
     }
     
     private func applyLocalization() {
@@ -89,8 +99,8 @@ class LogInViewController: UIViewController {
             spinnerView.isHidden = true
         }
     }
-
-    @IBAction func faceIDLoginPressed(_ sender: UIButton) {
+    
+    private func logInWithBiometrics(email: String, password: String) {
         let localAuthenticationContext = LAContext()
         localAuthenticationContext.localizedFallbackTitle = "Please use your password"
         
@@ -105,6 +115,29 @@ class LogInViewController: UIViewController {
                 localAuthenticationContext.evaluatePolicy(LAPolicy.deviceOwnerAuthentication, localizedReason: "Authentication is required") { (success, error) in
                     if success {
                         print("Success")
+                        
+                        // try logging in
+                        // if successful, call performSegue()
+                        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+                            guard let strongSelf = self else { return }
+                            // issue signing in the user
+                            if error != nil {
+                                strongSelf.spinner.stopAnimating()
+                                strongSelf.spinnerView.isHidden = true
+                                strongSelf.logInButton.isEnabled = true
+                                let alert = UIAlertController(title: NSLocalizedString("sign in failed alert", comment: ""), message: NSLocalizedString("sign in failed alert message", comment: ""), preferredStyle: .alert)
+                                let action = UIAlertAction(title: NSLocalizedString("OK message", comment: ""), style: .default, handler: nil)
+                                alert.addAction(action)
+                                strongSelf.present(alert, animated: true, completion: {
+                                    return
+                                })
+                            }
+                            strongSelf.spinner.stopAnimating()
+                            strongSelf.spinnerView.isHidden = true
+                            // login should be successful so save the email to UserDefaults
+                            strongSelf.defaults.set(strongSelf.emailField.text!, forKey: "email")
+                            strongSelf.performSegue(withIdentifier: K.Segues.loginToMain, sender: self)
+                        }
                     } else {
                         print("Error \(String(describing: error))")
                     }
