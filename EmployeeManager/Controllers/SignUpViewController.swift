@@ -56,6 +56,7 @@ class SignUpViewController: UIViewController {
     
     /**
      Signs up the user using the email and password in the respective text fields.
+     If sign up was successful, asks the user if they want to opt in for the biometric authentication.
      */
     private func signUp() {
         guard let email = emailField.text, email.count > 0 else {
@@ -93,12 +94,23 @@ class SignUpViewController: UIViewController {
                 return
             }
 
-            // save credentials to keychain
-            let keychain = KeychainSwift()
-            keychain.set(email, forKey: "userEmail")
-            keychain.set(self.passwordField.text!, forKey: "userPassword")
-            
-            self.performSegue(withIdentifier: K.Segues.signupToMain, sender: self)
+            // save email to UserDefaults
+            UserDefaults.standard.set(email, forKey: "email")
+            // ask the user if they want biometric authentication
+            let alert = UIAlertController(title: "Would you like to use FaceID/TouchID?", message: "", preferredStyle: .alert)
+            let yesAction = UIAlertAction(title: "Yes", style: .default) { (action) in
+                // save credentials to keychain
+                let keychain = KeychainSwift()
+                keychain.set(email, forKey: "userEmail")
+                keychain.set(self.passwordField.text!, forKey: "userPassword")
+                self.performSegue(withIdentifier: K.Segues.signupToMain, sender: self)
+            }
+            let noAction = UIAlertAction(title: "No", style: .cancel) { (action) in
+                self.performSegue(withIdentifier: K.Segues.signupToMain, sender: self)
+            }
+            alert.addAction(yesAction)
+            alert.addAction(noAction)
+            self.present(alert, animated: true, completion: nil)
         }
     }
     

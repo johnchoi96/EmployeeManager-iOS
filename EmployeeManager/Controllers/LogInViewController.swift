@@ -22,6 +22,7 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var loginView: UIButton!
     
     let defaults = UserDefaults.standard
+    let keychain = KeychainSwift()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +47,6 @@ class LogInViewController: UIViewController {
         
         // try to log in with biometric method
         // grab email and password from keychain
-        let keychain = KeychainSwift()
         // check if credentials exist in keychain
         if let userEmail = keychain.get("userEmail"), let userPassword = keychain.get("userPassword") {
             logInWithBiometrics(email: userEmail, password: userPassword)
@@ -66,6 +66,11 @@ class LogInViewController: UIViewController {
         logIn()
     }
     
+    /**
+     Tries to log in the user with email and password provided.
+     Performs integrity check on email and password to see if they fulfill the requirement and attempts log in.
+     If log in is successful, asks the user if they want to opt in for a biometric authentication using UIAlertController and UIAlertAction.
+     */
     private func logIn() {
         spinnerView.isHidden = false
         spinner.startAnimating()
@@ -89,9 +94,26 @@ class LogInViewController: UIViewController {
                 }
                 strongSelf.spinner.stopAnimating()
                 strongSelf.spinnerView.isHidden = true
+                
                 // login should be successful so save the email to UserDefaults
                 strongSelf.defaults.set(strongSelf.emailField.text!, forKey: "email")
-                strongSelf.performSegue(withIdentifier: K.Segues.loginToMain, sender: self)
+                
+                // ask the user if user wants to use biometric authentication in the future
+                let alert = UIAlertController(title: "Would you like to use FaceID/TouchID in the future?", message: "", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Yes", style: .default) { (action) in
+                    strongSelf.keychain.set(strongSelf.emailField.text!, forKey: "userEmail")
+                    strongSelf.keychain.set(strongSelf.passwordField.text!, forKey: "userPassword")
+
+                    strongSelf.performSegue(withIdentifier: K.Segues.loginToMain, sender: self)
+                }
+                let noAction = UIAlertAction(title: "No", style: .cancel) { (action) in
+                    strongSelf.keychain.delete("userEmail")
+                    strongSelf.keychain.delete("userPassword")
+                    strongSelf.performSegue(withIdentifier: K.Segues.loginToMain, sender: self)
+                }
+                alert.addAction(action)
+                alert.addAction(noAction)
+                strongSelf.present(alert, animated: true, completion: nil)
             }
             
         } else {
@@ -100,9 +122,15 @@ class LogInViewController: UIViewController {
         }
     }
     
+    /**
+     Attempts log in using the biometric authentication method.
+     This is called immediately after the view is loaded if the email and password exist in the Apple Keychain.
+     - Parameter email: user email extracted from Apple Keychain
+     - Parameter password: user password extracted from Apple Keychain
+     */
     private func logInWithBiometrics(email: String, password: String) {
         let localAuthenticationContext = LAContext()
-        localAuthenticationContext.localizedFallbackTitle = "Please use your password"
+        localAuthenticationContext.localizedFallbackTitle = "Enter Email/Password"
         
         // check if biometric is available
         var authorizationError: NSError?
