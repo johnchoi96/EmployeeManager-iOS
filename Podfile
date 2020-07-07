@@ -17,17 +17,11 @@ target 'EmployeeManager' do
   pod 'IQKeyboardManagerSwift'
   pod 'MarqueeLabel'
 
+  target 'EmployeesTests' do
+    # Pods for EmployeeTests
+    inherit! :search_paths
+    
+  end
 end
 
-target 'EmployeesTests' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  #use_frameworks!
 
-  # Pods for EmployeeTests
-  pod 'Firebase/Auth'
-  pod 'Firebase/Firestore'
-  pod 'FirebaseFirestoreSwift'
-  pod 'IQKeyboardManagerSwift'
-  pod 'MarqueeLabel'
-
-end
