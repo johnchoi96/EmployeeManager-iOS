@@ -140,7 +140,7 @@ class LogInViewController: UIViewController {
             case .faceID:
                 fallthrough
             case .touchID:
-                localAuthenticationContext.evaluatePolicy(LAPolicy.deviceOwnerAuthentication, localizedReason: "Authentication is required") { (success, error) in
+                localAuthenticationContext.evaluatePolicy(LAPolicy.deviceOwnerAuthentication, localizedReason: "Log In using Touch ID") { (success, error) in
                     if success {
                         print("Success")
                         
