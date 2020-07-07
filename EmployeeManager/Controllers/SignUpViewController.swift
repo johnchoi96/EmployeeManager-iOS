@@ -96,16 +96,18 @@ class SignUpViewController: UIViewController {
 
             // save email to UserDefaults
             UserDefaults.standard.set(email, forKey: "email")
+            // available authentication method
+            let authenticationMethod = K.BIOMETRIC_METHOD
             // ask the user if they want biometric authentication
-            let alert = UIAlertController(title: "Would you like to use FaceID/TouchID?", message: "", preferredStyle: .alert)
-            let yesAction = UIAlertAction(title: "Yes", style: .default) { (action) in
+            let alert = UIAlertController(title: String.localizedStringWithFormat(NSLocalizedString("ask biometric opt in alert", comment: ""), authenticationMethod), message: "", preferredStyle: .alert)
+            let yesAction = UIAlertAction(title: NSLocalizedString("Yes message", comment: ""), style: .default) { (action) in
                 // save credentials to keychain
                 let keychain = KeychainSwift()
                 keychain.set(email, forKey: "userEmail")
                 keychain.set(self.passwordField.text!, forKey: "userPassword")
                 self.performSegue(withIdentifier: K.Segues.signupToMain, sender: self)
             }
-            let noAction = UIAlertAction(title: "No", style: .cancel) { (action) in
+            let noAction = UIAlertAction(title: NSLocalizedString("No message", comment: ""), style: .cancel) { (action) in
                 self.performSegue(withIdentifier: K.Segues.signupToMain, sender: self)
             }
             alert.addAction(yesAction)

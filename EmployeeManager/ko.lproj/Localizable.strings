@@ -101,11 +101,15 @@
 "password request alert message" = "비밀번호를 입력해주세요";
 "email already taken alert" = "이미 사용중인 이메일 입니다.";
 "email already taken alert message" = "다른 이메일을 사용해주세요.";
+"ask biometric opt in alert" = "%@ 를 사용하여 로그인 하시겠습니까?";
 
 /** LogInViewController */
 
 "sign in failed alert" = "로그인 도중 문제가 발생했습니다!";
 "sign in failed alert message" = "이메일과 비밀번호를 확인하시고 다시 시도해주세요";
+"ask biometric opt in alert" = "%@ 를 사용하여 로그인 하시겠습니까?";
+"biometric fallback message" = "이메일/페스워드 입력";
+"biometric reason for touch id" = "TouchID 를 사용하여 로그인하세요";
 
 /** MainMenuViewController */
 

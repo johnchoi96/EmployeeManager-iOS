@@ -23,6 +23,7 @@ class LogInViewController: UIViewController {
     
     let defaults = UserDefaults.standard
     let keychain = KeychainSwift()
+    let localAuthenticationContext = LAContext()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,15 +99,17 @@ class LogInViewController: UIViewController {
                 // login should be successful so save the email to UserDefaults
                 strongSelf.defaults.set(strongSelf.emailField.text!, forKey: "email")
                 
+                // authentication method
+                let authenticationMethod = K.BIOMETRIC_METHOD
                 // ask the user if user wants to use biometric authentication in the future
-                let alert = UIAlertController(title: "Would you like to use FaceID/TouchID in the future?", message: "", preferredStyle: .alert)
-                let action = UIAlertAction(title: "Yes", style: .default) { (action) in
+                let alert = UIAlertController(title: String.localizedStringWithFormat(NSLocalizedString("ask biometric opt in alert", comment: ""), authenticationMethod), message: "", preferredStyle: .alert)
+                let action = UIAlertAction(title: NSLocalizedString("Yes message", comment: ""), style: .default) { (action) in
                     strongSelf.keychain.set(strongSelf.emailField.text!, forKey: "userEmail")
                     strongSelf.keychain.set(strongSelf.passwordField.text!, forKey: "userPassword")
 
                     strongSelf.performSegue(withIdentifier: K.Segues.loginToMain, sender: self)
                 }
-                let noAction = UIAlertAction(title: "No", style: .cancel) { (action) in
+                let noAction = UIAlertAction(title: NSLocalizedString("No message", comment: ""), style: .cancel) { (action) in
                     strongSelf.keychain.delete("userEmail")
                     strongSelf.keychain.delete("userPassword")
                     strongSelf.performSegue(withIdentifier: K.Segues.loginToMain, sender: self)
@@ -129,8 +132,7 @@ class LogInViewController: UIViewController {
      - Parameter password: user password extracted from Apple Keychain
      */
     private func logInWithBiometrics(email: String, password: String) {
-        let localAuthenticationContext = LAContext()
-        localAuthenticationContext.localizedFallbackTitle = "Enter Email/Password"
+        localAuthenticationContext.localizedFallbackTitle = NSLocalizedString("biometric fallback message", comment: "")
         
         // check if biometric is available
         var authorizationError: NSError?
@@ -140,7 +142,7 @@ class LogInViewController: UIViewController {
             case .faceID:
                 fallthrough
             case .touchID:
-                localAuthenticationContext.evaluatePolicy(LAPolicy.deviceOwnerAuthentication, localizedReason: "Log In using Touch ID") { (success, error) in
+                localAuthenticationContext.evaluatePolicy(LAPolicy.deviceOwnerAuthentication, localizedReason: NSLocalizedString("biometric reason for touch id", comment: "")) { (success, error) in
                     if success {
                         print("Success")
                         
