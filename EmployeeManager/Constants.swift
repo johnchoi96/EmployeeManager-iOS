@@ -72,7 +72,7 @@ struct K {
         default:
             osLabel = "iOS"
         }
-        osLabel += " \(Bundle.main.infoDictionary?["DTPlatformVersion"] as! String)"
+        osLabel += " \(UIDevice.current.systemVersion)"
         return osLabel
     }
     
