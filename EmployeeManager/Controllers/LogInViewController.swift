@@ -46,9 +46,7 @@ class LogInViewController: UIViewController {
         logInButton.isEnabled = true
         
         loginView.layer.cornerRadius = 25
-        
-//        useBiometricButton.setTitle(K.BIOMETRIC_METHOD, for: .normal)
-        
+
         // try to log in with biometric method
         // grab email and password from keychain
         // check if credentials exist in keychain
