@@ -97,11 +97,15 @@
 "password request alert message" = "Please enter password";
 "email already taken alert" = "The email address is already in use by another account.";
 "email already taken alert message" = "Please choose another email.";
+"ask biometric opt in alert" = "Would you like to use %@ to authenticate?";
 
 /** LogInViewController */
 
 "sign in failed alert" = "Sign in failed!";
 "sign in failed alert message" = "There was a problem signing in";
+"ask biometric opt in alert" = "Would you like to use %@ to authenticate from now on?";
+"biometric fallback message" = "Enter Email/Password";
+"biometric reason for touch id" = "Log In";
 
 /** MainMenuViewController */
 

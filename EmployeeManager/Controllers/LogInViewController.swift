@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import LocalAuthentication
+import KeychainSwift
 
 class LogInViewController: UIViewController {
 
@@ -18,8 +20,11 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var logInButton: UIButton!
     
     @IBOutlet weak var loginView: UIButton!
+    @IBOutlet weak var useBiometricButton: UIButton!
     
     let defaults = UserDefaults.standard
+    let keychain = KeychainSwift()
+    let localAuthenticationContext = LAContext()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +43,21 @@ class LogInViewController: UIViewController {
         if let email = defaults.string(forKey: "email") {
             emailField.text = email
         }
-        emailField.becomeFirstResponder()
         logInButton.isEnabled = true
         
         loginView.layer.cornerRadius = 25
+        
+//        useBiometricButton.setTitle(K.BIOMETRIC_METHOD, for: .normal)
+        
+        // try to log in with biometric method
+        // grab email and password from keychain
+        // check if credentials exist in keychain
+        if let userEmail = keychain.get("userEmail"), let userPassword = keychain.get("userPassword") {
+            logInWithBiometrics(email: userEmail, password: userPassword)
+        } else {
+            useBiometricButton.isEnabled = false
+            emailField.becomeFirstResponder()
+        }
     }
     
     private func applyLocalization() {
@@ -55,6 +71,11 @@ class LogInViewController: UIViewController {
         logIn()
     }
     
+    /**
+     Tries to log in the user with email and password provided.
+     Performs integrity check on email and password to see if they fulfill the requirement and attempts log in.
+     If log in is successful, asks the user if they want to opt in for a biometric authentication using UIAlertController and UIAlertAction.
+     */
     private func logIn() {
         spinnerView.isHidden = false
         spinner.startAnimating()
@@ -78,9 +99,28 @@ class LogInViewController: UIViewController {
                 }
                 strongSelf.spinner.stopAnimating()
                 strongSelf.spinnerView.isHidden = true
+                
                 // login should be successful so save the email to UserDefaults
                 strongSelf.defaults.set(strongSelf.emailField.text!, forKey: "email")
-                strongSelf.performSegue(withIdentifier: K.Segues.loginToMain, sender: self)
+                
+                // authentication method
+                let authenticationMethod = K.BIOMETRIC_METHOD
+                // ask the user if user wants to use biometric authentication in the future
+                let alert = UIAlertController(title: String.localizedStringWithFormat(NSLocalizedString("ask biometric opt in alert", comment: ""), authenticationMethod), message: "", preferredStyle: .alert)
+                let action = UIAlertAction(title: NSLocalizedString("Yes message", comment: ""), style: .default) { (action) in
+                    strongSelf.keychain.set(strongSelf.emailField.text!, forKey: "userEmail")
+                    strongSelf.keychain.set(strongSelf.passwordField.text!, forKey: "userPassword")
+
+                    strongSelf.performSegue(withIdentifier: K.Segues.loginToMain, sender: self)
+                }
+                let noAction = UIAlertAction(title: NSLocalizedString("No message", comment: ""), style: .cancel) { (action) in
+                    strongSelf.keychain.delete("userEmail")
+                    strongSelf.keychain.delete("userPassword")
+                    strongSelf.performSegue(withIdentifier: K.Segues.loginToMain, sender: self)
+                }
+                alert.addAction(action)
+                alert.addAction(noAction)
+                strongSelf.present(alert, animated: true, completion: nil)
             }
             
         } else {
@@ -88,7 +128,65 @@ class LogInViewController: UIViewController {
             spinnerView.isHidden = true
         }
     }
-
+    
+    @IBAction func useBiometricPressed(_ sender: UIButton) {
+        logInWithBiometrics(email: keychain.get("userEmail")!, password: keychain.get("userPassword")!)
+    }
+    
+    /**
+     Attempts log in using the biometric authentication method.
+     This is called immediately after the view is loaded if the email and password exist in the Apple Keychain.
+     - Parameter email: user email extracted from Apple Keychain
+     - Parameter password: user password extracted from Apple Keychain
+     */
+    private func logInWithBiometrics(email: String, password: String) {
+        localAuthenticationContext.localizedFallbackTitle = NSLocalizedString("biometric fallback message", comment: "")
+        
+        // check if biometric is available
+        var authorizationError: NSError?
+        if localAuthenticationContext.canEvaluatePolicy(LAPolicy.deviceOwnerAuthentication, error: &authorizationError) {
+            print("Biometrics is supported")
+            switch localAuthenticationContext.biometryType {
+            case .faceID:
+                fallthrough
+            case .touchID:
+                localAuthenticationContext.evaluatePolicy(LAPolicy.deviceOwnerAuthentication, localizedReason: NSLocalizedString("biometric reason for touch id", comment: "")) { (success, error) in
+                    if success {
+                        print("Success")
+                        
+                        // try logging in
+                        // if successful, call performSegue()
+                        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+                            guard let strongSelf = self else { return }
+                            // issue signing in the user
+                            if error != nil {
+                                strongSelf.spinner.stopAnimating()
+                                strongSelf.spinnerView.isHidden = true
+                                strongSelf.logInButton.isEnabled = true
+                                let alert = UIAlertController(title: NSLocalizedString("sign in failed alert", comment: ""), message: NSLocalizedString("sign in failed alert message", comment: ""), preferredStyle: .alert)
+                                let action = UIAlertAction(title: NSLocalizedString("OK message", comment: ""), style: .default, handler: nil)
+                                alert.addAction(action)
+                                strongSelf.present(alert, animated: true, completion: {
+                                    return
+                                })
+                            }
+                            strongSelf.spinner.stopAnimating()
+                            strongSelf.spinnerView.isHidden = true
+                            // login should be successful so save the email to UserDefaults
+                            strongSelf.defaults.set(strongSelf.emailField.text!, forKey: "email")
+                            strongSelf.performSegue(withIdentifier: K.Segues.loginToMain, sender: self)
+                        }
+                    } else {
+                        print("Error \(String(describing: error))")
+                    }
+                }
+            default:
+                print("Biometric not available")
+            }
+            
+        }
+    }
+    
     /**
      Returns true if the email in the email text field is a valid email.
      - Returns: true if the email entry is a valid email

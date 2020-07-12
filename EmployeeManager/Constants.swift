@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import LocalAuthentication
 
 struct K {
     
@@ -44,25 +45,45 @@ struct K {
         static let mainToAbout = "mainToAbout"
     }
     
+    /**
+     Returns the current app version as String.
+     */
     static var APP_VERSION: String {
         return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
     }
     
+    /**
+     Returns the current app build number as String.
+     */
     static var BUILD_NUMBER: String {
         return Bundle.main.infoDictionary?["CFBundleVersion"] as! String
     }
     
+    /**
+     Returns the operating system version for this device. e.g. iOS 13.5 or iPadOS 13.5
+     */
     static var OS: String {
         var osLabel: String
-        switch UIDevice.current.userInterfaceIdiom {
-        case .phone:
+        if UIDevice.current.userInterfaceIdiom == .phone {
             osLabel = "iOS"
-        case .pad:
+        } else {
             osLabel = "iPadOS"
-        default:
-            osLabel = "iOS"
         }
-        osLabel += " \(Bundle.main.infoDictionary?["DTPlatformVersion"] as! String)"
+        osLabel += " \(UIDevice.current.systemVersion)"
         return osLabel
+    }
+    
+    /**
+     Returns the available biometric authentication method available for this device.
+     Returns none if this device does not have a biometric authentication method. e.g. iPod Touch
+     */
+    static var BIOMETRIC_METHOD: String {
+        if LAContext().biometryType == .faceID {
+            return "Face ID"
+        } else if LAContext().biometryType == .touchID {
+            return "Touch ID"
+        } else {
+            return "Face ID/Touch ID"
+        }
     }
 }
