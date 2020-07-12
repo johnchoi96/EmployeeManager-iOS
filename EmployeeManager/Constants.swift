@@ -64,13 +64,10 @@ struct K {
      */
     static var OS: String {
         var osLabel: String
-        switch UIDevice.current.userInterfaceIdiom {
-        case .phone:
+        if UIDevice.current.userInterfaceIdiom == .phone {
             osLabel = "iOS"
-        case .pad:
+        } else {
             osLabel = "iPadOS"
-        default:
-            osLabel = "iOS"
         }
         osLabel += " \(UIDevice.current.systemVersion)"
         return osLabel
@@ -86,7 +83,7 @@ struct K {
         } else if LAContext().biometryType == .touchID {
             return "Touch ID"
         } else {
-            return "none"
+            return "Face ID/Touch ID"
         }
     }
 }

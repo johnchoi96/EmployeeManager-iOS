@@ -107,9 +107,9 @@
 
 "sign in failed alert" = "로그인 도중 문제가 발생했습니다!";
 "sign in failed alert message" = "이메일과 비밀번호를 확인하시고 다시 시도해주세요";
-"ask biometric opt in alert" = "%@ 를 사용하여 로그인 하시겠습니까?";
+"ask biometric opt in alert" = "지금부터 %@ 를 사용하여 로그인 하시겠습니까?";
 "biometric fallback message" = "이메일/페스워드 입력";
-"biometric reason for touch id" = "TouchID 를 사용하여 로그인하세요";
+"biometric reason for touch id" = "로그인하세요";
 
 /** MainMenuViewController */
 

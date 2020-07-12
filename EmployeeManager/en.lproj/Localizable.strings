@@ -103,9 +103,9 @@
 
 "sign in failed alert" = "Sign in failed!";
 "sign in failed alert message" = "There was a problem signing in";
-"ask biometric opt in alert" = "Would you like to use %@ to authenticate?";
+"ask biometric opt in alert" = "Would you like to use %@ to authenticate from now on?";
 "biometric fallback message" = "Enter Email/Password";
-"biometric reason for touch id" = "Log In using TouchID";
+"biometric reason for touch id" = "Log In";
 
 /** MainMenuViewController */
 

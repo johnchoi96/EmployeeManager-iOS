@@ -21,7 +21,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSFaceIDUsageDescription</key>
-	<string>To sign into database with Face ID or Touch ID.</string>
+	<string>To sign into the application with Face ID or Touch ID.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Employee Manager needs the current location data to display the current location on the map.</string>
 	<key>UIApplicationSceneManifest</key>

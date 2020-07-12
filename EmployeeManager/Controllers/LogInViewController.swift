@@ -20,6 +20,7 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var logInButton: UIButton!
     
     @IBOutlet weak var loginView: UIButton!
+    @IBOutlet weak var useBiometricButton: UIButton!
     
     let defaults = UserDefaults.standard
     let keychain = KeychainSwift()
@@ -46,12 +47,15 @@ class LogInViewController: UIViewController {
         
         loginView.layer.cornerRadius = 25
         
+//        useBiometricButton.setTitle(K.BIOMETRIC_METHOD, for: .normal)
+        
         // try to log in with biometric method
         // grab email and password from keychain
         // check if credentials exist in keychain
         if let userEmail = keychain.get("userEmail"), let userPassword = keychain.get("userPassword") {
             logInWithBiometrics(email: userEmail, password: userPassword)
         } else {
+            useBiometricButton.isEnabled = false
             emailField.becomeFirstResponder()
         }
     }
@@ -123,6 +127,10 @@ class LogInViewController: UIViewController {
             spinner.stopAnimating()
             spinnerView.isHidden = true
         }
+    }
+    
+    @IBAction func useBiometricPressed(_ sender: UIButton) {
+        logInWithBiometrics(email: keychain.get("userEmail")!, password: keychain.get("userPassword")!)
     }
     
     /**

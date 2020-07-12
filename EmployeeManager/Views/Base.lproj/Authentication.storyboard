@@ -129,11 +129,28 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
                                     </textField>
-                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fE9-f4-zok">
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M63-Qz-gnq">
                                         <rect key="frame" x="0.0" y="78" width="355" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
-                                    </textField>
+                                        <subviews>
+                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fE9-f4-zok">
+                                                <rect key="frame" x="0.0" y="0.0" width="321" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="I0Q-eH-6iz">
+                                                <rect key="frame" x="321" y="1.6666666666666625" width="34" height="31.000000000000007"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="I0Q-eH-6iz" secondAttribute="height" multiplier="1:1" id="ypz-eI-Je3"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" backgroundImage="faceid" catalog="system"/>
+                                                <connections>
+                                                    <action selector="useBiometricPressed:" destination="uE7-Aa-tBS" eventType="touchUpInside" id="JLa-Nc-QYz"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTp-cV-zyt">
@@ -188,6 +205,7 @@
                         <outlet property="passwordField" destination="fE9-f4-zok" id="rbf-fp-EA6"/>
                         <outlet property="spinner" destination="Lo4-iw-eWR" id="Rf9-EU-Ey4"/>
                         <outlet property="spinnerView" destination="LWM-aN-8h8" id="4hR-Th-4xm"/>
+                        <outlet property="useBiometricButton" destination="I0Q-eH-6iz" id="IZ8-lH-6tt"/>
                         <segue destination="3yt-2y-vFt" kind="show" identifier="loginToMain" id="RUZ-uR-JoQ"/>
                     </connections>
                 </viewController>
@@ -207,6 +225,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="faceid" catalog="system" width="128" height="114"/>
         <namedColor name="AppColor">
             <color red="0.23100000619888306" green="0.70999997854232788" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
