@@ -86,4 +86,34 @@ struct K {
             return "Face ID/Touch ID"
         }
     }
+    
+    static func FEEDBACK_HTML(email userEmail: String) -> String {
+        return """
+        <h3>Employee Manager - iOS Feedback</h3>
+        <p>Device: \(UIDevice.current.model)</p>
+        <p>OS: \(OS)</p>
+        <p>App Version: \(APP_VERSION)</p>
+        <p>Build: \(BUILD_NUMBER)</p>
+        <p>User: \(userEmail)</p>
+        <br /><p>
+        
+        <b>Share your thoughts:</b></p>
+        <p></p>
+        """
+    }
+    
+    static func BUG_REPORT_HTML(email userEmail: String) -> String {
+        return """
+        <h3>Employee Manager - iOS Bug Report</h3>
+        <p>Device: \(UIDevice.current.model)</p>
+        <p>OS: \(OS)</p>
+        <p>App Version: \(APP_VERSION)</p>
+        <p>Build: \(BUILD_NUMBER)</p>
+        <p>User: \(userEmail)</p>
+        <br /><p>
+        
+        <b>Describe the problem:</b></p>
+        <p></p>
+        """
+    }
 }

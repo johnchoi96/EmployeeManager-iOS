@@ -72,13 +72,6 @@ class MainMenuViewController: UIViewController {
         performSegue(withIdentifier: K.Segues.mainToTable, sender: self)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == K.Segues.mainToTable {
-            let vc = segue.destination as! EmployeeTableViewController
-            vc.isAdmin = userIsAdmin
-        }
-    }
-    
     @IBAction func aboutPressed(_ sender: UIButton) {
         performSegue(withIdentifier: K.Segues.mainToAbout, sender: self)
     }
@@ -157,4 +150,17 @@ class MainMenuViewController: UIViewController {
         }
     }
     
+}
+
+extension MainMenuViewController {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.Segues.mainToTable {
+            let vc = segue.destination as! EmployeeTableViewController
+            vc.isAdmin = userIsAdmin
+        } else if segue.identifier == K.Segues.mainToAbout {
+            let vc = segue.destination as! AboutViewController
+            vc.userEmail = userEmail
+        }
+    }
 }

@@ -266,7 +266,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fAz-TL-a0w"/>
                     </view>
-                    <navigationItem key="navigationItem" title="About" id="6Oo-KK-0Ca"/>
+                    <navigationItem key="navigationItem" title="About" id="6Oo-KK-0Ca">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="gYc-iz-hzf">
+                            <connections>
+                                <action selector="actionBarButtonPressed:" destination="6wc-Rn-GhN" id="TVo-St-URH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="appVersionLabel" destination="hzl-H6-pcm" id="uof-Un-lkT"/>
                         <outlet property="appVersionTitleLabel" destination="fvL-IU-mdx" id="kzp-Nx-U08"/>
