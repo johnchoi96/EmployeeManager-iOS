@@ -12,12 +12,14 @@ import MessageUI
 
 class AboutViewController: UIViewController {
 
+    @IBOutlet weak var currentUserTitleLabel: UILabel!
     @IBOutlet weak var appVersionTitleLabel: UILabel!
     @IBOutlet weak var buildNumberTitleLabel: UILabel!
     
     @IBOutlet weak var appVersionLabel: UILabel!
     @IBOutlet weak var buildNumberLabel: UILabel!
     @IBOutlet weak var osLabel: UILabel!
+    @IBOutlet weak var currentUserLabel: UILabel!
     
     @IBOutlet weak var devWebsiteButton: UIButton!
     
@@ -34,11 +36,13 @@ class AboutViewController: UIViewController {
         appVersionLabel.text = K.APP_VERSION
         buildNumberLabel.text = K.BUILD_NUMBER
         osLabel.text = K.OS
+        currentUserLabel.text = userEmail + "   "
     }
     
     private func applyLocalization() {
         appVersionTitleLabel.text = NSLocalizedString("app version label", comment: "Short app version label")
         buildNumberTitleLabel.text = NSLocalizedString("build number label", comment: "Build number")
+        currentUserTitleLabel.text = NSLocalizedString("current user label", comment: "Current user")
     }
 
     @IBAction func devWebsitePressed(_ sender: UIButton) {

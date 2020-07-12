@@ -67,6 +67,7 @@
 
 /** About View */
 
+"current user label" = "유저:";
 "app version label" = "버전:";
 "build number label" = "빌드:";
 
