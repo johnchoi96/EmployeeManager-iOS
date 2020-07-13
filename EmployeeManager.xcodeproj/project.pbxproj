@@ -168,6 +168,7 @@
 				D22C7A7D247372FE00FA5DFC /* Info.plist */,
 				D2454BA024B1A8BA00624B37 /* GoogleService-Info.plist */,
 				D22C7A8E2473894D00FA5DFC /* Constants.swift */,
+				D2454B9824AD8F8600624B37 /* GoogleService-Info.plist */,
 				D24ABC77248C834900016D2E /* Localizable.strings */,
 			);
 			path = EmployeeManager;
