@@ -53,6 +53,9 @@ class AddEmployeeViewController: UIViewController {
         requiredAddressFields.append(streetField)
         requiredAddressFields.append(cityField)
         requiredAddressFields.append(zipField)
+        
+        // select the first element on picker view
+        self.pickerView(statePicker, didSelectRow: 0, inComponent: 0)
     }
     
     private func applyLocalization() {
@@ -235,7 +238,8 @@ extension AddEmployeeViewController: UIPickerViewDataSource, UIPickerViewDelegat
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        state = K.states[row]
+        let stateName = K.states[row]
+        state = K.statesDictionary[stateName]
     }
 }
 

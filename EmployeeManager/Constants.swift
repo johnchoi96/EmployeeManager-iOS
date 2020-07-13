@@ -6,20 +6,33 @@
 //  Copyright © 2020 John Choi. All rights reserved.
 //
 
+import UIKit
 import Foundation
+import LocalAuthentication
 
 struct K {
     
     static let employeeCell = "employeeCell"
     static let employeeCellName = "EmployeeTableViewCell"
-    static let states = ["AK", "AL", "AR", "AZ", "CA", "CO", "CT",
-                         "DE", "FL", "GA", "HI", "IA", "ID", "IL",
-                         "IN", "KS", "KY", "LA", "MA", "MD", "ME",
-                         "MI", "MN", "MO", "MS", "MT", "NC", "ND",
-                         "NE", "NH", "NJ", "NM", "NV", "NY", "OH",
-                         "OK", "OR", "PA", "RI", "SC", "SD", "TN",
-                         "TX", "UT", "VA", "VT", "WA", "WI", "WV",
-                         "WY"]
+    
+    static let states = ["North Carolina", "Alaska", "Alabama", "Arkansas", "Arizona", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Iowa", "Idaho", "Illinois", "Indiana",
+                         "Kansas", "Kentucky", "Louisiana", "Massachusetts", "Maryland", "Maine", "Michigan", "Minnesota", "Missouri", "Mississippi", "Montana", "North Dakota",
+                         "Nebraska", "New Hampshire", "New Jersey", "New Mexico", "Nevada", "New York", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina",
+                         "South Dakota", "Tennessee", "Texas", "Utah", "Virginia", "Vermont", "Washington", "Wisconsin", "West Virginia", "Wyoming"
+    ]
+    
+    static let statesDictionary = ["Louisiana": "LA", "Washington": "WA", "Iowa": "IA", "Nevada": "NV", "Oklahoma": "OK",
+                                   "Rhode Island": "RI", "Maine": "ME", "New Jersey": "NJ", "New Mexico": "NM", "Arizona": "AZ",
+                                   "Illinois": "IL", "Kansas": "KS", "Montana": "MT", "Michigan": "MI", "Vermont": "VT",
+                                   "North Carolina": "NC", "Tennessee": "TN", "Colorado": "CO", "Indiana": "IN", "Maryland": "MD",
+                                   "Utah": "UT", "Minnesota": "MN", "South Carolina": "SC", "Texas": "TX", "Alaska": "AK",
+                                   "Missouri": "MO", "Nebraska": "NE", "Virginia": "VA", "Mississippi": "MS", "Hawaii": "HI",
+                                   "Wyoming": "WY", "Florida": "FL", "South Dakota": "SD", "Georgia": "GA", "Arkansas": "AR",
+                                   "Ohio": "OH", "Oregon": "OR", "California": "CA", "Pennsylvania": "PA", "West Virginia": "WV",
+                                   "Idaho": "ID", "Kentucky": "KY", "Alabama": "AL", "Delaware": "DE", "Massachusetts": "MA",
+                                   "North Dakota": "ND", "Wisconsin": "WI", "Connecticut": "CT", "New Hampshire": "NH", "New York": "NY"
+    ]
+    
     struct Segues {
         static let welcomeToSignup = "welcomeToSignup"
         static let welcomeToLogin = "welcomeToLogin"
@@ -32,15 +45,75 @@ struct K {
         static let mainToAbout = "mainToAbout"
     }
     
+    /**
+     Returns the current app version as String.
+     */
     static var APP_VERSION: String {
         return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
     }
     
+    /**
+     Returns the current app build number as String.
+     */
     static var BUILD_NUMBER: String {
         return Bundle.main.infoDictionary?["CFBundleVersion"] as! String
     }
     
+    /**
+     Returns the operating system version for this device. e.g. iOS 13.5 or iPadOS 13.5
+     */
     static var OS: String {
-        return "iOS \(Bundle.main.infoDictionary?["DTPlatformVersion"] as! String)"
+        var osLabel: String
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            osLabel = "iOS"
+        } else {
+            osLabel = "iPadOS"
+        }
+        osLabel += " \(UIDevice.current.systemVersion)"
+        return osLabel
+    }
+    
+    /**
+     Returns the available biometric authentication method available for this device.
+     Returns none if this device does not have a biometric authentication method. e.g. iPod Touch
+     */
+    static var BIOMETRIC_METHOD: String {
+        if LAContext().biometryType == .faceID {
+            return "Face ID"
+        } else if LAContext().biometryType == .touchID {
+            return "Touch ID"
+        } else {
+            return "Face ID/Touch ID"
+        }
+    }
+    
+    static func FEEDBACK_HTML(email userEmail: String) -> String {
+        return """
+        <h3>Employee Manager - iOS Feedback</h3>
+        <p>Device: \(UIDevice.current.model)</p>
+        <p>OS: \(OS)</p>
+        <p>App Version: \(APP_VERSION)</p>
+        <p>Build: \(BUILD_NUMBER)</p>
+        <p>User: \(userEmail)</p>
+        <br /><p>
+        
+        <b>Share your thoughts:</b></p>
+        <p></p>
+        """
+    }
+    
+    static func BUG_REPORT_HTML(email userEmail: String) -> String {
+        return """
+        <h3>Employee Manager - iOS Bug Report</h3>
+        <p>Device: \(UIDevice.current.model)</p>
+        <p>OS: \(OS)</p>
+        <p>App Version: \(APP_VERSION)</p>
+        <p>Build: \(BUILD_NUMBER)</p>
+        <p>User: \(userEmail)</p>
+        <br /><p>
+        
+        <b>Describe the problem:</b></p>
+        <p></p>
+        """
     }
 }
