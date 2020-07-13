@@ -99,10 +99,61 @@ class AboutViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
+        let changeLanguageAction = UIAlertAction(title: "Change app language", style: .default) { (action) in
+            let alert = UIAlertController(title: "Choose language", message: "This will require app restart", preferredStyle: .actionSheet)
+            let enAction = UIAlertAction(title: "English", style: .default) { (action) in
+                UserDefaults.standard.set(["en"], forKey: "AppleLanguages")
+                UserDefaults.standard.synchronize()
+                self.confirmAppRestart(sender)
+            }
+            let koAction = UIAlertAction(title: "Korean", style: .default) { (action) in
+                UserDefaults.standard.set(["ko"], forKey: "AppleLanguages")
+                UserDefaults.standard.synchronize()
+                self.confirmAppRestart(sender)
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { (action) in
+                self.dismiss(animated: true, completion: nil)
+            }
+            alert.addAction(enAction)
+            alert.addAction(koAction)
+            alert.addAction(cancelAction)
+            if let popoverController = alert.popoverPresentationController {
+                popoverController.barButtonItem = sender
+            }
+            self.present(alert, animated: true, completion: nil)
+        }
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
         alert.addAction(feedbackAction)
         alert.addAction(bugReportAction)
+        print(UIDevice.current.model)
+        if UIDevice.current.model == "iPad" {
+            alert.addAction(changeLanguageAction)
+        }
         alert.addAction(cancelAction)
+        // present as popover on iPads
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.barButtonItem = sender
+        }
+        present(alert, animated: true, completion: nil)
+    }
+    
+    /**
+     Asks the user for a app termination confirmation and terminates the app.
+     NOTE: using exit(Int32) is not permitted by Apple and will be rejected from the App Store. 
+     */
+    private func confirmAppRestart(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Are you sure you want to change language?", message: "App will restart", preferredStyle: .actionSheet)
+        let confirmAction = UIAlertAction(title: "Restart", style: .destructive) { (action) in
+            // quit app
+            // UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil) // this only puts the app to background
+            exit(0)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        alert.addAction(confirmAction)
+        alert.addAction(cancelAction)
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.barButtonItem = sender
+        }
         present(alert, animated: true, completion: nil)
     }
 }
