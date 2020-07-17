@@ -11,6 +11,9 @@ iPhone or iPad running iOS 13.0 or later
 * English
 * Korean
 
+## Screenshots
+![welcome](./imgs/welcome.png) ![login](./imgs/login_biometrics.png) ![main](./imgs/main.png) ![detail](./imgs/emp_detail.png) ![addressView](./imgs/address_view.png)
+
 ## CocoaPods dependencies
 
 * [Firebase/Auth](https://firebase.google.com)
