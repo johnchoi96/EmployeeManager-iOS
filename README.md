@@ -12,7 +12,11 @@ iPhone or iPad running iOS 13.0 or later
 * Korean
 
 ## Screenshots
-<img src="https://github.com/johnchoi96/EmployeeManager-iOS/blob/master/imgs/welcome.png" width="115" height="250"> ![login](./imgs/login_biometrics.png) ![main](./imgs/main.png) ![detail](./imgs/emp_detail.png) ![addressView](./imgs/address_view.png)
+<img src="https://github.com/johnchoi96/EmployeeManager-iOS/blob/master/imgs/welcome.png" width="185" height="400"> 
+<img src="https://github.com/johnchoi96/EmployeeManager-iOS/blob/master/imgs/login_biometrics.png" width="185" height="400">
+<img src="https://github.com/johnchoi96/EmployeeManager-iOS/blob/master/imgs/main.png" width="185" height="400">
+<img src="https://github.com/johnchoi96/EmployeeManager-iOS/blob/master/imgs/emp_detail.png" width="185" height="400">
+<img src="https://github.com/johnchoi96/EmployeeManager-iOS/blob/master/imgs/address_view.png" width="185" height="400">
 
 ## CocoaPods dependencies
 
