@@ -168,7 +168,6 @@
 				D22C7A7D247372FE00FA5DFC /* Info.plist */,
 				D2454BA024B1A8BA00624B37 /* GoogleService-Info.plist */,
 				D22C7A8E2473894D00FA5DFC /* Constants.swift */,
-				D2454B9824AD8F8600624B37 /* GoogleService-Info.plist */,
 				D24ABC77248C834900016D2E /* Localizable.strings */,
 			);
 			path = EmployeeManager;
@@ -642,7 +641,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = EmployeeManager/Employees.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 200712;
+				CURRENT_PROJECT_VERSION = 200718;
 				DEVELOPMENT_TEAM = 2JDGUK4DRH;
 				INFOPLIST_FILE = EmployeeManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -650,7 +649,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.johnchoi96.EmployeeManager;
 				PRODUCT_NAME = Employees;
 				SWIFT_VERSION = 5.0;
@@ -665,7 +664,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = EmployeeManager/Employees.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 200712;
+				CURRENT_PROJECT_VERSION = 200718;
 				DEVELOPMENT_TEAM = 2JDGUK4DRH;
 				INFOPLIST_FILE = EmployeeManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -673,7 +672,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.johnchoi96.EmployeeManager;
 				PRODUCT_NAME = Employees;
 				SWIFT_VERSION = 5.0;
