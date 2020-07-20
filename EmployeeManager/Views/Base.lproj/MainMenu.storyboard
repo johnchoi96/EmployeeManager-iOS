@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -480,7 +480,7 @@
                                 <rect key="frame" x="0.0" y="140" width="375" height="638"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="a0C-Is-qie">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="592"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="672.33333333333337"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="JqK-46-dGB">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
@@ -647,14 +647,14 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="yyM-XM-Fnn">
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yyM-XM-Fnn">
                                                 <rect key="frame" x="0.0" y="292" width="375" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a7b-ZF-owb">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours Worked:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reO-Bg-dK8">
-                                                                <rect key="frame" x="10" y="0.0" width="355" height="50"/>
+                                                                <rect key="frame" x="10" y="0.0" width="177.66666666666666" height="50"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -664,11 +664,21 @@
                                                         <constraints>
                                                             <constraint firstItem="reO-Bg-dK8" firstAttribute="top" secondItem="a7b-ZF-owb" secondAttribute="top" id="HuZ-F2-yVt"/>
                                                             <constraint firstAttribute="height" constant="50" id="R7b-XZ-ReM"/>
-                                                            <constraint firstAttribute="trailing" secondItem="reO-Bg-dK8" secondAttribute="trailing" constant="10" id="T3Y-Ye-RXR"/>
+                                                            <constraint firstAttribute="trailing" secondItem="reO-Bg-dK8" secondAttribute="trailing" id="T3Y-Ye-RXR"/>
                                                             <constraint firstItem="reO-Bg-dK8" firstAttribute="leading" secondItem="a7b-ZF-owb" secondAttribute="leading" constant="10" id="TZm-pd-Ufr"/>
                                                             <constraint firstAttribute="bottom" secondItem="reO-Bg-dK8" secondAttribute="bottom" id="qRR-Wg-qXp"/>
                                                         </constraints>
                                                     </view>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xsq-66-J6v">
+                                                        <rect key="frame" x="187.66666666666663" y="0.0" width="187.33333333333337" height="51"/>
+                                                        <segments>
+                                                            <segment title="Time Picker"/>
+                                                            <segment title="Time Slider"/>
+                                                        </segments>
+                                                        <connections>
+                                                            <action selector="hoursModeChanged:" destination="WVJ-ac-3kY" eventType="valueChanged" id="VSO-wx-fvu"/>
+                                                        </connections>
+                                                    </segmentedControl>
                                                 </subviews>
                                             </stackView>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="3600" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68h-4V-3nH">
@@ -680,8 +690,42 @@
                                                     <action selector="timeChanged:" destination="WVJ-ac-3kY" eventType="valueChanged" id="Q64-Y2-hpt"/>
                                                 </connections>
                                             </datePicker>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5oA-uF-zsW">
+                                                <rect key="frame" x="0.0" y="542" width="375" height="80.333333333333371"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OS3-I0-Gz7">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="20.333333333333332"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gf8-Ah-0Fj">
+                                                                <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="20.333333333333332"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Minutes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHp-bc-5aQ">
+                                                                <rect key="frame" x="187.66666666666663" y="0.0" width="187.33333333333337" height="20.333333333333332"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ox2-VU-goF" userLabel="Hour Slider">
+                                                        <rect key="frame" x="-2" y="20.333333333333371" width="379" height="31"/>
+                                                        <connections>
+                                                            <action selector="sliderChanged:" destination="WVJ-ac-3kY" eventType="valueChanged" id="8lA-hk-EQ1"/>
+                                                        </connections>
+                                                    </slider>
+                                                    <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="gLH-lw-T8G" userLabel="Minutes Slider">
+                                                        <rect key="frame" x="-2" y="50.333333333333371" width="379" height="31"/>
+                                                        <connections>
+                                                            <action selector="sliderChanged:" destination="WVJ-ac-3kY" eventType="valueChanged" id="33f-0U-x8M"/>
+                                                        </connections>
+                                                    </slider>
+                                                </subviews>
+                                            </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="mSZ-eg-XKp">
-                                                <rect key="frame" x="0.0" y="542" width="375" height="50"/>
+                                                <rect key="frame" x="0.0" y="622.33333333333337" width="375" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sNV-N0-Ybu">
                                                         <rect key="frame" x="0.0" y="0.0" width="178" height="50"/>
@@ -735,16 +779,22 @@
                     <navigationItem key="navigationItem" title="&lt;Full Name&gt;" id="G4e-aR-1FY"/>
                     <connections>
                         <outlet property="firstNameLabel" destination="0ca-Qj-RAm" id="NeR-4K-vkg"/>
+                        <outlet property="hourLabel" destination="Gf8-Ah-0Fj" id="41U-NR-6fH"/>
+                        <outlet property="hourSlider" destination="Ox2-VU-goF" id="TWn-HL-mjO"/>
+                        <outlet property="hoursInputSegmentControl" destination="xsq-66-J6v" id="Sm3-pK-Hfw"/>
                         <outlet property="hoursWorked" destination="68h-4V-3nH" id="WEp-K0-tVV"/>
                         <outlet property="hoursWorkedLabel" destination="reO-Bg-dK8" id="9UZ-5o-6ul"/>
                         <outlet property="idLabel" destination="JXY-7K-ZOI" id="fVU-Ly-A7K"/>
                         <outlet property="lastNameLabel" destination="75Z-Nq-ueN" id="c3g-fH-SiO"/>
                         <outlet property="middleNameLabel" destination="Chc-iU-QGF" id="FSn-y5-9gr"/>
                         <outlet property="middleNameStackView" destination="VTz-yt-pJ1" id="dfs-SC-WWR"/>
+                        <outlet property="minuteLabel" destination="wHp-bc-5aQ" id="9dn-Dl-ku3"/>
+                        <outlet property="minuteSlider" destination="gLH-lw-T8G" id="nnP-Cg-ntw"/>
                         <outlet property="payCheckLabel" destination="qq5-ds-rQW" id="9ik-aI-0Hu"/>
                         <outlet property="payRateLabel" destination="kJn-cM-RnD" id="wW7-rB-EIX"/>
                         <outlet property="paycheckLabel" destination="Kck-z2-7Xb" id="0kF-WO-o6f"/>
                         <outlet property="payrateLabel" destination="lSb-cT-krB" id="uBY-kD-Vdv"/>
+                        <outlet property="sliderStack" destination="5oA-uF-zsW" id="dAd-UD-0e9"/>
                         <outlet property="viewAddressButton" destination="H1v-Wy-bEY" id="5DW-Sq-fCU"/>
                         <segue destination="VaG-YM-dsr" kind="show" identifier="detailToAddress" id="i0m-Vs-cQg"/>
                     </connections>
