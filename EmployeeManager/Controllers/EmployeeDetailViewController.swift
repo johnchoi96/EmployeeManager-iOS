@@ -60,7 +60,7 @@ class EmployeeDetailViewController: UIViewController {
         
         // set up slider view
         sliderStack.isHidden = true
-        hourSlider.maximumValue = 200
+        hourSlider.maximumValue = 100
         hourSlider.minimumValue = 0
         minuteSlider.maximumValue = 59
         minuteSlider.minimumValue = 0
