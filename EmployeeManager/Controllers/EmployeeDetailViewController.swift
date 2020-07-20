@@ -36,6 +36,10 @@ class EmployeeDetailViewController: UIViewController {
     @IBOutlet weak var hourLabel: UILabel!
     @IBOutlet weak var minuteLabel: UILabel!
     
+    let hapticFeedback = UINotificationFeedbackGenerator()
+    
+    let selectionFeedback = UISelectionFeedbackGenerator()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -63,6 +67,8 @@ class EmployeeDetailViewController: UIViewController {
         
         hourSlider.value = 1
         minuteSlider.value = 0
+        
+        hapticFeedback.prepare()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -100,7 +106,9 @@ class EmployeeDetailViewController: UIViewController {
         let alert = UIAlertController(title: NSLocalizedString("copied confirmation alert", comment: ""), message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: NSLocalizedString("Close message", comment: ""), style: .default, handler: nil)
         alert.addAction(action)
-        present(alert, animated: true, completion: nil)
+        present(alert, animated: true) {
+            self.hapticFeedback.notificationOccurred(.success)
+        }
     }
     
     @IBAction func hoursModeChanged(_ sender: UISegmentedControl) {
@@ -108,6 +116,7 @@ class EmployeeDetailViewController: UIViewController {
             hoursWorked.isHidden = false
             sliderStack.isHidden = true
         } else {
+            selectionFeedback.prepare()
             hoursWorked.isHidden = true
             sliderStack.isHidden = false
         }
@@ -125,6 +134,9 @@ class EmployeeDetailViewController: UIViewController {
         let minute = Int(minuteLabel.text!.split(separator: " ")[0])!
         let paycheck = employee.getPaycheck(hours: hour, minutes: minute)
         payCheckLabel.text = String(format: "$%.2f", paycheck)
+        
+        // haptic feedback
+        selectionFeedback.selectionChanged()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
