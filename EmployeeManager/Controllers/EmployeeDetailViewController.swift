@@ -25,7 +25,20 @@ class EmployeeDetailViewController: UIViewController {
     
     @IBOutlet weak var middleNameStackView: UIStackView!
     
+    @IBOutlet weak var sliderStack: UIStackView!
+    
     var employee: Employee!
+    
+    @IBOutlet weak var hoursInputSegmentControl: UISegmentedControl!
+    
+    @IBOutlet weak var hourSlider: UISlider!
+    @IBOutlet weak var minuteSlider: UISlider!
+    @IBOutlet weak var hourLabel: UILabel!
+    @IBOutlet weak var minuteLabel: UILabel!
+    
+    let hapticFeedback = UINotificationFeedbackGenerator()
+    
+    let selectionFeedback = UISelectionFeedbackGenerator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +57,18 @@ class EmployeeDetailViewController: UIViewController {
         idLabel.text = "\(employee.id)    " // 4 spaces at the end for label rotation
         payRateLabel.text = String(format: "$%.2f", employee.payRate)
         payCheckLabel.text = String(format: "$%.2f", employee.getPaycheck(hours: 1, minutes: 0))
+        
+        // set up slider view
+        sliderStack.isHidden = true
+        hourSlider.maximumValue = 200
+        hourSlider.minimumValue = 0
+        minuteSlider.maximumValue = 59
+        minuteSlider.minimumValue = 0
+        
+        hourSlider.value = 1
+        minuteSlider.value = 0
+        
+        hapticFeedback.prepare()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -59,6 +84,9 @@ class EmployeeDetailViewController: UIViewController {
         payrateLabel.text = NSLocalizedString("pay rate label", comment: "Pay rate label")
         hoursWorkedLabel.text = NSLocalizedString("hours worked label", comment: "Hours worked label")
         paycheckLabel.text = NSLocalizedString("pay check label", comment: "Pay check label")
+        
+        hoursInputSegmentControl.setTitle("Time Picker", forSegmentAt: 0)
+        hoursInputSegmentControl.setTitle("Time Slider", forSegmentAt: 1)
     }
     
     @IBAction func timeChanged(_ sender: UIDatePicker) {
@@ -78,7 +106,37 @@ class EmployeeDetailViewController: UIViewController {
         let alert = UIAlertController(title: NSLocalizedString("copied confirmation alert", comment: ""), message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: NSLocalizedString("Close message", comment: ""), style: .default, handler: nil)
         alert.addAction(action)
-        present(alert, animated: true, completion: nil)
+        present(alert, animated: true) {
+            self.hapticFeedback.notificationOccurred(.success)
+        }
+    }
+    
+    @IBAction func hoursModeChanged(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            hoursWorked.isHidden = false
+            sliderStack.isHidden = true
+        } else {
+            selectionFeedback.prepare()
+            hoursWorked.isHidden = true
+            sliderStack.isHidden = false
+        }
+    }
+    
+    @IBAction func sliderChanged(_ sender: UISlider) {
+        let value = Int(sender.value)
+        // if sender tag is 0, hour slider. if sender tag is 1, minute slider
+        if sender.tag == 0 {
+            hourLabel.text = String(value) + " " + (value == 1 ? "Hour" : "Hours")
+        } else {
+            minuteLabel.text = String(value) + " " + (value == 1 ? "Minute" : "Minutes")
+        }
+        let hour = Int(hourLabel.text!.split(separator: " ")[0])!
+        let minute = Int(minuteLabel.text!.split(separator: " ")[0])!
+        let paycheck = employee.getPaycheck(hours: hour, minutes: minute)
+        payCheckLabel.text = String(format: "$%.2f", paycheck)
+        
+        // haptic feedback
+        selectionFeedback.selectionChanged()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
