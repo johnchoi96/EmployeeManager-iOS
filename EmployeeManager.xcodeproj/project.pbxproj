@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		16ED873B3B53435E5AE7EA8B /* Pods_EmployeeManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2808F7250ADEAD6FC0C8F62 /* Pods_EmployeeManager.framework */; };
 		3AAC8A0CD75E10DF5A231DB5 /* Pods_EmployeesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73FA17AED670DA6151877327 /* Pods_EmployeesTests.framework */; };
+		D20A659624CA5D8E00D63EA9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D20A659524CA5D8E00D63EA9 /* README.md */; };
 		D21AD5F324B27CA30065BF10 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D21AD5F224B27CA30065BF10 /* KeychainSwift */; };
 		D22C7A70247372FB00FA5DFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A6F247372FB00FA5DFC /* AppDelegate.swift */; };
 		D22C7A72247372FB00FA5DFC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C7A71247372FB00FA5DFC /* SceneDelegate.swift */; };
@@ -56,6 +57,7 @@
 		5C30AA165C6F0F089334D08A /* Pods-EmployeeManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmployeeManager.release.xcconfig"; path = "Target Support Files/Pods-EmployeeManager/Pods-EmployeeManager.release.xcconfig"; sourceTree = "<group>"; };
 		73FA17AED670DA6151877327 /* Pods_EmployeesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmployeesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2808F7250ADEAD6FC0C8F62 /* Pods_EmployeeManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmployeeManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D20A659524CA5D8E00D63EA9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D22C7A6C247372FB00FA5DFC /* Employees.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Employees.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D22C7A6F247372FB00FA5DFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D22C7A71247372FB00FA5DFC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		D22C7A63247372FB00FA5DFC = {
 			isa = PBXGroup;
 			children = (
+				D20A659524CA5D8E00D63EA9 /* README.md */,
 				D22C7A6E247372FB00FA5DFC /* EmployeeManager */,
 				D2BB60B4247E6DE300EE499A /* EmployeesTests */,
 				D22C7A6D247372FB00FA5DFC /* Products */,
@@ -329,6 +332,7 @@
 				D26CE49A2479701400C1A909 /* EmployeeTableViewCell.xib in Resources */,
 				D22C7A7C247372FE00FA5DFC /* LaunchScreen.storyboard in Resources */,
 				D24ABC75248C834900016D2E /* Localizable.strings in Resources */,
+				D20A659624CA5D8E00D63EA9 /* README.md in Resources */,
 				D22C7A79247372FE00FA5DFC /* Assets.xcassets in Resources */,
 				D22C7A77247372FB00FA5DFC /* Main.storyboard in Resources */,
 			);
