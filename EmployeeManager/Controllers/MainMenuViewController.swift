@@ -65,6 +65,19 @@ class MainMenuViewController: UIViewController {
     }
     
     @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
+        do {
+            Auth.auth().removeStateDidChangeListener(handle)
+            try Auth.auth().signOut()
+        } catch {
+            print("Error happened")
+            // display alert controller with error information
+            let alert = UIAlertController(title: "Problem Occurred", message: "Problem occurred while trying to log out the user.\n\(error)", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true) {
+                return
+            }
+        }
         navigationController?.popToRootViewController(animated: true)
     }
     
