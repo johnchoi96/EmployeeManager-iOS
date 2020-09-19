@@ -345,6 +345,7 @@
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Npa-Zy-BHq">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="zam-6q-Cjb"/>
                                                 </constraints>
@@ -353,6 +354,7 @@
                                             </textField>
                                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Middle Name (Optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vYr-Xv-dN1">
                                                 <rect key="frame" x="0.0" y="80" width="375" height="50"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="nQ6-lP-Z79"/>
                                                 </constraints>
@@ -361,6 +363,7 @@
                                             </textField>
                                             <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SBX-68-OFq">
                                                 <rect key="frame" x="0.0" y="160" width="375" height="50"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="nkM-sY-su9"/>
                                                 </constraints>
@@ -369,6 +372,7 @@
                                             </textField>
                                             <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hourly Rate ($)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FNI-ii-XYY">
                                                 <rect key="frame" x="0.0" y="240" width="375" height="50"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Qui-37-6OH"/>
                                                 </constraints>
@@ -377,6 +381,7 @@
                                             </textField>
                                             <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h6F-dE-XpM">
                                                 <rect key="frame" x="0.0" y="320" width="375" height="50"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="vIF-5a-Tbn"/>
                                                 </constraints>
@@ -385,6 +390,7 @@
                                             </textField>
                                             <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street 2 (Optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iUg-uh-0LY">
                                                 <rect key="frame" x="0.0" y="400" width="375" height="50"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="PWh-8S-hvj"/>
                                                 </constraints>
@@ -393,6 +399,7 @@
                                             </textField>
                                             <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tRC-R7-u08">
                                                 <rect key="frame" x="0.0" y="480" width="375" height="50"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="mGy-vV-Mpg"/>
                                                 </constraints>
@@ -418,6 +425,7 @@
                                             </stackView>
                                             <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l5p-kf-XzW">
                                                 <rect key="frame" x="0.0" y="790" width="375" height="50"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="hSU-l4-sKP"/>
                                                 </constraints>
@@ -1068,6 +1076,9 @@
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

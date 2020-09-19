@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,7 +21,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ZL-1V-9Km" userLabel="SignUpView">
                                 <rect key="frame" x="100" y="698" width="175" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uId-AC-5pt">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uId-AC-5pt">
                                         <rect key="frame" x="36" y="1" width="103" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="Sign Up">
@@ -42,16 +44,19 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4rH-r4-HGD">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="34"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4eL-nC-Pnc">
                                         <rect key="frame" x="0.0" y="53" width="355" height="34"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
                                     <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uTo-Ej-qKN">
                                         <rect key="frame" x="0.0" y="106" width="355" height="34"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
@@ -73,6 +78,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="zCq-3D-V9X"/>
                         <color key="backgroundColor" name="AppColor"/>
                         <constraints>
                             <constraint firstItem="eqy-W6-mY1" firstAttribute="leading" secondItem="zCq-3D-V9X" secondAttribute="leading" constant="10" id="2hZ-v9-M68"/>
@@ -86,7 +92,6 @@
                             <constraint firstItem="eqy-W6-mY1" firstAttribute="centerY" secondItem="AID-iL-dHv" secondAttribute="centerY" constant="-50" id="juX-w6-w74"/>
                             <constraint firstItem="sfl-Uz-JJu" firstAttribute="centerY" secondItem="AID-iL-dHv" secondAttribute="centerY" id="taO-ns-Dge"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="zCq-3D-V9X"/>
                     </view>
                     <connections>
                         <outlet property="confirmPasswordField" destination="uTo-Ej-qKN" id="ooy-WL-ITA"/>
@@ -126,6 +131,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="avo-62-iVm">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="34"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
                                     </textField>
@@ -134,11 +140,12 @@
                                         <subviews>
                                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fE9-f4-zok">
                                                 <rect key="frame" x="0.0" y="0.0" width="321" height="34"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="I0Q-eH-6iz">
-                                                <rect key="frame" x="321" y="1.6666666666666625" width="34" height="31.000000000000007"/>
+                                                <rect key="frame" x="321" y="1.3333333333333357" width="34" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="I0Q-eH-6iz" secondAttribute="height" multiplier="1:1" id="ypz-eI-Je3"/>
                                                 </constraints>
@@ -153,7 +160,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTp-cV-zyt">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTp-cV-zyt">
                                 <rect key="frame" x="100" y="698" width="175" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -183,6 +190,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jxx-Fx-R5N"/>
                         <color key="backgroundColor" name="AppColor"/>
                         <constraints>
                             <constraint firstItem="LWM-aN-8h8" firstAttribute="height" secondItem="i0f-SC-TaW" secondAttribute="height" multiplier="0.15" id="6Du-dG-XRO"/>
@@ -196,7 +204,6 @@
                             <constraint firstItem="YV7-Lm-Mom" firstAttribute="centerY" secondItem="i0f-SC-TaW" secondAttribute="centerY" id="pgc-1P-MVs"/>
                             <constraint firstItem="Jxx-Fx-R5N" firstAttribute="trailing" secondItem="MTp-cV-zyt" secondAttribute="trailing" constant="100" id="xGi-SO-xj4"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Jxx-Fx-R5N"/>
                     </view>
                     <connections>
                         <outlet property="emailField" destination="avo-62-iVm" id="bbC-Q4-PAv"/>
@@ -225,9 +232,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="faceid" catalog="system" width="128" height="114"/>
+        <image name="faceid" catalog="system" width="128" height="115"/>
         <namedColor name="AppColor">
             <color red="0.23100000619888306" green="0.70999997854232788" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
