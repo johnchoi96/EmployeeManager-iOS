@@ -14,11 +14,16 @@ iPhone or iPad running iOS 13.0 or later
 ## Screenshots
 <img src="./Images/welcome.png" width="185" height="400"> <img src="./Images/login_biometrics.png" width="185" height="400"> <img src="./Images/emp_detail.png" width="185" height="400"><img src="./Images/address_view.png" width="185" height="400">
 
-## CocoaPods dependencies
+## Dependencies
+
+### CocoaPods
+
+* [MarqueeLabel](https://github.com/cbpowell/MarqueeLabel)
+
+### Swift Package Manager
 
 * [Firebase/Auth](https://firebase.google.com)
 * [Firebase/Firestore](https://firebase.google.com)
 * [FirebaseFirestoreSwift](https://firebase.google.com)
 * [IQKeyboardManagerSwift](https://github.com/hackiftekhar/IQKeyboardManager)
-* [MarqueeLabel](https://github.com/cbpowell/MarqueeLabel)
 

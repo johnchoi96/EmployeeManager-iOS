@@ -53,6 +53,9 @@ class AddressViewController: UIViewController {
         // add employee annotation
         addEmployeeAnnotation()
         
+        // map view corner radius
+        mapView.layer.cornerRadius = 10
+        
         mapView.showsUserLocation = true
         
         // get current location

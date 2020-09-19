@@ -1,9 +1,9 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '13.0'
 
-plugin 'cocoapods-binary'
+#plugin 'cocoapods-binary'
 
-all_binary!
+#all_binary!
 use_frameworks!
 
 target 'EmployeeManager' do
@@ -11,10 +11,6 @@ target 'EmployeeManager' do
   #use_frameworks!
 
   # Pods for EmployeeManager
-  pod 'Firebase/Auth'
-  pod 'Firebase/Firestore'
-  pod 'FirebaseFirestoreSwift'
-  pod 'IQKeyboardManagerSwift'
   pod 'MarqueeLabel'
 
   target 'EmployeesTests' do
@@ -24,4 +20,11 @@ target 'EmployeeManager' do
   end
 end
 
-
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '9.0'
+    end
+  end
+end
